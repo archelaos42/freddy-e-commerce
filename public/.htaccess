@@ -1,12 +1,13 @@
 #Header add Access-Control-Allow-Origin "*"
-#Header add Access-Control-Allow-Headers "x-requested-with, origin , content-type"
+#Header add Access-Control-Allow-Headers "X-Inertia, content-type, x-inertia-version, x-requested-with, x-inertia-location"
 #Header add Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS"
-#header("Content-Security-Policy: default-src *; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' stackexchange.com");
+#Header("Content-Security-Policy: default-src *; style-src 'self' http://* 'unsafe-inline'; font-src 'self' http://* data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' stackexchange.com");
+
 
 <IfModule mod_rewrite.c>
-#    <IfModule mod_negotiation.c>
-#        Options -MultiViews -Indexes
-#    </IfModule>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
 
     RewriteEngine On
     RewriteBase /
@@ -25,3 +26,25 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+
+# with AJAX withCredentials=false (cookies NOT sent)
+#Header always set Access-Control-Allow-Origin "*"
+#Header always set Access-Control-Allow-Methods "POST, GET, PUT, OPTIONS, PATCH, DELETE"
+#Header always set Access-Control-Allow-Headers "X-Accept-Charset,X-Accept,Content-Type,X-Inertia,X-Inertia-Version,X-Requested-With,X-Xsrf-Token"
+#RewriteEngine On
+#RewriteCond %{REQUEST_METHOD} OPTIONS
+#RewriteRule ^(.*)$ $1 [R=200,L,E=HTTP_ORIGIN:%{HTTP:ORIGIN}]]
+
+## with AJAX withCredentials=true (cookies sent, SSL allowed...)
+#SetEnvIfNoCase ORIGIN (.*) ORIGIN=$1
+#Header always set Access-Control-Allow-Methods "POST, GET, PUT, OPTIONS, PATCH, DELETE"
+#Header always set Access-Control-Allow-Origin "%{ORIGIN}e"
+#Header always set Access-Control-Allow-Credentials "true"
+#Header always set Access-Control-Allow-Headers "X-Accept-Charset,X-Accept,Content-Type, X-Inertia"
+#RewriteEngine On
+#RewriteCond %{REQUEST_METHOD} OPTIONS
+#RewriteRule ^(.*)$ $1 [R=200,L,E=HTTP_ORIGIN:%{HTTP:ORIGIN}]
+#
+#<Limit GET POST PUT DELETE>
+#  Allow from all
+#</Limit>

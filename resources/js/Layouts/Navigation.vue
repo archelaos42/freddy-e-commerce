@@ -7,9 +7,17 @@
         </div>
         <div class="w-9/12">
             <ul class="flex py-8 ">
-                <li class="ml-auto mr-3"><NavLink href="/" class="hover:underline" :class="{'font-bold underline': $page.component === 'Users'}"><span class="font-bold text-lg text-black">WR.UP®</span></NavLink></li>
-                <li class="mr-3"><NavLink href="/welcome" class="hover:underline" :class="{'font-bold underline': $page.component === 'Welcome'}"><span class="font-bold text-lg text-black">N.O.W®</span></NavLink></li>
-                <li class="mr-3"><NavLink href="/products" class=" hover:underline" :class="{'font-bold underline': $page.component === 'Products'}"><span class="font-bold text-lg text-black">Black®</span></NavLink></li>
+<!--                <li class="ml-auto mr-3">-->
+<!--                    <NavLink href="/" class="hover:underline" :class="{'font-bold underline': $page.component === 'Users'}"><span class="font-bold text-lg text-black">WR.UP®</span></NavLink>-->
+<!--                        <div>-->
+<!--                            <NavLink>-->
+
+<!--                            </NavLink>-->
+<!--                        </div>-->
+<!--                </li>-->
+                <li class="ml-auto mr-3"><NavLink href="/collection/2" class="hover:underline" :class="{'font-bold underline': $page.component === 'Users'}"><span class="font-bold text-lg text-black">WR.UP®</span></NavLink></li>
+                <li class="mr-3"><NavLink href="/collection/3" class="hover:underline" :class="{'font-bold underline': $page.component === 'Welcome'}"><span class="font-bold text-lg text-black">N.O.W®</span></NavLink></li>
+                <li class="mr-3"><NavLink href="/collection/1" class=" hover:underline" :class="{'font-bold underline': $page.component === 'Products'}"><span class="font-bold text-lg text-black">Black®</span></NavLink></li>
                 <li class="mr-3"><NavLink href="/products" class=" hover:underline" :class="{'font-bold underline': $page.component === 'Products'}"><span class="font-bold text-lg text-black">Popular</span></NavLink></li>
                 <li class="mr-3"><NavLink href="/products" class=" hover:underline" :class="{'font-bold underline': $page.component === 'Products'}"><span class="font-bold text-lg text-black">Collections</span></NavLink></li>
                 <li class="mr-3"><NavLink href="/products" class=" hover:underline" :class="{'font-bold underline': $page.component === 'Products'}"><span class="font-bold text-lg text-black">Sport and Leisure</span></NavLink></li>
@@ -29,7 +37,7 @@
                 </template>
             </ul>
         </div>
-        <div class="flex w-1/12 max-h-10 my-9 justify-center">
+        <div class="flex w-1/12 max-h-10 py-8 justify-center">
             <div>
                 <button @hover="showSearch">
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -43,9 +51,25 @@
                 </div>
             </div>
             <div class="ml-6">
-                <a href="/">
+                <Link :href="('/cart')">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d="M20 7h-4v-3c0-2.209-1.791-4-4-4s-4 1.791-4 4v3h-4l-2 17h20l-2-17zm-11-3c0-1.654 1.346-3 3-3s3 1.346 3 3v3h-6v-3zm-4.751 18l1.529-13h2.222v1.5c0 .276.224.5.5.5s.5-.224.5-.5v-1.5h6v1.5c0 .276.224.5.5.5s.5-.224.5-.5v-1.5h2.222l1.529 13h-15.502z"/></svg>
-                </a>
+                    <div class="left-5 bottom-8">
+                        <div class="position absolute bg-blue-800 rounded-full text-gray-200 grid place-items-center text-xs h-4 w-4">
+                            {{ $page.props.count }}
+                        </div>
+                    </div>
+                </Link>
+<!--                <a href="/">-->
+<!--                    <div>-->
+<!--                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d="M20 7h-4v-3c0-2.209-1.791-4-4-4s-4 1.791-4 4v3h-4l-2 17h20l-2-17zm-11-3c0-1.654 1.346-3 3-3s3 1.346 3 3v3h-6v-3zm-4.751 18l1.529-13h2.222v1.5c0 .276.224.5.5.5s.5-.224.5-.5v-1.5h6v1.5c0 .276.224.5.5.5s.5-.224.5-.5v-1.5h2.222l1.529 13h-15.502z"/></svg>-->
+<!--                        <div class="position absolute left-5 bottom-8">-->
+<!--                            <div class="position absolute bg-blue-800 rounded-full text-gray-200 grid place-items-center text-xs h-4 w-4">-->
+<!--                                {{ $page.props.count }}-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </a>-->
+
             </div>
 <!--            <div>-->
 <!--                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"/></svg>-->
@@ -58,11 +82,12 @@
 </template>
 
 <script>
+import { Link, useForm } from '@inertiajs/inertia-vue3';
 import NavLink from "../Components/NavLink.vue";
-import {ref} from "vue";
+import {ref, toRefs, defineProps} from "vue";
 export default {
     name: "Navigation.vue",
-    components: {NavLink},
+    components: {NavLink, Link},
     setup() {
         const searchToggle = ref(false);
 
@@ -71,7 +96,12 @@ export default {
         };
       return { showSearch, searchToggle}
     },
+    props: {
+        count: String,
+    }
 }
+// const props = defineProps({ products: Object,});
+// const { products } = toRefs(props);
 </script>
 
 <style scoped>

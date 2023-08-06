@@ -57,7 +57,7 @@ const form = useForm({
 // };
 
 function submit () {
-    form._token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    // form._token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     form.transform(data => ({
         ...data,
         remember: form.remember ? 'on' : '',

@@ -6,8 +6,10 @@ use App\Models\Category;
 use App\Models\Collection;
 use App\Models\Product;
 use App\Models\Subcategory;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+
 
 class PagesController extends Controller
 {
@@ -17,21 +19,36 @@ class PagesController extends Controller
      * @return \Inertia\Response
      */
     public function index()
-    {
-        return Inertia::render('Welcome', [
-        ]);
-
-
+    {   $content = Cart::content();
+        $count = $content->count();
+//        $amount = $content->count();
+//        if ($amount > 0) {
+//            $count = $amount;
+//        } else
+//        {$count = 0;}
+        return Inertia::render('Welcome', compact('count'));
+//        dd($products);
     }
+//    {
+//        return Inertia::render('Welcome', [
+//        ]);
+//
+//
+//    }
+
 
     /**
      * Displays a single product.
      */
     public function product($id)
     {
+        $selectedPhoto = "https://freddy.hr/image/cache/catalog/izdelki/NOW1HC006P_N/NOW1HC006P_N-667x1000h.jpg";
+        $quantity = 1;
+        $content = Cart::content();
+        $count = $content->count();
         $product = Product::findOrFail($id);
         $collection = Collection::findOrFail($product->collection_id);
-        return Inertia::render('Product', compact('product', 'collection'));
+        return Inertia::render('Product', compact('product', 'collection', 'count', 'quantity', 'selectedPhoto'));
 //        dd($products);
     }
 
@@ -44,17 +61,10 @@ class PagesController extends Controller
         return Inertia::render('Collection', [
             'collection' => Collection::findOrFail($id),
             'categories' => Category::query()->where('collection_id', '=', $id)->get(),
+            $content = Cart::content(),
+                'selectedView' => 'multi',
+                'count' => $content->count(),
                 'products' => Product::query()
-                ->when(request()->has('vMin'), function ($query) {
-
-                        $query->where('price', '>', request()->input('vMin'));
-
-                })
-                ->when(request()->has('vMax'), function ($query) {
-
-                    $query->where('price', '<', request()->input('vMax'));
-
-                })
                 ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'legnthN' ), function ($query) {
                     if(request()->input('length78') === "true"){
                         $query->orWhere('length', '=', '7/8');
@@ -125,6 +135,16 @@ class PagesController extends Controller
                     }
 
                 })
+                    ->when(request()->has('vMin'), function ($query) {
+
+                        $query->where('price', '>=', request()->input('vMin'));
+
+                    })
+                    ->when(request()->has('vMax'), function ($query) {
+
+                        $query->where('price', '<=', request()->input('vMax'));
+
+                    })
                 ->where('collection_id', '=', $id)
 //                    ->where('price', '<', 'vMax')
 //                    ->where('price', '>', 'vMin')
@@ -136,7 +156,8 @@ class PagesController extends Controller
                     'size' => $product->size,
                     'waist' => $product->size,
                     'price' => $product->price,
-                    'collection_id' => $product->collection_id
+                    'collection_id' => $product->collection_id,
+                    'description' => $product->description
                 ]),
             'filters' => (new \Illuminate\Http\Request)->only([
                 'sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl', 'filters',
@@ -145,7 +166,14 @@ class PagesController extends Controller
                 'vMin', 'vMax',
                 'blue', 'beige', 'grey', 'military', 'pink', 'black'
             ])
+
         ]);
 
+
+    }
+
+    public function tester()
+    {
+        return Inertia::render('Success');
     }
 }

@@ -19,9 +19,9 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.post(route('register'), {
+    form.post('/register'), {
         onFinish: () => form.reset('password', 'password_confirmation'),
-    });
+    };
 };
 </script>
 
@@ -187,7 +187,7 @@ const submit = () => {
 <!--                </div>-->
 
                 <div class="flex items-center justify-end mt-4">
-                    <Link :href="route('login')" class="underline text-sm text-gray-600 hover:text-gray-900">
+                    <Link :href="('/login')" class="underline text-sm text-gray-600 hover:text-gray-900">
                         Already registered?
                     </Link>
 

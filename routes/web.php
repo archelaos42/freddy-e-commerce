@@ -31,6 +31,10 @@ use Inertia\Inertia;
 //   ]);
 //});
 
+//header('Access-Control-Allow-Origin:  *');
+//header('Access-Control-Allow-Methods:  POST, GET, OPTIONS, PUT, DELETE');
+//header('Access-Control-Allow-Headers:  Content-Type, X-Auth-Token, Origin, Authorization');
+
 Route::get('/', [PagesController::class, 'index'])->name('home');
 Route::get('collection/{id}', [PagesController::class, 'collection'])->name('collection');
 Route::get('product/{id}', [PagesController::class, 'product'])->name('product');
@@ -42,7 +46,14 @@ Route::post('cart.remove', [CartController::class, 'remove'])->name('cart.remove
 Route::get('/subscription', ManageSubscriptionController::class)->name('subscription');
 Route::get('/billing-portal', BilingPortalController::class)->name('billing-portal');
 
-Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+//Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+Route::post('/checkout', [CartController::class, 'checkout'])->name('checkout.index');
+
+Route::get('/success', [CartController::class, 'success'])->name('checkout.success');
+Route::get('/cancel', [CartController::class, 'cancel'])->name('checkout.cancel');
+Route::get('/tester', [PagesController::class, 'tester'])->name('tester');
+
+
 
 
 
@@ -103,6 +114,8 @@ Route::get('/welcome', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
+
 
 
 

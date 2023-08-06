@@ -22,12 +22,21 @@
         <div class="flex">
             <div class="w-1/2 flex p-5 mr-10">
                 <div class="1/5">
-                    <img class="mb-3" src="https://freddy.hr/image/cache/catalog/izdelki/NOW1HC006P_N/NOW1HC006P_N-66x100h.jpg" alt="">
-                    <img class="mb-3" src="https://freddy.hr/image/cache/catalog/izdelki/NOW1HC006P_N/NOW1HC006P_N_M-66x100h.jpg" alt="">
-                    <img class="mb-3" src="https://freddy.hr/image/cache/catalog/izdelki/NOW1HC006P_N/NOW1HC006P_N_-_02m-66x100h.jpg" alt="">
+                    <img class="mb-3" src="https://freddy.hr/image/cache/catalog/izdelki/NOW1HC006P_N/NOW1HC006P_N-66x100h.jpg"
+                         @click="$page.props.selectedPhoto = 'https://freddy.hr/image/cache/catalog/izdelki/NOW1HC006P_N/NOW1HC006P_N-667x1000h.jpg'"
+                         alt="">
+                    <img class="mb-3" src="https://freddy.hr/image/cache/catalog/izdelki/NOW1HC006P_N/NOW1HC006P_N_M-66x100h.jpg"
+                         @click="$page.props.selectedPhoto = 'https://freddy.hr/image/cache/catalog/izdelki/NOW1HC006P_N/NOW1HC006P_N_M-667x1000h.jpg'"
+                         alt="">
+                    <img class="mb-3" src="https://freddy.hr/image/cache/catalog/izdelki/NOW1HC006P_N/NOW1HC006P_N_-_02m-66x100h.jpg"
+                         @click="$page.props.selectedPhoto = 'https://freddy.hr/image/cache/catalog/izdelki/NOW1HC006P_N/NOW1HC006P_N_-_02m-667x1000h.jpg'"
+                         alt="">
                 </div>
                 <div class="4/5">
-                    <img src="https://freddy.hr/image/cache/catalog/izdelki/NOW1HC006P_N/NOW1HC006P_N-667x1000h.jpg" alt="">
+<!--                    <img :src="'{{ $page.props.selectedPhoto }}" alt="">-->
+                    <img :src="selectedPhoto" alt="">
+
+                    <!--                    <img src="https://freddy.hr/image/cache/catalog/izdelki/NOW1HC006P_N/NOW1HC006P_N-667x1000h.jpg" alt="">-->
                 </div>
             </div>
             <div class="w-1/2">
@@ -68,26 +77,46 @@
                     <div class="flex">
                         <div class="mr-32 my-auto ml-0">SIZE&nbsp<span class="text-red-600">*</span></div>
                         <div>
-                            <button class="border-1 border-solid border-black ml-2 h-8 w-10">XXS</button>
-                            <button class="border-1 border-solid border-gray-300 ml-2 h-8 w-8">XS</button>
-                            <button class="border-1 border-solid border-gray-300 ml-2 h-8 w-8">S</button>
-                            <button class="border-1 border-solid border-gray-300 ml-2 h-8 w-8">M</button>
-                            <button class="border-1 border-solid border-gray-300 ml-2 h-8 w-8">L</button>
-                            <button class="border-1 border-solid border-gray-300 ml-2 h-8 w-8">XL</button>
+                            <button class="border-1 border-solid ml-2 h-8 w-10"
+                                    @click="$page.props.selectedSize = 'XXS'"
+                                    :class="$page.props.selectedSize === 'XXS' ? 'border-blue-600' : 'border-black'"
+                            >XXS</button>
+                            <button class="border-1 border-solid ml-2 h-8 w-8"
+                                    @click="$page.props.selectedSize = 'XS'"
+                                    :class="$page.props.selectedSize === 'XS' ? 'border-blue-600' : 'border-black'"
+                            >XS</button>
+                            <button class="border-1 border-solid ml-2 h-8 w-8"
+                                    @click="$page.props.selectedSize = 'S'"
+                                    :class="$page.props.selectedSize === 'S' ? 'border-blue-600' : 'border-black'"
+                            >S</button>
+                            <button class="border-1 border-solid ml-2 h-8 w-8"
+                                    @click="$page.props.selectedSize = 'M'"
+                                    :class="$page.props.selectedSize === 'M' ? 'border-blue-600' : 'border-black'"
+                            >M</button>
+                            <button class="border-1 border-solid ml-2 h-8 w-8"
+                                    @click="$page.props.selectedSize = 'L'"
+                                    :class="$page.props.selectedSize === 'L' ? 'border-blue-600' : 'border-black'"
+                            >L</button>
+<!--                            <button class="border-1 border-solid ml-2 h-8 w-8" @click="$page.props.selectedSize = 'XL'">XL</button>-->
+                            <button class="border-1 border-solid ml-2 h-8 w-8"
+                                    @click="$page.props.selectedSize = 'XL'"
+                                    :class="$page.props.selectedSize === 'XL' ? 'border-blue-600' : 'border-black'"
+                            >XL</button>
                         </div>
                     </div>
                     <div class="flex mt-6 justify-between">
                         <div class="flex">
                             <div class="flex mr-1">
-                                <div class="my-auto mr-1 ml-0"><input class="w-6 h-8" type="text"></div>
+                                <div class="my-auto mr-1 ml-0"><input v-model="$page.props.quantity" class="w-12 h-8" type="text"></div>
+
 
                                 <div class="my-auto mx-1">
                                     <div>
-                                        <button><svg width="12" height="12" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"><path d="M23.245 20l-11.245-14.374-11.219 14.374-.781-.619 12-15.381 12 15.391-.755.609z"/>
+                                        <button @click="$page.props.quantity += 1 "><svg width="12" height="12" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"><path d="M23.245 20l-11.245-14.374-11.219 14.374-.781-.619 12-15.381 12 15.391-.755.609z"/>
                                         </svg></button>
                                     </div>
                                     <div>
-                                        <button><svg width="12" height="12" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="black" fill-rule="evenodd" clip-rule="evenodd"><path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z"/>
+                                        <button @click="$page.props.quantity > 1 ? $page.props.quantity -= 1 : console.log('cant')"><svg width="12" height="12" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="black" fill-rule="evenodd" clip-rule="evenodd"><path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z"/>
                                         </svg></button>
                                     </div>
                                 </div>
@@ -101,29 +130,34 @@
 
 <!--                                <h1>Add to Cart</h1>-->
                                 <Link
-                                    :href="route('cart.store')"
+                                    :href="('/cart.store')"
                                     method="post"
                                     :data="{
                                             id: product.id,
                                             name: product.name,
-                                            price: product.price,
                                             qty: 1,
+                                            price: product.price,
+                                            size: selectedSize,
+                                            _token: this.$page.props.csrf_token,
                                             }"
                                     classes="px-3 py-2 mr-2 rounded text-white text-sm font-bold whitespace-no-wrap bg-blue-600 hover:bg-blue-800"
                                     as="button"
                                 >Add to Cart</Link>
 
                             </button>
-                            <button class="flex bg-[#3D568F] font-ropa text-white text-transform: uppercase pr-1 pt-2 pl-2">
+                            <div v-if="$page.props.flash.message" class="text-blue-600 mb-4">
+                                {{ $page.props.flash.message }}
+                            </div>
+<!--                            <button class="flex bg-[#3D568F] font-ropa text-white text-transform: uppercase pr-1 pt-2 pl-2">-->
 
-                                <div class="px-1 pb-1">
-                                    <svg width="25" height="25" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" fill="currentColor" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9.474 5.209s-4.501 4.505-6.254 6.259c-.147.146-.22.338-.22.53s.073.384.22.53c1.752 1.754 6.252 6.257 6.252 6.257.145.145.336.217.527.217.191-.001.383-.074.53-.221.293-.293.294-.766.004-1.057l-4.976-4.976h14.692c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-14.692l4.978-4.979c.289-.289.287-.761-.006-1.054-.147-.147-.339-.221-.53-.221-.191-.001-.38.071-.525.215z" fill-rule="nonzero"/>
-                                    </svg>
-                                </div>
+<!--                                <div class="px-1 pb-1">-->
+<!--                                    <svg width="25" height="25" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" fill="currentColor" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9.474 5.209s-4.501 4.505-6.254 6.259c-.147.146-.22.338-.22.53s.073.384.22.53c1.752 1.754 6.252 6.257 6.252 6.257.145.145.336.217.527.217.191-.001.383-.074.53-.221.293-.293.294-.766.004-1.057l-4.976-4.976h14.692c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-14.692l4.978-4.979c.289-.289.287-.761-.006-1.054-.147-.147-.339-.221-.53-.221-.191-.001-.38.071-.525.215z" fill-rule="nonzero"/>-->
+<!--                                    </svg>-->
+<!--                                </div>-->
 
-                                <h1>Buy Now</h1>
+<!--                                <h1>Buy Now</h1>-->
 
-                            </button>
+<!--                            </button>-->
                         </div>
                         <button><svg clip-rule="evenodd" width="20" height="20" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m7.234 3.004c-2.652 0-5.234 1.829-5.234 5.177 0 3.725 4.345 7.727 9.303 12.54.194.189.446.283.697.283s.503-.094.697-.283c4.977-4.831 9.303-8.814 9.303-12.54 0-3.353-2.58-5.168-5.229-5.168-1.836 0-3.646.866-4.771 2.554-1.13-1.696-2.935-2.563-4.766-2.563zm0 1.5c1.99.001 3.202 1.353 4.155 2.7.14.198.368.316.611.317.243 0 .471-.117.612-.314.955-1.339 2.19-2.694 4.159-2.694 1.796 0 3.729 1.148 3.729 3.668 0 2.671-2.881 5.673-8.5 11.127-5.454-5.285-8.5-8.389-8.5-11.127 0-1.125.389-2.069 1.124-2.727.673-.604 1.625-.95 2.61-.95z" fill-rule="nonzero"/>
                         </svg></button>
@@ -336,6 +370,13 @@ import 'tw-elements';
 let props = defineProps({
     product: Object,
     collection: Object,
+    selectedSize: String,
+    quantity: Number,
+    selectedPhoto: String,
+    // flash: {
+    //     message: "Item added successfully!"
+    // }
+
 });
 
 

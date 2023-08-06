@@ -5,8 +5,6 @@ import basicSsl from '@vitejs/plugin-basic-ssl';
 // import cors from "cors";
 import fs from 'fs';
 
-const host = 'freddyshop.test';
-
 
 export default defineConfig({
     plugins: [
@@ -24,27 +22,61 @@ export default defineConfig({
         // },
         vue({
             template: {
-                // transformAssetUrls: {
-                //     base: null,
-                //     includeAbsolute: false,
-                // },
+                compilerOptions: {
+                    isCustomElement: (tag) => ['Tags'].includes(tag),
+                }
+            //     transformAssetUrls: {
+            //         base: null,
+            //         includeAbsolute: false,
+            //     },
             },
         }),
         basicSsl(),
     ],
     server: {
-        https:true,
-        host:'localhost',
-        // host,
-        // hmr: { host },
-        // https: {
-        // key: fs.readFileSync(`C:/laragon/etc/ssl/laragon.key`),
-        // cert: fs.readFileSync(`C:/laragon/etc/ssl/laragon.crt`),
-        // key: fs.readFileSync(`/path/to/${host}.key`),
-        // cert: fs.readFileSync(`/path/to/${host}.crt`),
-        // },
+        // port: 3000,
+        // https: true,
+        hmr: {
+            host: 'localhost',
+            // port: 3001,
+            protocol: 'wss',
+            origin: false,
+        },
+            key: fs.readFileSync(`C:/laragon/etc/ssl/laragon.key`),
+            cert: fs.readFileSync(`C:/laragon/etc/ssl/laragon.crt`),},
+    resolve: {
+        preserveSymlinks: true,
+        server: {
+            https: true,
+            origin: 'localhost'
+
+        },
+        cors: true,
+
     },
-    cors: true,
+
+    // server: {
+    //     port: 8080,
+    //     https: true,
+    //     hmr: {
+    //         host: 'localhost',
+    //     },
+    // },
+    // server: {
+    //     // https:true,
+    //     host:true,
+    //     // host,
+    //     // host,
+    //     changeOrigin: true,
+    //     // origin: false,
+    //     origin: 'localhost:5173',
+    //     hmr: { host: 'localhost' },
+    //     https: {
+    //     key: fs.readFileSync(`C:/laragon/etc/ssl/laragon.key`),
+    //     cert: fs.readFileSync(`C:/laragon/etc/ssl/laragon.crt`),
+    //     },
+    // },
+    // cors: true,
 });
 
 

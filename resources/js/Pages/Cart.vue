@@ -71,7 +71,7 @@
 
 
                             <Link
-                                :href="route('cart.remove')"
+                                :href="('/cart.remove')"
                                 method="post"
                                 :data="{
                                             id: product.rowId,
@@ -159,8 +159,13 @@
                 </button>
                 <button className="flex font-ropa text-white text-transform: uppercase bg-black pr-1 pt-2 pl-2">
 
-                    <h1>Checkout</h1>
-
+<!--                    <h1>Checkout</h1>-->
+                    <Link
+                        :href="('/checkout')"
+                        method="post"
+                        classes="px-3 py-2 mr-2 rounded text-white text-sm font-bold whitespace-no-wrap bg-blue-600 hover:bg-blue-800"
+                        as="button"
+                    >Checkout</Link>
                     <div className="px-1 pb-1">
                         <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                              clip-rule="evenodd">
