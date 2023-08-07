@@ -1,4 +1,4 @@
----
+...
 steps:
   - name: gcr.io/google.com/cloudsdktool/cloud-sdk
   - entrypoint: bash
@@ -9,3 +9,4 @@ steps:
         && gcloud app deploy -q --promote -v=$BUILD_ID \
         --project=$PROJECT_ID
 timeout: 3600s
+...
