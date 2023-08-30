@@ -38,6 +38,10 @@ use Inertia\Inertia;
 Route::get('/', [PagesController::class, 'index'])->name('home');
 Route::get('collection/{id}', [PagesController::class, 'collection'])->name('collection');
 Route::get('product/{id}', [PagesController::class, 'product'])->name('product');
+Route::get('review/{id}', [PagesController::class, 'review'])->name('review');
+Route::get('reviews/{id}', [PagesController::class, 'reviews'])->name('reviews');
+Route::post('/postreview', [PagesController::class, 'postreview'])->name('postreview');
+Route::get('/sizetable', [PagesController::class, 'sizetable'])->name('sizetable');
 
 Route::get('cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('cart.store', [CartController::class, 'store'])->name('cart.store');

@@ -12,23 +12,11 @@ export default defineConfig({
             input: 'resources/js/app.js',
             refresh: true,
         }),
-        // module.exports = {
-        //     devServer: {
-        //         host: 'freddyshop.test',
-        //         https: true,
-        //         key: fs.readFileSync('.certs/key.pem'),
-        //         cert: fs.readFileSync('.certs/cert.pem'),
-        //     }
-        // },
         vue({
             template: {
                 compilerOptions: {
                     isCustomElement: (tag) => ['Tags'].includes(tag),
                 }
-            //     transformAssetUrls: {
-            //         base: null,
-            //         includeAbsolute: false,
-            //     },
             },
         }),
         basicSsl(),
@@ -54,52 +42,5 @@ export default defineConfig({
         cors: true,
 
     },
-
-    // server: {
-    //     port: 8080,
-    //     https: true,
-    //     hmr: {
-    //         host: 'localhost',
-    //     },
-    // },
-    // server: {
-    //     // https:true,
-    //     host:true,
-    //     // host,
-    //     // host,
-    //     changeOrigin: true,
-    //     // origin: false,
-    //     origin: 'localhost:5173',
-    //     hmr: { host: 'localhost' },
-    //     https: {
-    //     key: fs.readFileSync(`C:/laragon/etc/ssl/laragon.key`),
-    //     cert: fs.readFileSync(`C:/laragon/etc/ssl/laragon.crt`),
-    //     },
-    // },
-    // cors: true,
 });
 
-
-// server: {
-//     // host,
-//     // hmr: { host },
-//     // https: {
-//     //     key: fs.readFileSync(`/path/to/${host}.key`),
-//     //     cert: fs.readFileSync(`/path/to/${host}.crt`),
-//     // }
-//     // // https: true,
-//     // // host: 'localhost'
-//
-// },
-// // configureServer: ({ app }) => {
-// //     app.use(cors({ origin: '*' }));
-// resolve: {
-//     // preserveSymlinks: true,
-//     server: {
-//         // https: true,
-//         // origin: 'localhost'
-//
-//     },
-//     cors: true,
-//
-// },

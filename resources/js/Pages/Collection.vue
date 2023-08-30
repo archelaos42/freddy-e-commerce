@@ -181,15 +181,15 @@
         <div class="w-4/5">
 
 
-                <div class="h-78" v-for="category in categories">
-                    <a href="/" class="">
-                        <img src="https://freddy.hr/image/cache/catalog/bannerji/k-klasik-500x500.jpg" alt="">
-                            {{ category.name }}
-                    </a>
-                </div>
+<!--                <div class="h-78" v-for="category in categories">-->
+<!--                    <a href="/" class="">-->
+<!--                        <img src="https://freddy.hr/image/cache/catalog/bannerji/k-klasik-500x500.jpg" alt="">-->
+<!--                            {{ category.name }}-->
+<!--                    </a>-->
+<!--                </div>-->
 
                 <div class="mt-16">
-                    {{ selectedView }}{{ products.data.length }}
+<!--                    {{ selectedView }}{{ products.data.length }}-->
                     <div class="flex border-b border-t border-gray-100 border-solid py-3 mb-3 flex justify-between">
                         <div class="pt-2">
                             <button @click="$page.props.selectedView = 'multi'" class="mr-3">
@@ -202,13 +202,13 @@
                             </button>
                         </div>
                         <div class="flex">
-                            <label class="mr-3 text-sm my-auto" for="cars">Sort by:</label>
-                            <select class="h-8 w-36 p-0 text-sm" id="cars" name="cars">
-                                <option value="volvo">Choice</option>
-                                <option value="saab">Name</option>
-                                <option value="fiat">Review</option>
-                                <option value="audi">Model</option>
-                            </select>
+<!--                            <label class="mr-3 text-sm my-auto" for="cars">Sort by:</label>-->
+<!--                            <select class="h-8 w-36 p-0 text-sm" id="cars" name="cars">-->
+<!--                                <option value="volvo">Choice</option>-->
+<!--                                <option value="saab">Name</option>-->
+<!--                                <option value="fiat">Review</option>-->
+<!--                                <option value="audi">Model</option>-->
+<!--                            </select>-->
                         </div>
                     </div>
                 </div>

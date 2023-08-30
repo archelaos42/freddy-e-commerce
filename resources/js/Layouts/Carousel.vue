@@ -30,20 +30,20 @@
                     alt="..."
                 />
             </div>
-            <div class="carousel-item relative float-left w-full">
-                <img
-                    src="https://freddy.hr/image/cache/catalog/naslovnica/naslovnice%20hr/Desktop_HR_1480x526-1480x526.jpg"
-                    class="block w-full"
-                    alt="..."
-                />
-            </div>
-            <div class="carousel-item relative float-left w-full">
-                <img
-                    src="https://freddy.hr/image/cache/catalog/naslovnica/Desktop_black_popusti-1480x526.png"
-                    class="block w-full"
-                    alt="..."
-                />
-            </div>
+<!--            <div class="carousel-item relative float-left w-full">-->
+<!--                <img-->
+<!--                    src="https://freddy.hr/image/cache/catalog/naslovnica/naslovnice%20hr/Desktop_HR_1480x526-1480x526.jpg"-->
+<!--                    class="block w-full"-->
+<!--                    alt="..."-->
+<!--                />-->
+<!--            </div>-->
+<!--            <div class="carousel-item relative float-left w-full">-->
+<!--                <img-->
+<!--                    src="https://freddy.hr/image/cache/catalog/naslovnica/Desktop_black_popusti-1480x526.png"-->
+<!--                    class="block w-full"-->
+<!--                    alt="..."-->
+<!--                />-->
+<!--            </div>-->
         </div>
         <button
             class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"

@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Collection;
 use App\Models\Product;
+use App\Models\Review;
 use App\Models\Subcategory;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use mysql_xdevapi\TableInsert;
 
 
 class PagesController extends Controller
@@ -42,13 +44,21 @@ class PagesController extends Controller
      */
     public function product($id)
     {
+        $reviews = Review::query()->where('product_id', '=', $id)->get();
+        $reviewMap = $reviews->map(function($item, $key){
+            return (object)$item;
+        });
+        $averageGrade = $reviewMap->avg('grade');
+        $reviewCount = count($reviews);
+        $selectedTab = "description";
+//        dd($reviewCount);
         $selectedPhoto = "https://freddy.hr/image/cache/catalog/izdelki/NOW1HC006P_N/NOW1HC006P_N-667x1000h.jpg";
         $quantity = 1;
         $content = Cart::content();
         $count = $content->count();
         $product = Product::findOrFail($id);
         $collection = Collection::findOrFail($product->collection_id);
-        return Inertia::render('Product', compact('product', 'collection', 'count', 'quantity', 'selectedPhoto'));
+        return Inertia::render('Product', compact('product', 'collection', 'count', 'quantity', 'selectedPhoto', 'averageGrade', 'reviewCount', 'selectedTab'));
 //        dd($products);
     }
 
@@ -175,5 +185,42 @@ class PagesController extends Controller
     public function tester()
     {
         return Inertia::render('Success');
+    }
+
+    public function review($id)
+    {
+        $product = Product::findOrFail($id);
+        $content = Cart::content();
+        $count = $content->count();
+        return Inertia::render(('Review'), compact('product', 'count'));
+    }
+
+    public function reviews($id)
+    {
+        $product = Product::findOrFail($id);
+        $content = Cart::content();
+        $count = $content->count();
+        $reviews = Review::query()->where('product_id', '=', $id)->get();
+//        $reviews = Review::all();
+        return Inertia::render(('Reviews'), compact('reviews', 'product', 'count'));
+//        dd($reviews);
+    }
+
+    public function postreview(Request $request)
+    {
+        $review = new Review();
+        $review->content = $request->contents;
+        $review->grade = $request->grade;
+        $review->product_id = $request->productID;
+        $review->user_name = $request->user;
+        $review->save();
+        return \redirect()->back()->with('message', 'Thank you for your feedback!');
+    }
+
+    public function sizetable()
+    {
+        $content = Cart::content();
+        $count = $content->count();
+        return Inertia::render(('Sizetable'), compact('count'));
     }
 }

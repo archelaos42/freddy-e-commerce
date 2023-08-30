@@ -21,7 +21,7 @@
     <div class="mx-60 border-b border-solid border-gray-200 mb-5">
         <div class="flex">
             <div class="w-1/2 flex p-5 mr-10">
-                <div class="1/5">
+                <div class="1/5 pr-5">
                     <img class="mb-3" src="https://freddy.hr/image/cache/catalog/izdelki/NOW1HC006P_N/NOW1HC006P_N-66x100h.jpg"
                          @click="$page.props.selectedPhoto = 'https://freddy.hr/image/cache/catalog/izdelki/NOW1HC006P_N/NOW1HC006P_N-667x1000h.jpg'"
                          alt="">
@@ -47,29 +47,51 @@
                     <div class="text-sm text-gray-700 py-4 font-ibm">The amazing two-elastic fabric ensures a perfect fit, as well as 5 pockets for that casual vibe. Click for more information > ></div>
                 </div>
                 <div class="flex justify-left border-solid border-t border-b border-gray-200 mt-3">
-                    <a href=""><h3 class="py-3 relative top-2 font-ropa mr-6 text-black font-bold text-base text-transform: uppercase mt-0 mb-2 border-solid border-b-2">Description</h3></a>
-                    <a href=""><h3 class="py-3 relative top-2 font-ropa mr-6 text-black font-bold text-base text-transform: uppercase mt-0 mb-2">Label</h3></a>
-                    <a href=""><h3 class="py-3 relative top-2 font-ropa text-black font-bold text-base text-transform: uppercase mt-0 mb-2">Size table</h3></a>
+                    <button @click="$page.props.selectedTab = 'description'">
+                        <h3 :class="$page.props.selectedTab === 'description' ? 'border-black' : 'border-none'"
+                            class="py-3 relative top-2 font-ropa mr-6 text-black font-bold text-base text-transform: uppercase mt-0 mb-2 border-b-2 border-solid">Description</h3>
+                    </button>
+                    <button @click="$page.props.selectedTab = 'label'">
+                        <h3 :class="$page.props.selectedTab === 'label' ? 'border-black' : 'border-none'"
+                            class="py-3 relative top-2 font-ropa mr-6 text-black font-bold text-base text-transform: uppercase mt-0 mb-2 border-b-2 border-solid">Label</h3>
+                    </button>
+                    <Link :href="('/sizetable')"><h3 class="py-3 relative top-2 font-ropa text-black font-bold text-base text-transform: uppercase mt-0 mb-2">Size table</h3></Link>
                 </div>
-                <div class="text-sm font-ibm my-5">N.O.W eco leather pants. They look like jeans, but are as comfortable as tights. Classic 5 pocket fit.</div>
-                <div class="text-sm font-ibm my-5">
-                    <div>
-                        Product code: NOW1HC006P_N
+                <div>
+                    <div v-if="$page.props.selectedTab === 'description'">
+                        <div class="text-sm font-ibm my-5">N.O.W eco leather pants. They look like jeans, but are as comfortable as tights. Classic 5 pocket fit.</div>
+                        <div class="text-sm font-ibm my-5">
+                        <div>
+                            Product code: NOW1HC006P_N
+                        </div>
+                        </div>
                     </div>
+                    <div class="border-solid border-gray-200 border-1 mt-6 font-ropa" v-if="$page.props.selectedTab === 'label'">
+                        <div class="border-solid border-gray-200 border-1 bg-gray-200 p-2">{{product.name}}</div>
+                        <div class="flex border-solid border-gray-200 border-1 p-2"><div class="w-1/2">Material</div><div>100% Cotton</div></div>
+                        <div class="flex border-solid border-gray-200 border-1 p-2"><div class="w-1/2">Color</div><div>Black</div></div>
+                        <div class="flex border-solid border-gray-200 border-1 p-2"><div class="w-1/2">Model</div><div>Loose</div></div>
+                        <div class="flex border-solid border-gray-200 border-1 p-2"><div class="w-1/2">Waist</div><div>Normal</div></div>
+                        <div class="flex border-solid border-gray-200 border-1 p-2"><div class="w-1/2">Length</div><div>Normal</div></div>
+                    </div>
+
+
                     <div class="flex mt-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="grey" viewBox="-5 0 30 30"><path d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="grey" viewBox="-5 0 30 30"><path d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="grey" viewBox="-5 0 30 30"><path d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="grey" viewBox="-5 0 30 30"><path d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"/>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="grey" viewBox="-5 0 30 30"><path d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"/>
-                            </svg>
-                        <div class="flex ml-3 ">
-                            <div>Based on 0 reviews&nbsp</div>
-                            <a href="/"><div class="text-black"> - Write a review</div></a>
+                        <div class="text-3xl">{{ $page.props.averageGrade }}</div>
+<!--                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="grey" viewBox="-5 0 30 30"><path d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"/>-->
+<!--                            </svg>-->
+<!--                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="grey" viewBox="-5 0 30 30"><path d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"/>-->
+<!--                            </svg>-->
+<!--                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="grey" viewBox="-5 0 30 30"><path d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"/>-->
+<!--                            </svg>-->
+<!--                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="grey" viewBox="-5 0 30 30"><path d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"/>-->
+<!--                            </svg>-->
+<!--                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="grey" viewBox="-5 0 30 30"><path d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"/>-->
+<!--                            </svg>-->
+                        <div class="flex  pt-2">
+                            <div class="">Based on {{ $page.props.reviewCount }} reviews&nbsp</div>
+                            <Link :href="'/reviews/' + $page.props.product.id"><div class="text-black"> - View reviews</div></Link>&nbsp;
+                            <Link :href="'/review/' + $page.props.product.id"><div class="text-black"> - Write a review</div></Link>
                         </div>
                     </div>
                     <h1 class="font-ropa text-tra text-5xl text-transform: uppercase text-centers my-2">117,23 €</h1>
@@ -123,7 +145,7 @@
                             </div>
                             <button class="flex font-ropa text-white text-transform: uppercase bg-black pr-1 pt-2 pl-2 mr-3">
 
-                                <div class="px-1 pb-1">
+                                <div class="px-1 pt-1">
                                     <svg width="25" height="25" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" fill="currentColor" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9.474 5.209s-4.501 4.505-6.254 6.259c-.147.146-.22.338-.22.53s.073.384.22.53c1.752 1.754 6.252 6.257 6.252 6.257.145.145.336.217.527.217.191-.001.383-.074.53-.221.293-.293.294-.766.004-1.057l-4.976-4.976h14.692c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-14.692l4.978-4.979c.289-.289.287-.761-.006-1.054-.147-.147-.339-.221-.53-.221-.191-.001-.38.071-.525.215z" fill-rule="nonzero"/>
                                     </svg>
                                 </div>
@@ -140,7 +162,7 @@
                                             size: selectedSize,
                                             _token: this.$page.props.csrf_token,
                                             }"
-                                    classes="px-3 py-2 mr-2 rounded text-white text-sm font-bold whitespace-no-wrap bg-blue-600 hover:bg-blue-800"
+                                    classes="px-3 py-1 mr-2 rounded text-white text-sm font-bold whitespace-no-wrap bg-blue-600 hover:bg-blue-800"
                                     as="button"
                                 >Add to Cart</Link>
 
@@ -167,7 +189,7 @@
                         <div>> Award points: 119</div>
                         <div>> Code: NOW1HC006P_N</div>
                     </div>
-                    <div id="slider">
+                    <div id="slider" class="">
                         <h1 class="font-bold font-ropa text-tra text-base text-transform: uppercase mt-6">You have also looked at</h1>
                         <div class="relative bottom-3">________</div>
 
@@ -194,7 +216,7 @@
                                     aria-label="Slide 3"
                                 ></button>
                             </div>
-                            <div class="carousel-inner relative w-full overflow-hidden font-ropa">
+                            <Link :href="'/product/5'" class="carousel-inner relative w-full overflow-hidden font-ropa">
                                 <div class="carousel-item active float-left w-full">
                                     <div class="flex">
                                         <div class="w-1/2 h-40 flex">
@@ -247,51 +269,51 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="carousel-item float-left w-full">
-                                    <div class="flex">
-                                        <div class="w-1/2 h-40 flex">
-                                            <img
-                                                src="https://freddy.hr/image/cache/catalog/izdelki/WRUP4RC006/usnje-98x150h.jpeg"
-                                                class="block"
-                                                alt="Camera"
-                                            />
-                                            <div>
-                                                <div class="text-sm text-black">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>
-                                                <span class="text-lg">127,05 EUR</span>
-                                            </div>
-                                        </div>
-                                        <div class="w-1/2 h-40 flex">
-                                            <img
-                                                src="https://freddy.hr/image/cache/catalog/izdelki/CITYWALKLXCM_NV1/citywalklxcm_nv1_-_02M-98x150h.jpg"
-                                                class="block"
-                                                alt="Camera"
-                                            />
-                                            <div>
-                                                <div class="text-sm text-black">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>
-                                                <span class="text-lg">127,05 EUR</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button
-                                class="carousel-control-prev absolute bottom-full text-black flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-16"
-                                type="button"
-                                data-bs-target="#carouselExampleIndicators"
-                                data-bs-slide="prev"
-                            >
-                                <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-                                <span class="text-black">Previous</span>
-                            </button>
-                            <button
-                                class="carousel-control-next absolute bottom-full flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
-                                type="button"
-                                data-bs-target="#carouselExampleIndicators"
-                                data-bs-slide="next"
-                            >
-                                <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-                                <span class="text-black">Next</span>
-                            </button>
+<!--                                <div class="carousel-item float-left w-full">-->
+<!--                                    <div class="flex">-->
+<!--                                        <div class="w-1/2 h-40 flex">-->
+<!--                                            <img-->
+<!--                                                src="https://freddy.hr/image/cache/catalog/izdelki/WRUP4RC006/usnje-98x150h.jpeg"-->
+<!--                                                class="block"-->
+<!--                                                alt="Camera"-->
+<!--                                            />-->
+<!--                                            <div>-->
+<!--                                                <div class="text-sm text-black">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>-->
+<!--                                                <span class="text-lg">127,05 EUR</span>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="w-1/2 h-40 flex">-->
+<!--                                            <img-->
+<!--                                                src="https://freddy.hr/image/cache/catalog/izdelki/CITYWALKLXCM_NV1/citywalklxcm_nv1_-_02M-98x150h.jpg"-->
+<!--                                                class="block"-->
+<!--                                                alt="Camera"-->
+<!--                                            />-->
+<!--                                            <div>-->
+<!--                                                <div class="text-sm text-black">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>-->
+<!--                                                <span class="text-lg">127,05 EUR</span>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+                            </Link>
+<!--                            <button-->
+<!--                                class="carousel-control-prev absolute bottom-full text-black flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-16"-->
+<!--                                type="button"-->
+<!--                                data-bs-target="#carouselExampleIndicators"-->
+<!--                                data-bs-slide="prev"-->
+<!--                            >-->
+<!--                                <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>-->
+<!--                                <span class="text-black">Previous</span>-->
+<!--                            </button>-->
+<!--                            <button-->
+<!--                                class="carousel-control-next absolute bottom-full flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"-->
+<!--                                type="button"-->
+<!--                                data-bs-target="#carouselExampleIndicators"-->
+<!--                                data-bs-slide="next"-->
+<!--                            >-->
+<!--                                <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>-->
+<!--                                <span class="text-black">Next</span>-->
+<!--                            </button>-->
                         </div>
                     </div>
                 </div>
@@ -371,8 +393,11 @@ let props = defineProps({
     product: Object,
     collection: Object,
     selectedSize: String,
-    quantity: Number,
+    // quantity: Number,
     selectedPhoto: String,
+    averageGrade: Number,
+    reviewCount: Number,
+    selectedTab: String,
     // flash: {
     //     message: "Item added successfully!"
     // }
