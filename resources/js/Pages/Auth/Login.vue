@@ -72,6 +72,7 @@ function submit () {
 </script>
 
 <template>
+    <AppLayout>
     <Head title="Log in" />
     <input type="hidden" name="_token">
     <div class="flex justify-center bg-gradient-to-b from-gray-200 pt-2">
@@ -101,16 +102,18 @@ function submit () {
             <p>Creating your user account allows for faster and simpler shopping/placing an order, changing your data, as well as reviewing your order status and history. </p>
 
             <div class="">
-                <button class="flex relative -right-3/4 mt-28 font-ropa text-white text-transform: uppercase bg-black pr-1 pt-2 pl-2">
+                <Link :href="'/register'">
+                    <button class="flex relative -right-3/4 mt-28 font-ropa text-white text-transform: uppercase bg-black pr-1 pt-2 pl-2">
 
-                        <h1>Proceed</h1>
+                            <h1>Register</h1>
 
-                        <div class="px-1 pb-1">
-                            <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg" fill="currentColor" clip-rule="evenodd"><path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
-                            </svg>
-                        </div>
+                            <div class="px-1 pb-1">
+                                <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg" fill="currentColor" clip-rule="evenodd"><path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
+                                </svg>
+                            </div>
 
-                </button>
+                    </button>
+                </Link>
             </div>
 
         </div>
@@ -178,4 +181,14 @@ function submit () {
             </form>
         </div>
     </div>
+    </AppLayout>
 </template>
+
+<script>
+import AppLayout from "../../Layouts/AppLayout.vue";
+
+export default {
+    name: "Login.vue",
+    components: {AppLayout}
+}
+</script>

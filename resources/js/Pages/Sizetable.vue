@@ -1,4 +1,5 @@
 <template>
+    <AppLayout>
     <div class="flex justify-center bg-gradient-to-b from-gray-200 pt-2">
         <a href="/login" class="text-sm mt-1 mr-2"><span class="underline">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -31,4 +32,11 @@
     <div  class="flex justify-center mt-5">
         <img src="https://cdn-ejkkk.nitrocdn.com/yYOSwFYgUxrUPuSztpMwtJytCaAlXHab/assets/images/optimized/rev-7c30919/image/catalog/bannerji/tabelavelikosti-freddy-78.jpg" alt="">
     </div>
+    </AppLayout>
 </template>
+<script>
+import AppLayout from "../Layouts/AppLayout.vue";
+export default {
+    components: {AppLayout}
+}
+</script>

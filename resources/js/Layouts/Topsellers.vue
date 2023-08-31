@@ -1,5 +1,5 @@
 <template>
-    <div class="text-center mt-24">
+    <div class="text-center mt-24 mb-8">
         <h1 class="font-bold font-ropa text-tra text-base text-5xl text-transform: uppercase">Top Sellers</h1>
         <div class="relative bottom-3 text-5xl bottom-6 h-9">__</div>
         <div class="w-1/3 mx-auto">We have selected for you the top selling products of the past several months. This way, you will be able to quickly and easily renew your favorite products</div>
@@ -31,42 +31,42 @@
         <div class="carousel-inner relative w-full overflow-hidden font-ropa">
             <div class="carousel-item active float-left w-full">
                 <div class="flex mx-56">
-                    <div class="w-1/5">
+                    <div class="w-1/5 mx-2">
                         <img
-                            src="https://freddy.hr/image/cache/catalog/izdelki/WRUP1RC001_B94/WRUP1RC001_B94_0M-400x600w.jpg"
+                            src="https://freddy.hr/image/cache/catalog/izdelki/WRUP1RC003_J4Y/WRUP1RC003_J4_Y_02M-400x600.jpg"
                             class="block"
                             alt="Camera"
                         />
                         <div class="text-sm text-gray-500">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>
                         <span class="text-lg">127,05 EUR</span>
                     </div>
-                    <div class="w-1/5">
+                    <div class="w-1/5 mx-2">
                         <img
-                            src="https://freddy.hr/image/cache/catalog/izdelki/WRUP1RC001_B94/WRUP1RC001_B94_0M-400x600w.jpg"
+                            src="https://freddy.hr/image/cache/catalog/izdelki/WRUP1LC001_H4/WRUP1LC001_H4_0_02M-400x600w.jpg"
                             class="block"
                             alt="Camera"
                         />
                         <div class="text-sm text-gray-500">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>
                         <span class="text-lg">127,05 EUR</span>
-                    </div><div class="w-1/5">
+                    </div><div class="w-1/5 mx-2">
                     <img
-                        src="https://freddy.hr/image/cache/catalog/izdelki/WRUP1RC001_B94/WRUP1RC001_B94_0M-400x600w.jpg"
+                        src="https://freddy.hr/image/cache/catalog/izdelki/WRUP1RC002_J0Y/wrup1rc002_j0_y_02-400x600w.jpg"
                         class="block"
                         alt="Camera"
                     />
                     <div class="text-sm text-gray-500">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>
                     <span class="text-lg">127,05 EUR</span>
-                </div><div class="w-1/5">
+                </div><div class="w-1/5 mx-2">
                     <img
-                        src="https://freddy.hr/image/cache/catalog/izdelki/WRUP1RC001_B94/WRUP1RC001_B94_0M-400x600w.jpg"
+                        src="https://freddy.hr/image/cache/catalog/izdelki/WRUP1RC003_J3Y/WRUP1RC003_J3Y1M-400x600w.jpg"
                         class="block"
                         alt="Camera"
                     />
                     <div class="text-sm text-gray-500">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>
                     <span class="text-lg">127,05 EUR</span>
-                </div><div class="w-1/5">
+                </div><div class="w-1/5 mx-2">
                     <img
-                        src="https://freddy.hr/image/cache/catalog/izdelki/WRUP1RC001_B94/WRUP1RC001_B94_0M-400x600w.jpg"
+                        src="https://freddy.hr/image/cache/catalog/izdelki/WRUP1RC005_N0/WRUP1RC005_N_0_02M-400x600h.jpg"
                         class="block"
                         alt="Camera"
                     />

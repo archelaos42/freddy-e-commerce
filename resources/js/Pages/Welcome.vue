@@ -1,4 +1,5 @@
 <template>
+    <AppLayout>
 <!--Carousel directly beneath the navigation-->
     <Carousel />
 <!--Tags underneath the carousel-->
@@ -67,6 +68,7 @@
         <img class="w-1/5 ml-8" src="https://freddy.hr/image/cache/catalog/bannerji/freddy-sloveni%20ja32-1000x1000w.jpg" alt="">
         <img class="w-1/5 ml-8" src="https://freddy.hr/image/cache/catalog/bannerji/freddy-sloveni%20ja40-1000x1000.jpg" alt="">
     </div>
+    </AppLayout>
 </template>
 
 <script setup>
@@ -75,6 +77,7 @@ import Carousel from "../Layouts/Carousel.vue";
 import Tags from "../Layouts/Tags.vue";
 import Homeimages from "../Layouts/HomeImages.vue";
 import Topsellers from "../Layouts/Topsellers.vue";
+import AppLayout from "../Layouts/AppLayout.vue";
 
 
 

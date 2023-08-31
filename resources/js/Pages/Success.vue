@@ -1,4 +1,5 @@
 <template>
+    <AppLayout>
     <div class="bg-gray-200 py-5">
         <h1 class=" text-center text-4xl mt-16 mb-12">Your payment has been successfully made!</h1>
         <p class="text-center text-xl mb-12">Your item(s) will be dispatched within 2 business days, and you will recieve an order confirmation as well as a receipt on your e-mail.</p>
@@ -22,17 +23,19 @@
         </div>
     </div>
 <!--    <p>{{ customer.name }}</p>-->
+    </AppLayout>
 </template>
 
 <script>
 import { Link, useForm } from '@inertiajs/inertia-vue3';
+import AppLayout from "../Layouts/AppLayout.vue";
 export default {
     name: "Success",
     props: {
         customer: Object,
     },
     components: {
-        Link
+        Link, AppLayout
     },
 }
 </script>

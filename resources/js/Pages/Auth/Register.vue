@@ -26,6 +26,7 @@ const submit = () => {
 </script>
 
 <template>
+    <AppLayout>
     <Head title="Register" />
 
     <div class="flex justify-center bg-gradient-to-b from-gray-200 pt-2">
@@ -153,8 +154,8 @@ const submit = () => {
                 <h1 class="font-bold font-ropa text-tra text-base text-transform: uppercase mt-6">Newsletter</h1>
                 <div class="relative bottom-3">________</div>
 
-                <div class="flex">
-                    <span class="text-sm w-52 my-auto">Apply</span>
+                <div class="flex w-1/3">
+                    <span class="text-sm w-20">Apply</span>
                     <div class="mb-4 mr-3">
                         <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                         <label for="default-radio-1" class="ml-2 text-sm font-medium">Yes</label>
@@ -165,13 +166,13 @@ const submit = () => {
                     </div>
                 </div>
 
-                <h1 class="font-bold font-ropa text-tra text-base text-transform: uppercase mt-6">Security verification (CAPTCHA)</h1>
-                <div class="relative bottom-3">________</div>
-                <div class="flex">
-                    <span class="text-sm w-52 my-auto w-52">Please check the verification box to the right</span>
+<!--                <h1 class="font-bold font-ropa text-tra text-base text-transform: uppercase mt-6">Security verification (CAPTCHA)</h1>-->
+<!--                <div class="relative bottom-3">________</div>-->
+<!--                <div class="flex">-->
+<!--                    <span class="text-sm w-52 my-auto w-52">Please check the verification box to the right</span>-->
 
 
-                </div>
+<!--                </div>-->
 
 <!--                <div v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature" class="mt-4">-->
 <!--                    <InputLabel for="terms">-->
@@ -205,4 +206,13 @@ const submit = () => {
                 </div>
             </form>
     </div>
+    </AppLayout>
 </template>
+<script>
+import AppLayout from "../../Layouts/AppLayout.vue";
+
+export default {
+name: "Register.vue",
+components: {AppLayout}
+}
+</script>

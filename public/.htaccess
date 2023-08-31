@@ -1,5 +1,5 @@
 #Header add Access-Control-Allow-Origin "*"
-#Header add Access-Control-Allow-Headers "X-Inertia, content-type, x-inertia-version, x-requested-with, x-inertia-location"
+Header add Access-Control-Allow-Headers "X-Inertia, content-type, x-inertia-version, x-requested-with, x-inertia-location"
 #Header add Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS"
 #Header("Content-Security-Policy: default-src *; style-src 'self' http://* 'unsafe-inline'; font-src 'self' http://* data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' stackexchange.com");
 

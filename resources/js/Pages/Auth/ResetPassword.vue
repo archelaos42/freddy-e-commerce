@@ -6,6 +6,7 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
+import
 
 const props = defineProps({
     email: String,
@@ -27,6 +28,7 @@ const submit = () => {
 </script>
 
 <template>
+    <AppLayout>
     <Head title="Reset Password" />
 
     <AuthenticationCard>
@@ -81,4 +83,14 @@ const submit = () => {
             </div>
         </form>
     </AuthenticationCard>
+    </AppLayout>
 </template>
+
+<script>
+import AppLayout from "../../Layouts/AppLayout.vue";
+
+export default {
+    name: "ResetPassword.vue",
+    components: {AppLayout}
+}
+</script>

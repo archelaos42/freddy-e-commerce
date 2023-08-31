@@ -23,8 +23,10 @@ createInertiaApp({
         );
 
         page.then((module) => {
-
-            module.default.layout = module.default.layout || AppLayout;
+            // if(page.layout){
+            //     module.default.layout = module.default.layout || AppLayout;
+            // }
+            // module.default.layout = module.default.layout || AppLayout;
 
         });
 

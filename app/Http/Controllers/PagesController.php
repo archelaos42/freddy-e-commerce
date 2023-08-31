@@ -7,6 +7,7 @@ use App\Models\Collection;
 use App\Models\Product;
 use App\Models\Review;
 use App\Models\Subcategory;
+use App\Models\User;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -184,7 +185,7 @@ class PagesController extends Controller
 
     public function tester()
     {
-        return Inertia::render('Success');
+        return Inertia::render('TermsOfService');
     }
 
     public function review($id)
@@ -222,5 +223,77 @@ class PagesController extends Controller
         $content = Cart::content();
         $count = $content->count();
         return Inertia::render(('Sizetable'), compact('count'));
+    }
+
+    public function account()
+    {
+//        $user = User::findOrFail($id);
+        $user = auth()->user()->id;
+//        dd($user);
+        $content = Cart::content();
+        $count = $content->count();
+        return Inertia::render(('Account'), compact('count', 'user'));
+    }
+
+    public function awardpoints($id)
+    {
+//        $user = User::findOrFail($id);
+        $user = User::findOrFail($id);
+        $content = Cart::content();
+        $count = $content->count();
+        return Inertia::render(('Awardpoints'), compact('count', 'user'));
+    }
+
+    public function address($id)
+    {
+        $user = User::findOrFail($id);
+        $content = Cart::content();
+        $count = $content->count();
+        return Inertia::render(('Address'), compact('count', 'user'));
+    }
+
+    public function mailinglist(Request $request)
+    {
+        $email = $request->email;
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return \redirect()->back()->with('message', 'Please provide a valid email!');
+        }
+        if (!$request->terms){
+            return \redirect()->back()->with('message', 'You must accept the confidentiality agreement!');
+        }else{
+            return \redirect()->back()->with('message', 'Thank you for signing up!');
+        }
+//        $review = new MailingL();
+//        $review->content = $request->contents;
+//        $review->grade = $request->grade;
+//        $review->product_id = $request->productID;
+//        $review->user_name = $request->user;
+//        $review->save();
+//        return \redirect()->back()->with('message', 'Thank you for your feedback!');
+//        dd($request);
+    }
+
+    public function orderhistory($id)
+    {
+        $user = User::findOrFail($id);
+        $content = Cart::content();
+        $count = $content->count();
+        return Inertia::render(('Orderhistory'), compact('count', 'user'));
+    }
+
+    public function transactionhistory($id)
+    {
+        $user = User::findOrFail($id);
+        $content = Cart::content();
+        $count = $content->count();
+        return Inertia::render(('Transactionhistory'), compact('count', 'user'));
+    }
+
+    public function wishlist($id)
+    {
+        $user = User::findOrFail($id);
+        $content = Cart::content();
+        $count = $content->count();
+        return Inertia::render(('Wishlist'), compact('count', 'user'));
     }
 }

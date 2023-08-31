@@ -7,6 +7,7 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
+import
 
 const form = useForm({
     password: '',
@@ -26,6 +27,7 @@ const submit = () => {
 </script>
 
 <template>
+    <AppLayout>
     <Head title="Secure Area" />
 
     <AuthenticationCard>
@@ -60,4 +62,15 @@ const submit = () => {
             </div>
         </form>
     </AuthenticationCard>
+    </AppLayout>
 </template>
+
+<script>
+import AppLayout from "../../Layouts/AppLayout.vue";
+
+export default {
+    name: "ConfirmPassword.vue",
+    components: {AppLayout}
+
+}
+</script>

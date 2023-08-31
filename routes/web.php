@@ -42,6 +42,7 @@ Route::get('review/{id}', [PagesController::class, 'review'])->name('review');
 Route::get('reviews/{id}', [PagesController::class, 'reviews'])->name('reviews');
 Route::post('/postreview', [PagesController::class, 'postreview'])->name('postreview');
 Route::get('/sizetable', [PagesController::class, 'sizetable'])->name('sizetable');
+Route::get('/account/{id}', [PagesController::class, 'account'])->name('account');
 
 Route::get('cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('cart.store', [CartController::class, 'store'])->name('cart.store');
@@ -52,11 +53,28 @@ Route::get('/billing-portal', BilingPortalController::class)->name('billing-port
 
 //Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 Route::post('/checkout', [CartController::class, 'checkout'])->name('checkout.index');
+Route::post('/mailinglist', [PagesController::class, 'mailinglist'])->name('mailinglist');
 
 Route::get('/success', [CartController::class, 'success'])->name('checkout.success');
 Route::get('/cancel', [CartController::class, 'cancel'])->name('checkout.cancel');
 Route::get('/tester', [PagesController::class, 'tester'])->name('tester');
+Route::get('/awardpoints/{id}', [PagesController::class, 'awardpoints'])->name('awardpoints');
+Route::get('/address/{id}', [PagesController::class, 'address'])->name('address');
+Route::get('/orderhistory/{id}', [PagesController::class, 'orderhistory'])->name('orderhistory');
+Route::get('/transactionhistory/{id}', [PagesController::class, 'transactionhistory'])->name('transactionhistory');
+Route::get('/wishlist/{id}', [PagesController::class, 'wishlist'])->name('wishlist');
 
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+
+    Route::get('/account', [PagesController::class, 'account'])->name('account');
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
+});
 
 
 
@@ -123,12 +141,4 @@ Route::get('/welcome', function () {
 
 
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
-});
+

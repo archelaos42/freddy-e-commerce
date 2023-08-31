@@ -1,5 +1,5 @@
 <template>
-
+    <AppLayout>
     <div class="flex justify-center bg-gradient-to-b from-gray-200 pt-2">
         <a href="/login" class="text-sm mt-1 mr-2"><span class="underline">
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -383,11 +383,13 @@
             </div>
         </div>
     </div>
+    </AppLayout>
 </template>
 
 <script setup>
 import { Link, useForm } from '@inertiajs/inertia-vue3';
 import 'tw-elements';
+import AppLayout from "../Layouts/AppLayout.vue";
 
 let props = defineProps({
     product: Object,

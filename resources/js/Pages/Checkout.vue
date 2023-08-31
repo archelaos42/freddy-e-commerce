@@ -57,8 +57,11 @@
 </template>
 
 <script>
+
 export default {
-    name: "Checkout.vue"
+    name: "Checkout.vue",
+    components: {}
+
 }
 
 $(function() {

@@ -1,4 +1,5 @@
 <template>
+    <AppLayout>
     <div class="flex justify-center bg-gradient-to-b from-gray-200 pt-2">
         <a href="/login" class="text-sm mt-1 mr-2"><span class="underline">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -325,13 +326,14 @@
 
 
 
-
+    </AppLayout>
 </template>
 
 <script setup>
 import {onMounted, ref, watch} from "vue";
 import {Inertia} from "@inertiajs/inertia";
 import { Link, useForm } from '@inertiajs/inertia-vue3';
+import AppLayout from "../Layouts/AppLayout.vue";
 
 
 let props = defineProps({
