@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('address', 255)->nullable();
             $table->string('city')->nullable();
             $table->string('country')->nullable();
-            $table->integer('award_points')->default(100);
+            $table->integer('award_points')->nullable();
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
