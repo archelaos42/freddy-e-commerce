@@ -25,7 +25,7 @@ export default defineConfig({
         // port: 3000,
         // https: true,
         hmr: {
-            host: '127.0.0.1',
+            host: 'localhost',
             // port: 3001,
             protocol: 'wss',
             origin: false,
@@ -36,7 +36,7 @@ export default defineConfig({
         preserveSymlinks: true,
         server: {
             https: true,
-            origin: '127.0.0.1'
+            origin: 'localhost'
 
         },
         cors: true,
