@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@admin.com',
             'password' => 'password',
             'is_admin' => 1,
-            'award_points' => 100
+            'award_points' => 100,
         ]);
 
         DB::table('collections')->insert([
