@@ -36,8 +36,8 @@ export default defineConfig({
     resolve: {
         preserveSymlinks: true,
         server: {
-            https: true,
-            origin: 'localhost'
+            https: false,
+            origin: '127.0.0.1'
 
         },
         cors: true,
