@@ -20,6 +20,7 @@
             <div class="flex">
                 <div>
                     <h1 class="font-bold font-ropa text-transform: uppercase text-tra text-base">Filters</h1>
+                    $page.props.selectedView
                     <div class="relative bottom-3">________</div>
                 </div>
                 <Link class="flex my-auto text-sm py-1 px-2" v-bind:href="'/collection/' + collection.id">
