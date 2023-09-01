@@ -28,6 +28,7 @@ export default defineConfig({
             host: 'localhost',
             // port: 3001,
             protocol: 'http',
+            // protocol: 'wss',
             origin: false,
         },
             // key: fs.readFileSync(`C:/laragon/etc/ssl/laragon.key`),
