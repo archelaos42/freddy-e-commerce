@@ -25,7 +25,7 @@ export default defineConfig({
         // port: 3000,
         // https: true,
         hmr: {
-            host: 'localhost',
+            host: '127.0.0.1',
             // port: 3001,
             protocol: 'wss',
             origin: false,
