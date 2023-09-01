@@ -30,8 +30,9 @@ export default defineConfig({
             protocol: 'wss',
             origin: false,
         },
-            key: fs.readFileSync(`C:/laragon/etc/ssl/laragon.key`),
-            cert: fs.readFileSync(`C:/laragon/etc/ssl/laragon.crt`),},
+            // key: fs.readFileSync(`C:/laragon/etc/ssl/laragon.key`),
+            // cert: fs.readFileSync(`C:/laragon/etc/ssl/laragon.crt`),
+    },
     resolve: {
         preserveSymlinks: true,
         server: {
