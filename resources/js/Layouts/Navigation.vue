@@ -56,7 +56,7 @@
             <div class="ml-6">
                 <Link :href="('/cart')">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d="M20 7h-4v-3c0-2.209-1.791-4-4-4s-4 1.791-4 4v3h-4l-2 17h20l-2-17zm-11-3c0-1.654 1.346-3 3-3s3 1.346 3 3v3h-6v-3zm-4.751 18l1.529-13h2.222v1.5c0 .276.224.5.5.5s.5-.224.5-.5v-1.5h6v1.5c0 .276.224.5.5.5s.5-.224.5-.5v-1.5h2.222l1.529 13h-15.502z"/></svg>
-                    <div class="left-5 bottom-8">
+                    <div v-if="$page.props.count" class="left-5 bottom-8">
                         <div class="position absolute bg-blue-800 rounded-full text-gray-200 grid place-items-center text-xs h-4 w-4">
                             {{ $page.props.count }}
                         </div>
