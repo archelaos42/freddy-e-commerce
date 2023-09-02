@@ -71,7 +71,7 @@
                             </button>
                         </div>
                     </div>
-                    <label>
+                    <label class="mt-2">
                         <input type="checkbox" id="terms" v-model="form.terms" name="agree">
                         I have read and agree with the <a href="/">
                         Confidentiality agreement and HTTP cookies
