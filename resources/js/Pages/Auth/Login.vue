@@ -85,10 +85,6 @@ function submit () {
             </svg>
         </span></a>
 
-        <div class="mr-1 text-gray-400 text-sm">
-            >
-        </div>
-
         <a href="/login" class="text-sm ">
         </a>
     </div>
