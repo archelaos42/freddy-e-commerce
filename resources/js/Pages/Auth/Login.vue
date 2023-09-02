@@ -89,7 +89,8 @@ function submit () {
             >
         </div>
 
-        <a href="/login" class="text-sm "><span class="underline">My account</span></a>
+        <a href="/login" class="text-sm ">
+        </a>
     </div>
 
     <h1 class="font-ropa text-tra text-3xl text-center mb-14 mt-12">Log into account</h1>
