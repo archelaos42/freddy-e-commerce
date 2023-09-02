@@ -160,7 +160,7 @@
                                             qty: 1,
                                             price: product.price,
                                             size: selectedSize,
-                                            _token: this.$page.props.csrf_token,
+                                            // _token: this.$page.props.csrf_token,
                                             }"
                                     classes="px-3 py-1 mr-2 rounded text-white text-sm font-bold whitespace-no-wrap bg-blue-600 hover:bg-blue-800"
                                     as="button"
