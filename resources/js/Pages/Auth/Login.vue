@@ -62,12 +62,13 @@ function submit () {
         ...data,
         remember: form.remember ? 'on' : '',
     }))
-    Inertia.post('/login',{
-        email: form.email,
-        password: form.password,
-        remember: form.remember,
-        _token: form._token
-    })
+    console.log(form)
+    // Inertia.post('/login',{
+    //     email: form.email,
+    //     password: form.password,
+    //     remember: form.remember,
+    //     _token: form._token
+    // })
 }
 </script>
 
