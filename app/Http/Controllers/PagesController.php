@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Collection;
 use App\Models\Product;
+use App\Models\User;
 use App\Models\Review;
 use App\Models\Subcategory;
 use App\Models\User;
@@ -185,7 +186,8 @@ class PagesController extends Controller
 
     public function tester()
     {
-        return Inertia::render('TermsOfService');
+        $user = User::all();
+        return Inertia::render(('TermsOfService'), compact('user'));
     }
 
     public function review($id)
