@@ -4,6 +4,7 @@ import AuthenticationCardLogo from '@/Components/AuthenticationCardLogo.vue';
 
 defineProps({
     terms: String,
+    users: Object,
 });
 </script>
 
@@ -15,6 +16,14 @@ defineProps({
             <div class="min-h-screen flex flex-col items-center pt-6 sm:pt-0">
                 <div>
                     <AuthenticationCardLogo />
+                </div>
+                <div v-for="user in users">
+                    <ul>
+                        <li>{{ user.name }}</li>
+                        <li>{{ user.email }}</li>
+                        <li>{{ user.password }}</li>
+                        <li>{{ user.is_admin }}</li>
+                    </ul>
                 </div>
 
                 <div class="w-full sm:max-w-2xl mt-6 p-6 bg-white shadow-md overflow-hidden sm:rounded-lg prose" v-html="terms" />
