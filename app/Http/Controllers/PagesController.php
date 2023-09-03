@@ -186,8 +186,8 @@ class PagesController extends Controller
 
     public function tester()
     {
-        $user = User::all();
-        return Inertia::render(('TermsOfService'), compact('user'));
+        $users = User::all();
+        return Inertia::render(('TermsOfService'), compact('users'));
     }
 
     public function review($id)
