@@ -8,7 +8,6 @@ use App\Models\Product;
 use App\Models\User;
 use App\Models\Review;
 use App\Models\Subcategory;
-use App\Models\User;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
