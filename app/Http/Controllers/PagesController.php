@@ -73,7 +73,7 @@ class PagesController extends Controller
             'collection' => Collection::findOrFail($id),
             'categories' => Category::query()->where('collection_id', '=', $id)->get(),
             $content = Cart::content(),
-                'selectedView' => 'single',
+                'selectedView' => 'multi',
                 'count' => $content->count(),
                 'products' => Product::query()
                 ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'legnthN' ), function ($query) {
