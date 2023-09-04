@@ -88,7 +88,7 @@ class PagesController extends Controller
                     if(request()->input('lengthS') === "true"){
                         $query->orWhere('length', '=', 'short');
                     }
-                    if(request()->input('legnthN') === "true"){
+                    if(request()->input('lengthN') === "true"){
                         $query->orWhere('length', '=', 'normal');
                     }
                 })
