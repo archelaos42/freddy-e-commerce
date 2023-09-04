@@ -76,15 +76,15 @@ class PagesController extends Controller
                 'selectedView' => 'multi',
                 'count' => $content->count(),
                 'products' => Product::query()
-               ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN', 
-                                         'sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl',
-                                         'waistM', 'waistH', 'waistHi',
-                                         'blue', 'beige', 'grey', 'military', 'pink', 'black',
-                                         'vMin', 'vMax',
-                                        ), function ($query) {
-                    $query->orWhere('collection_id', '=', 1);
+               // ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN', 
+               //                           'sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl',
+               //                           'waistM', 'waistH', 'waistHi',
+               //                           'blue', 'beige', 'grey', 'military', 'pink', 'black',
+               //                           'vMin', 'vMax',
+               //                          ), function ($query) {
+               //      $query->orWhere('collection_id', '=', 1);
                     
-                })
+               //  })
                 ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query) {
                     
                     if(request()->input('length78') === "true"){
