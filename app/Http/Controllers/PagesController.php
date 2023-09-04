@@ -142,10 +142,16 @@ class PagesController extends Controller
                     if(request()->input('black') === "true"){
                         $query->orWhere('color', '=', 'black');
                     }
+                    if(request()->input('vMin') === "true"){
+                        $query->where('price', '<=', 'vMax');
+                    }
+                    if(request()->input('vMax') === "true"){
+                        $query->where('price', '=>', 'vMin');
+                    }
+                    if(request()){
+                        $query->where('collection_id', '=', '1');
+                    }
                 })
-                   ->where('collection_id', '=', $id)
-                   ->where('price', '<=', 'vMax')
-                   ->where('price', '=>', 'vMin')
                 ->paginate(10)
                 ->withQueryString()
                 ->through(fn($product) => [
