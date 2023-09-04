@@ -144,6 +144,7 @@ class PagesController extends Controller
                         $query->orWhere('color', '=', 'black');
                     }
                     if(request()->input('vMin') === "true"){
+                        $query->orWhere('collection_id', '=', $id);
                         dd($id);
                     }
                 })
