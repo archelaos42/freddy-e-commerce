@@ -380,12 +380,12 @@ onMounted(() => {
     // if(props.selectedView === undefined){
     //     props.selectedView = 'zglj';
     // }
-    // console.log(props.selectedView)
-    // if(vMin.value === undefined){
-    //     vMin.value = 1;
-    //     vMax.value = 500;
-    // }
-}
+//     console.log(props.selectedView)
+//     if(vMin.value === undefined){
+//         vMin.value = 1;
+//         vMax.value = 500;
+//     }
+// }
 
 
 
