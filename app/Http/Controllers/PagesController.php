@@ -83,7 +83,7 @@ class PagesController extends Controller
                                          'vMin', 'vMax',
                                         ), function ($query, $id) {
                     // $query->orWhere('collection_id', '=', $id);
-                    if(request){
+                    if(request()){
                         $query->orWhere('collection_id', '=', $id);
                     }
                     if(request()->input('length78') === "true"){
