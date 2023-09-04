@@ -75,7 +75,7 @@ class PagesController extends Controller
             $content = Cart::content(),
                 'selectedView' => 'multi',
                 'count' => $content->count(),
-                'products' => Product::query()
+                'products' => Product::$query->where('collection_id', '=', $id)
                 ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'legnthN', 
                                          'sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl',
                                          'waistM', 'waistH', 'waistHi',
@@ -142,7 +142,6 @@ class PagesController extends Controller
                     if(request()->input('black') === "true"){
                         $query->orWhere('color', '=', 'black');
                     }
-                    $query->where('collection_id', '=', $id);
                 })
 //                    ->where('price', '<', 'vMax')
 //                    ->where('price', '>', 'vMin')
