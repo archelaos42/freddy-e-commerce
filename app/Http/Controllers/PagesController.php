@@ -115,13 +115,13 @@ class PagesController extends Controller
                 })
                 ->when(request()->hasAny('waistM', 'waistH', 'waistHi'), function ($query) {
                     if(request()->input('waistM') === "true"){
-                        $query->orWhere('waist', '=', 'M');
+                        $query->orWhere('waist', '=', 'medium');
                     }
                     if(request()->input('waistH') === "true"){
-                        $query->orWhere('waist', '=', 'H');
+                        $query->orWhere('waist', '=', 'high');
                     }
                     if(request()->input('waistHi') === "true"){
-                        $query->orWhere('waist', '=', 'Hi');
+                        $query->orWhere('waist', '=', 'higher');
                     }
 
                 })
