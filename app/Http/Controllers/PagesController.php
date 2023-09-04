@@ -80,11 +80,11 @@ class PagesController extends Controller
                 // 'products' => Product::query()
                 // $product = Product::where('collection_id', '=', $id),
                                // dd($product);
-                'products' => Product::query($collection)
+                'products' => Product::query()
                 // 'products' => $product->query()
                 // ->orWhere('collection_id', '=', $id)        
                 
-                ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query, $collection) {
+                ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query) {
                     if(request()->input('length78') === "true"){
                         dd($collection);
                         $query->orWhere('length', '=', '7/8');
