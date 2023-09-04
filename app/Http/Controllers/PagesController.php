@@ -83,6 +83,7 @@ class PagesController extends Controller
                                         ), function ($query, $id) {
                     $query->andWhere('collection_id', '=', $id);
                     if(request()->input('length78') === "true"){
+                        dd($id)
                         $query->orWhere('length', '=', '7/8');
                     }
                     if(request()->input('length34') === "true"){
