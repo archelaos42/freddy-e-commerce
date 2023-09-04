@@ -73,7 +73,7 @@ class PagesController extends Controller
             'categories' => Category::query()->where('collection_id', '=', $id)->get(),
             $content = Cart::content(),
             $conid = $id,
-            // dd($id),
+            dd($conid),
                 'selectedView' => 'multi',
                 'count' => $content->count(),
                 'products' => Product::query()
