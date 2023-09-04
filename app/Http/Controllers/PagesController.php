@@ -76,7 +76,7 @@ class PagesController extends Controller
                 'selectedView' => 'multi',
                 'count' => $content->count(),
                 'products' => Product::query()
-                ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'legnthN', 
+                ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN', 
                                          'sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl',
                                          'waistM', 'waistH', 'waistHi',
                                          'blue', 'beige', 'grey', 'military', 'pink', 'black',
@@ -94,7 +94,7 @@ class PagesController extends Controller
                     if(request()->input('lengthS') === "true"){
                         $query->orWhere('length', '=', 'S');
                     }
-                    if(request()->input('legnthN') === "true"){
+                    if(request()->input('lengthN') === "true"){
                         $query->orWhere('length', '=', 'N');
                     }
                     if(request()->input('sizeXxs') === "true"){
@@ -142,7 +142,7 @@ class PagesController extends Controller
                     if(request()->input('black') === "true"){
                         $query->orWhere('color', '=', 'black');
                     }
-                    $query->where('collection_id', '=', $id)
+                    $query->where('collection_id', '=', $id);
                 })
 //                    ->where('price', '<', 'vMax')
 //                    ->where('price', '>', 'vMin')
@@ -160,7 +160,7 @@ class PagesController extends Controller
             'filters' => (new \Illuminate\Http\Request)->only([
                 'sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl', 'filters',
                 'waistM', 'waistH', 'waistHi', 'collection',
-                'length78', 'length34', 'lengthBl', 'lengthS', 'legnthN',
+                'length78', 'length34', 'lengthBl', 'lengthS', 'lengthN',
                 'vMin', 'vMax',
                 'blue', 'beige', 'grey', 'military', 'pink', 'black'
             ])
