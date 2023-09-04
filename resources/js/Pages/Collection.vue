@@ -385,11 +385,11 @@ onMounted(() => {
         vMin.value = 1;
         vMax.value = 500;
     }
-}
+// }
 
 
 
-// })
+})
 
 let vMin = ref(props.filters.vMin);
 let vMax = ref(props.filters.vMax);
