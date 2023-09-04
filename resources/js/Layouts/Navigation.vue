@@ -16,7 +16,7 @@
 <!--                        </div>-->
 <!--                </li>-->
                 <li class="ml-auto mr-3"><NavLink href="/collection/2" class="hover:underline" :class="{'font-bold underline': $page.component === 'Users'}"><span class="font-bold text-lg text-black">WR.UP®</span></NavLink></li>
-                <li class="mr-3"><NavLink href="/collection/3" class="hover:underline" :class="{'font-bold underline': $page.component === 'Welcome'}"><span class="font-bold text-lg text-black">N.O.W®</span></NavLink></li>
+                <li class="mr-3"><NavLink href="/collection/3" class="hover:underline" :class="{'font-bold underline': $page.url === 'product/2'}"><span class="font-bold text-lg text-black">N.O.W®</span></NavLink></li>
                 <li class="mr-3"><NavLink href="/collection/1" class=" hover:underline" :class="{'font-bold underline': $page.component === 'Products'}"><span class="font-bold text-lg text-black">Black®</span></NavLink></li>
                 <li class="mr-3"><NavLink href="/products" class=" hover:underline" :class="{'font-bold underline': $page.component === 'Products'}"><span class="font-bold text-lg text-black">Popular</span></NavLink></li>
                 <li class="mr-3"><NavLink href="/products" class=" hover:underline" :class="{'font-bold underline': $page.component === 'Products'}"><span class="font-bold text-lg text-black">Collections</span></NavLink></li>
