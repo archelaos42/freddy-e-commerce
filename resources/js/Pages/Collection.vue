@@ -273,7 +273,7 @@
                     </div>
                  </div>
             <div v-if="$page.props.selectedView === 'single'">
-                <div class="flex grid grid-cols-1" v-for="product in products.data">
+                <div class="flex grid grid-cols-1 mt-5" v-for="product in products.data">
                     <div class="mr-6 font-ropa text-base text-left text-gray-500 border-solid flex">
                         <div class="pr-4">
                             <Link v-bind:href="'/product/' + product.id">
