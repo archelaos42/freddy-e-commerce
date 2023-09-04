@@ -77,8 +77,9 @@ class PagesController extends Controller
                 'selectedView' => 'multi',
                 'count' => $content->count(),
                 // 'products' => Product::query()
-                $products = Products::where('collection_id', '=', $id),
-                $products => Product::query()
+                // $products = Product::where('collection_id', '=', $id),
+                // $products => Product::query()
+                'products' => Product::query('collection_id', '=', $id)          
                 ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query) {
                     if(request()->input('length78') === "true"){
                         // dd($id);
