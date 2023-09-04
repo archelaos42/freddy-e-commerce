@@ -74,10 +74,7 @@ class PagesController extends Controller
             $content = Cart::content(),
                 'selectedView' => 'multi',
                 'count' => $content->count(),
-                'products' => Product::query($id)
-                ->when(request(), function ($query, $id) {
-                        $query->where('collection_id', '=', $id);
-                })
+                'products' => Product::query()
                 ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query) {
                     if(request()->input('length78') === "true"){
                         $query->orWhere('length', '=', '7/8');
