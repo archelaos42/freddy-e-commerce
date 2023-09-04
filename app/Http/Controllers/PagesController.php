@@ -167,8 +167,8 @@ class PagesController extends Controller
 
                 //     })
                    ->where('collection_id', '=', $id)
-                   ->where('price', '<', request()->input('vMax'))
-                   ->where('price', '>', request()->input('vMin'))
+                   ->where('price', '<', request()->vMax)
+                   ->where('price', '>', request()->vMin)
                 ->paginate(10)
                 ->withQueryString()
                 ->through(fn($product) => [
