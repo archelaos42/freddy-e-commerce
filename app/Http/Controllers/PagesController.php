@@ -80,7 +80,7 @@ class PagesController extends Controller
                 // 'products' => Product::query()
                 // $product = Product::where('collection_id', '=', $id),
                                // dd($product);
-                'products' => Product::query()
+                'products' => Product::query($collection)
                 // 'products' => $product->query()
                 // ->orWhere('collection_id', '=', $id)        
                 
