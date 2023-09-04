@@ -225,7 +225,7 @@
                             </Link>
                             <div class="bg-gray-200 text-center text-transform: uppercase text-sm  bg-green-400 bg-[#97C19B] font-ropa text-white py-0.5">Eco Friendly</div>
                             <div class="text-black bg-gray-200 text-center font-ibm text-sm mb-3 py-1">Code:WRUP4RC001ORG_Z64</div>
-                            <h1>{{ product.name }}</h1>
+                            <h1>{{ product.collection_id }}</h1>
                             <div class="text-black text-xl mt-2 border-t border-solid">{{ product.price }}&nbsp;€ </div>
                             <div v-if="$page.props.flash.message" class="text-blue-600 mb-4">
                                 {{ $page.props.flash.message }}
@@ -282,7 +282,7 @@
                         </div>
                         <div>
                             <div class="text-black text-center text-md mb-3 py-1">Code:WRUPs4RC001ORG_Z64</div>
-                            <h1 class="font-medium text-black text-2xl">{{ product.collection }}</h1>
+                            <h1 class="font-medium text-black text-2xl">{{ product.name }}</h1>
                             <div>{{ product.description }}</div>
                             <div class="text-black text-3xl mt-2 mb-2">{{ product.price }}&nbsp;€ </div>
                             <button class="flex font-ropa text-white text-transform: uppercase bg-black pr-1 pt-2  mt-3 pl-2 mr-3 w-40">
