@@ -219,7 +219,7 @@
                  <div class="flex grid grid-cols-4" v-if="$page.props.selectedView === 'multi'">
                     <div v-for="product in products.data">
     <!--                    <div v-if="!products.data.length">No product were found within the set parameters</div>-->
-                        <div class="mr-6 font-ropa text-base text-left text-gray-500 border-solid">
+                        <div v-if="product.collection_id === collection.id" class="mr-6 font-ropa text-base text-left text-gray-500 border-solid">
                             <Link v-bind:href="'/product/' + product.id">
                                 <img src="https://freddy.hr/image/cache/catalog/izdelki/BRITNEYF301_Z106X-/BRITNEYF301_Z106X_2-400x600w.jpg" alt="">
                             </Link>
@@ -385,8 +385,6 @@ onMounted(() => {
     //     vMin.value = 1;
     //     vMax.value = 500;
     // }
-    if(col.value === undefined){
-    col.value = collection.id;
 }
 
 
@@ -415,7 +413,6 @@ let sizeXl = ref(props.filters.sizeXl);
 let waistM = ref(props.filters.waistM);
 let waistH = ref(props.filters.waistH);
 let waistHi = ref(props.filters.waistHi);
-let col = ref(props.filters.col);
 let filters = ref(props.filters);
 let collection = ref(props.collection);
 let categories = ref(props.categories);
@@ -429,16 +426,7 @@ let categories = ref(props.categories);
 //     // do something with newValue and oldValue.
 // });
 
-    watch([
-    col
-], ([
-        val1, data
-    ]) => {
-    Inertia.get(window.location, { col: val1, filters: data,}, {
-        preserveState: true,
-    });
-
-});
+  
 watch([
     length34, length78, lengthBl, lengthS, lengthN,
 ], ([
