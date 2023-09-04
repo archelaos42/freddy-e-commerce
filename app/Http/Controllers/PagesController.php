@@ -142,10 +142,10 @@ class PagesController extends Controller
                     if(request()->input('black') === "true"){
                         $query->orWhere('color', '=', 'black');
                     }
-                    $query->where('collection_id', '=', $id);
                 })
-//                    ->where('price', '<', 'vMax')
-//                    ->where('price', '>', 'vMin')
+                   ->where('collection_id', '=', $id);
+                   ->where('price', '<=', 'vMax')
+                   ->where('price', '=>', 'vMin')
                 ->paginate(10)
                 ->withQueryString()
                 ->through(fn($product) => [
