@@ -70,11 +70,9 @@ class PagesController extends Controller
     {
         return Inertia::render('Collection', [
             // 'collection' => Collection::findOrFail($id),
-            // 'categories' => Category::query()->where('collection_id', '=', $id)->get(),
+            'categories' => Category::query()->where('collection_id', '=', $id)->get(),
             $collection = Collection::findOrFail($id),
             $content = Cart::content(),
-            // $conid = $id,
-            // dd($conid),
                 'selectedView' => 'multi',
                 'count' => $content->count(),
                 // 'products' => Product::query()
