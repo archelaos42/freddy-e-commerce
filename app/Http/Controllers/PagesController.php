@@ -81,7 +81,7 @@ class PagesController extends Controller
                                          'blue', 'beige', 'grey', 'military', 'pink', 'black',
                                          'vMin', 'vMax',
                                         ), function ($query, $id) {
-                    $query->orWhere('collection_id', '=', $id);
+                    $query->andWhere('collection_id', '=', $id);
                     if(request()->input('length78') === "true"){
                         $query->orWhere('length', '=', '7/8');
                     }
