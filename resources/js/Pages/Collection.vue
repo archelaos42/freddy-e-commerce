@@ -282,7 +282,7 @@
                         </div>
                         <div>
                             <div class="text-black text-center text-md mb-3 py-1">Code:WRUPs4RC001ORG_Z64</div>
-                            <h1 class="font-medium text-black text-2xl">{{ product.name }}</h1>
+                            <h1 class="font-medium text-black text-2xl">{{ product.collection }}</h1>
                             <div>{{ product.description }}</div>
                             <div class="text-black text-3xl mt-2 mb-2">{{ product.price }}&nbsp;€ </div>
                             <button class="flex font-ropa text-white text-transform: uppercase bg-black pr-1 pt-2  mt-3 pl-2 mr-3 w-40">
