@@ -85,90 +85,90 @@ class PagesController extends Controller
                //      $query->orWhere('collection_id', '=', 1);
                     
                //  })
-                ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query) {
+                // ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query) {
                     
-                    if(request()->input('length78') === "true"){
-                        $query->orWhere('length', '=', '7/8');
-                    }
-                    if(request()->input('length34') === "true"){
-                        $query->orWhere('length', '=', '3/4');
-                    }
-                    if(request()->input('lengthBl') === "true"){
-                        $query->orWhere('length', '=', 'bicycle length');
-                    }
-                    if(request()->input('lengthS') === "true"){
-                        $query->orWhere('length', '=', 'short');
-                    }
-                    if(request()->input('lengthN') === "true"){
-                        $query->orWhere('length', '=', 'normal');
-                    }
-                })
-                ->when(request()->hasAny('sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl' ), function ($query) {
-                    if(request()->input('sizeXxs') === "true"){
-                        $query->orWhere('size', '=', 'XXS');
-                    }
-                    if(request()->input('sizeXs') === "true"){
-                        $query->orWhere('size', '=', 'XS');
-                    }
-                    if(request()->input('sizeS') === "true"){
-                        $query->orWhere('size', '=', 'S');
-                    }
-                    if(request()->input('sizeM') === "true"){
-                        $query->orWhere('size', '=', 'M');
-                    }
-                    if(request()->input('sizeL') === "true"){
-                        $query->orWhere('size', '=', 'L');
-                    }
-                    if(request()->input('sizeXl') === "true"){
-                        $query->orWhere('size', '=', 'XL');
-                    }
-                })
-                ->when(request()->hasAny('waistM', 'waistH', 'waistHi'), function ($query) {
-                    if(request()->input('waistM') === "true"){
-                        $query->orWhere('waist', '=', 'medium');
-                    }
-                    if(request()->input('waistH') === "true"){
-                        $query->orWhere('waist', '=', 'high');
-                    }
-                    if(request()->input('waistHi') === "true"){
-                        $query->orWhere('waist', '=', 'higher');
-                    }
+                //     if(request()->input('length78') === "true"){
+                //         $query->orWhere('length', '=', '7/8');
+                //     }
+                //     if(request()->input('length34') === "true"){
+                //         $query->orWhere('length', '=', '3/4');
+                //     }
+                //     if(request()->input('lengthBl') === "true"){
+                //         $query->orWhere('length', '=', 'bicycle length');
+                //     }
+                //     if(request()->input('lengthS') === "true"){
+                //         $query->orWhere('length', '=', 'short');
+                //     }
+                //     if(request()->input('lengthN') === "true"){
+                //         $query->orWhere('length', '=', 'normal');
+                //     }
+                // })
+                // ->when(request()->hasAny('sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl' ), function ($query) {
+                //     if(request()->input('sizeXxs') === "true"){
+                //         $query->orWhere('size', '=', 'XXS');
+                //     }
+                //     if(request()->input('sizeXs') === "true"){
+                //         $query->orWhere('size', '=', 'XS');
+                //     }
+                //     if(request()->input('sizeS') === "true"){
+                //         $query->orWhere('size', '=', 'S');
+                //     }
+                //     if(request()->input('sizeM') === "true"){
+                //         $query->orWhere('size', '=', 'M');
+                //     }
+                //     if(request()->input('sizeL') === "true"){
+                //         $query->orWhere('size', '=', 'L');
+                //     }
+                //     if(request()->input('sizeXl') === "true"){
+                //         $query->orWhere('size', '=', 'XL');
+                //     }
+                // })
+                // ->when(request()->hasAny('waistM', 'waistH', 'waistHi'), function ($query) {
+                //     if(request()->input('waistM') === "true"){
+                //         $query->orWhere('waist', '=', 'medium');
+                //     }
+                //     if(request()->input('waistH') === "true"){
+                //         $query->orWhere('waist', '=', 'high');
+                //     }
+                //     if(request()->input('waistHi') === "true"){
+                //         $query->orWhere('waist', '=', 'higher');
+                //     }
 
-                })
-                ->when(request()->hasAny('blue', 'beige', 'grey', 'military', 'pink', 'black'), function ($query) {
-                    if(request()->input('blue') === "true"){
-                        $query->orWhere('color', '=', 'blue');
-                    }
-                    if(request()->input('beige') === "true"){
-                        $query->orWhere('color', '=', 'beige');
-                    }
-                    if(request()->input('grey') === "true"){
-                        $query->orWhere('color', '=', 'grey');
-                    }
-                    if(request()->input('military') === "true"){
-                        $query->orWhere('color', '=', 'military');
-                    }
-                    if(request()->input('pink') === "true"){
-                        $query->orWhere('color', '=', 'pink');
-                    }
-                    if(request()->input('black') === "true"){
-                        $query->orWhere('color', '=', 'black');
-                    }
+                // })
+                // ->when(request()->hasAny('blue', 'beige', 'grey', 'military', 'pink', 'black'), function ($query) {
+                //     if(request()->input('blue') === "true"){
+                //         $query->orWhere('color', '=', 'blue');
+                //     }
+                //     if(request()->input('beige') === "true"){
+                //         $query->orWhere('color', '=', 'beige');
+                //     }
+                //     if(request()->input('grey') === "true"){
+                //         $query->orWhere('color', '=', 'grey');
+                //     }
+                //     if(request()->input('military') === "true"){
+                //         $query->orWhere('color', '=', 'military');
+                //     }
+                //     if(request()->input('pink') === "true"){
+                //         $query->orWhere('color', '=', 'pink');
+                //     }
+                //     if(request()->input('black') === "true"){
+                //         $query->orWhere('color', '=', 'black');
+                //     }
 
-                })
-                    ->when(request()->has('vMin'), function ($query) {
+                // })
+                //     ->when(request()->has('vMin'), function ($query) {
 
-                        $query->where('price', '>=', request()->input('vMin'));
+                //         $query->where('price', '>=', request()->input('vMin'));
 
-                    })
-                    ->when(request()->has('vMax'), function ($query) {
+                //     })
+                //     ->when(request()->has('vMax'), function ($query) {
 
-                        $query->where('price', '<=', request()->input('vMax'));
+                //         $query->where('price', '<=', request()->input('vMax'));
 
-                    })
+                //     })
                    ->where('collection_id', '=', $id)
-//                    ->where('price', '<', 'vMax')
-//                    ->where('price', '>', 'vMin')
+                   ->where('price', '<', request()->input('vMax'))
+                   ->where('price', '>', request()->input('vMin'))
                 ->paginate(10)
                 ->withQueryString()
                 ->through(fn($product) => [
