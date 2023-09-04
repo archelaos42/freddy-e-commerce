@@ -81,6 +81,7 @@ class PagesController extends Controller
                                          'blue', 'beige', 'grey', 'military', 'pink', 'black',
                                          'vMin', 'vMax',
                                         ), function ($query, $id) {
+                    $query->where('collection_id', '=', $id);
                     if(request()->input('length78') === "true"){
                         $query->orWhere('length', '=', '7/8');
                     }
@@ -141,7 +142,6 @@ class PagesController extends Controller
                     if(request()->input('black') === "true"){
                         $query->orWhere('color', '=', 'black');
                     }
-                    $query->where('collection_id', '=', $id);
                 })
 //                    ->where('price', '<', 'vMax')
 //                    ->where('price', '>', 'vMin')
