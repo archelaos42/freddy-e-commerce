@@ -76,7 +76,12 @@ class PagesController extends Controller
                 'selectedView' => 'multi',
                 'count' => $content->count(),
                 'products' => Product::query()
-                ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query) {
+                ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'legnthN', 
+                                         'sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl',
+                                         'waistM', 'waistH', 'waistHi',
+                                         'blue', 'beige', 'grey', 'military', 'pink', 'black',
+                                         'vMin', 'vMax',
+                                        ), function ($query) {
                     if(request()->input('length78') === "true"){
                         $query->orWhere('length', '=', '7/8');
                     }
@@ -84,16 +89,14 @@ class PagesController extends Controller
                         $query->orWhere('length', '=', '3/4');
                     }
                     if(request()->input('lengthBl') === "true"){
-                        $query->orWhere('length', '=', 'bicycle length');
+                        $query->orWhere('length', '=', 'Bl');
                     }
                     if(request()->input('lengthS') === "true"){
-                        $query->orWhere('length', '=', 'short');
+                        $query->orWhere('length', '=', 'S');
                     }
-                    if(request()->input('lengthN') === "true"){
-                        $query->orWhere('length', '=', 'normal');
+                    if(request()->input('legnthN') === "true"){
+                        $query->orWhere('length', '=', 'N');
                     }
-                })
-                ->when(request()->hasAny('sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl' ), function ($query) {
                     if(request()->input('sizeXxs') === "true"){
                         $query->orWhere('size', '=', 'XXS');
                     }
@@ -112,8 +115,6 @@ class PagesController extends Controller
                     if(request()->input('sizeXl') === "true"){
                         $query->orWhere('size', '=', 'XL');
                     }
-                })
-                ->when(request()->hasAny('waistM', 'waistH', 'waistHi'), function ($query) {
                     if(request()->input('waistM') === "true"){
                         $query->orWhere('waist', '=', 'medium');
                     }
@@ -123,9 +124,6 @@ class PagesController extends Controller
                     if(request()->input('waistHi') === "true"){
                         $query->orWhere('waist', '=', 'higher');
                     }
-
-                })
-                ->when(request()->hasAny('blue', 'beige', 'grey', 'military', 'pink', 'black'), function ($query) {
                     if(request()->input('blue') === "true"){
                         $query->orWhere('color', '=', 'blue');
                     }
@@ -144,19 +142,8 @@ class PagesController extends Controller
                     if(request()->input('black') === "true"){
                         $query->orWhere('color', '=', 'black');
                     }
-
+                    $query->where('collection_id', '=', $id)
                 })
-                    ->when(request()->has('vMin'), function ($query) {
-
-                        $query->where('price', '>=', request()->input('vMin'));
-
-                    })
-                    ->when(request()->has('vMax'), function ($query) {
-
-                        $query->where('price', '<=', request()->input('vMax'));
-
-                    })
-                   ->where('collection_id', '=', $id)
 //                    ->where('price', '<', 'vMax')
 //                    ->where('price', '>', 'vMin')
                 ->paginate(10)
@@ -173,7 +160,7 @@ class PagesController extends Controller
             'filters' => (new \Illuminate\Http\Request)->only([
                 'sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl', 'filters',
                 'waistM', 'waistH', 'waistHi', 'collection',
-                'length78', 'length34', 'lengthBl', 'lengthS', 'lengthN',
+                'length78', 'length34', 'lengthBl', 'lengthS', 'legnthN',
                 'vMin', 'vMax',
                 'blue', 'beige', 'grey', 'military', 'pink', 'black'
             ])
