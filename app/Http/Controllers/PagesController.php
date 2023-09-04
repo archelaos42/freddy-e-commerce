@@ -74,7 +74,7 @@ class PagesController extends Controller
             $content = Cart::content(),
                 'selectedView' => 'multi',
                 'count' => $content->count(),
-                'products' => Product::query()
+                'products' => Product::query($id)
                 ->when(request(), function ($query, $id) {
                         $query->where('collection_id', '=', $id);
                 })
