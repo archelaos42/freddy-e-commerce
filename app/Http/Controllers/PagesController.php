@@ -66,23 +66,21 @@ class PagesController extends Controller
     /**
      * Displays all products from the chosen collection.
      *
-     */
-    public function collection($id)
+     */public function collection($id)
     {
         return Inertia::render('Collection', [
             'collection' => Collection::findOrFail($id),
             'categories' => Category::query()->where('collection_id', '=', $id)->get(),
-            $theproducts = Product::$query->where('collection_id', '=', $id)->get(),
             $content = Cart::content(),
                 'selectedView' => 'multi',
                 'count' => $content->count(),
-                'products' => $theproducts->query()
+                'products' => Product::query()
                 ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'legnthN', 
                                          'sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl',
                                          'waistM', 'waistH', 'waistHi',
                                          'blue', 'beige', 'grey', 'military', 'pink', 'black',
                                          'vMin', 'vMax',
-                                        ), function ($query) {
+                                        ), function ($query, $id) {
                     if(request()->input('length78') === "true"){
                         $query->orWhere('length', '=', '7/8');
                     }
@@ -143,6 +141,7 @@ class PagesController extends Controller
                     if(request()->input('black') === "true"){
                         $query->orWhere('color', '=', 'black');
                     }
+                    $query->where('collection_id', '=', $id)
                 })
 //                    ->where('price', '<', 'vMax')
 //                    ->where('price', '>', 'vMin')
