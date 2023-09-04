@@ -72,14 +72,14 @@ class PagesController extends Controller
             'collection' => Collection::findOrFail($id),
             'categories' => Category::query()->where('collection_id', '=', $id)->get(),
             $content = Cart::content(),
-            $conid = $id,
+            // $conid = $id,
             // dd($conid),
                 'selectedView' => 'multi',
                 'count' => $content->count(),
                 'products' => Product::query()
-                ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query, $conid) {
+                ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query) {
                     if(request()->input('length78') === "true"){
-                        dd($conid);
+                        dd($request->id);
                         $query->orWhere('length', '=', '7/8');
                     }
                     if(request()->input('length34') === "true"){
