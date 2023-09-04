@@ -67,7 +67,7 @@ class PagesController extends Controller
      * Displays all products from the chosen collection.
      *
      */
-    public function collection($id)
+        public function collection($id)
     {
         return Inertia::render('Collection', [
             'collection' => Collection::findOrFail($id),
@@ -76,7 +76,12 @@ class PagesController extends Controller
                 'selectedView' => 'multi',
                 'count' => $content->count(),
                 'products' => Product::query()
-                ->when(request()), function ($query) {
+                ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN', 
+                                         'sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl',
+                                         'waistM', 'waistH', 'waistHi',
+                                         'blue', 'beige', 'grey', 'military', 'pink', 'black',
+                                         'vMin', 'vMax',
+                                        ), function ($query) {
                     if(request()->input('length78') === "true"){
                         $query->orWhere('length', '=', '7/8');
                     }
@@ -84,13 +89,13 @@ class PagesController extends Controller
                         $query->orWhere('length', '=', '3/4');
                     }
                     if(request()->input('lengthBl') === "true"){
-                        $query->orWhere('length', '=', 'Bl');
+                        $query->orWhere('length', '=', 'bicycle length');
                     }
                     if(request()->input('lengthS') === "true"){
-                        $query->orWhere('length', '=', 'S');
+                        $query->orWhere('length', '=', 'short');
                     }
                     if(request()->input('lengthN') === "true"){
-                        $query->orWhere('length', '=', 'N');
+                        $query->orWhere('length', '=', 'normal');
                     }
                     if(request()->input('sizeXxs') === "true"){
                         $query->orWhere('size', '=', 'XXS');
@@ -137,16 +142,11 @@ class PagesController extends Controller
                     if(request()->input('black') === "true"){
                         $query->orWhere('color', '=', 'black');
                     }
-                    if(request()->input('vMin') === "true"){
-                        $query->where('price', '<=', 'vMax');
-                    }
-                    if(request()->input('vMax') === "true"){
-                        $query->where('price', '=>', 'vMin');
-                    }
-                    if(request()){
-                        $query->where('collection_id', '=', '1');
-                    }
+                    
                 })
+                   // $query->where('collection_id', '=', $id)     
+//                    ->where('price', '<', 'vMax')
+//                    ->where('price', '>', 'vMin')
                 ->paginate(10)
                 ->withQueryString()
                 ->through(fn($product) => [
@@ -167,8 +167,6 @@ class PagesController extends Controller
             ])
 
         ]);
-
-
     }
 
     public function tester()
