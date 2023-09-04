@@ -172,7 +172,7 @@ class PagesController extends Controller
             'filters' => (new \Illuminate\Http\Request)->only([
                 'sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl', 'filters',
                 'waistM', 'waistH', 'waistHi', 'collection',
-                'length78', 'length34', 'lengthBl', 'lengthS', 'legnthN',
+                'length78', 'length34', 'lengthBl', 'lengthS', 'lengthN',
                 'vMin', 'vMax',
                 'blue', 'beige', 'grey', 'military', 'pink', 'black'
             ])
