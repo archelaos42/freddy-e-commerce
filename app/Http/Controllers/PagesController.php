@@ -76,7 +76,6 @@ class PagesController extends Controller
                 'selectedView' => 'multi',
                 'count' => $content->count(),
                 'products' => Product::query()
-                ->where('collection_id', '=', $id)
                 ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'legnthN' ), function ($query) {
                     if(request()->input('length78') === "true"){
                         $query->orWhere('length', '=', '7/8');
@@ -157,6 +156,7 @@ class PagesController extends Controller
                         $query->where('price', '<=', request()->input('vMax'));
 
                     })
+                   ->where('collection_id', '=', $id)
 //                    ->where('price', '<', 'vMax')
 //                    ->where('price', '>', 'vMin')
                 ->paginate(10)
