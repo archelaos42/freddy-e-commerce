@@ -71,6 +71,7 @@ class PagesController extends Controller
         return Inertia::render('Collection', [
             'collection' => Collection::findOrFail($id),
             'categories' => Category::query()->where('collection_id', '=', $id)->get(),
+            'id' => $id,
             $content = Cart::content(),
                 'selectedView' => 'multi',
                 'count' => $content->count(),
@@ -81,8 +82,8 @@ class PagesController extends Controller
                                          'blue', 'beige', 'grey', 'military', 'pink', 'black',
                                          'vMin', 'vMax',
                                         ), function ($query, $id) {
-                    // dd($id);
-                    $query->orWhere('collection_id', '=', 1);
+                    dd($id);
+                    $query->orWhere('collection_id', '=', $id);
                     if(request()->input('length78') === "true"){
                         $query->orWhere('length', '=', '7/8');
                     }
