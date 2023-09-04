@@ -76,7 +76,12 @@ class PagesController extends Controller
                 'selectedView' => 'multi',
                 'count' => $content->count(),
                 'products' => Product::query()
-                ->when(request(), function ($query) {
+                ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN', 
+                                         'sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl',
+                                         'waistM', 'waistH', 'waistHi',
+                                         'blue', 'beige', 'grey', 'military', 'pink', 'black',
+                                         'vMin', 'vMax',
+                                        ), function ($query) {
                     if(request()->input('length78') === "true"){
                         $query->orWhere('length', '=', '7/8');
                     }
