@@ -141,7 +141,7 @@ class PagesController extends Controller
                     if(request()->input('black') === "true"){
                         $query->orWhere('color', '=', 'black');
                     }
-                    $query->where('collection_id', '=', $id)
+                    $query->where('collection_id', '=', $id);
                 })
 //                    ->where('price', '<', 'vMax')
 //                    ->where('price', '>', 'vMin')
