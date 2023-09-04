@@ -143,7 +143,7 @@ class PagesController extends Controller
                         $query->orWhere('color', '=', 'black');
                     }
                 })
-                   ->where('collection_id', '=', $id);
+                   ->where('collection_id', '=', $id)
                    ->where('price', '<=', 'vMax')
                    ->where('price', '=>', 'vMin')
                 ->paginate(10)
