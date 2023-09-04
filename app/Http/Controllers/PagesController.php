@@ -83,13 +83,13 @@ class PagesController extends Controller
                         $query->orWhere('length', '=', '3/4');
                     }
                     if(request()->input('lengthBl') === "true"){
-                        $query->orWhere('length', '=', 'Bl');
+                        $query->orWhere('length', '=', 'bicycle length');
                     }
                     if(request()->input('lengthS') === "true"){
-                        $query->orWhere('length', '=', 'S');
+                        $query->orWhere('length', '=', 'short');
                     }
                     if(request()->input('legnthN') === "true"){
-                        $query->orWhere('length', '=', 'N');
+                        $query->orWhere('length', '=', 'normal');
                     }
                 })
                 ->when(request()->hasAny('sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl' ), function ($query) {
