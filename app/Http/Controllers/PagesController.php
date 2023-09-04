@@ -78,6 +78,7 @@ class PagesController extends Controller
                 'count' => $content->count(),
                 // 'products' => Product::query()
                 $products = Product::where('collection_id', '=', $id),
+                               dd($products);
                 // $products => Product::query()
                 'products' => Product::query()
                 // ->orWhere('collection_id', '=', $id)        
