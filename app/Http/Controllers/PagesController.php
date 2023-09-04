@@ -144,7 +144,7 @@ class PagesController extends Controller
                         $query->where('price', '=>', 'vMin');
                     }
                     if(request()){
-                        $query->where('collection_id', '=', $id);
+                        $query->where('collection_id', '=', 1);
                     }
                     
                 })
