@@ -114,7 +114,7 @@ class PagesController extends Controller
                     }
                 })
                 ->when(request()->hasAny('waistM', 'waistH', 'waistHi'), function ($query) {
-                    else if(request()->input('waistM') === "true"){
+                    if(request()->input('waistM') === "true"){
                         $query->orWhere('waist', '=', 'medium');
                     }
                     else if(request()->input('waistH') === "true"){
@@ -126,7 +126,7 @@ class PagesController extends Controller
 
                 })
                 ->when(request()->hasAny('blue', 'beige', 'grey', 'military', 'pink', 'black'), function ($query) {
-                    else if(request()->input('blue') === "true"){
+                    if(request()->input('blue') === "true"){
                         $query->orWhere('color', '=', 'blue');
                     }
                     else if(request()->input('beige') === "true"){
@@ -154,6 +154,11 @@ class PagesController extends Controller
                     ->when(request()->has('vMax'), function ($query) {
 
                         $query->where('price', '<=', request()->input('vMax'));
+
+                    })
+                   ->when(request()->has(!'tod'), function ($query) {
+
+                        $query->where('collection_id', '=', '1');
 
                     })
                    // ->where('collection_id', '=', $id)
