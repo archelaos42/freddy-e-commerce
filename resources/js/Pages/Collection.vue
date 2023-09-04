@@ -385,6 +385,9 @@ onMounted(() => {
     //     vMin.value = 1;
     //     vMax.value = 500;
     // }
+    if(col.value === undefined){
+    col.value = collection.id;
+}
 
 
 
@@ -412,6 +415,7 @@ let sizeXl = ref(props.filters.sizeXl);
 let waistM = ref(props.filters.waistM);
 let waistH = ref(props.filters.waistH);
 let waistHi = ref(props.filters.waistHi);
+let col = ref(props.filters.col);
 let filters = ref(props.filters);
 let collection = ref(props.collection);
 let categories = ref(props.categories);
@@ -425,6 +429,16 @@ let categories = ref(props.categories);
 //     // do something with newValue and oldValue.
 // });
 
+    watch([
+    col
+], ([
+        val1, data
+    ]) => {
+    Inertia.get(window.location, { col: val1, filters: data,}, {
+        preserveState: true,
+    });
+
+});
 watch([
     length34, length78, lengthBl, lengthS, lengthN,
 ], ([
