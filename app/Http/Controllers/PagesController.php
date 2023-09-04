@@ -83,6 +83,9 @@ class PagesController extends Controller
                                          'vMin', 'vMax',
                                         ), function ($query, $id) {
                     // $query->orWhere('collection_id', '=', $id);
+                    if(request){
+                        $query->orWhere('collection_id', '=', $id);
+                    }
                     if(request()->input('length78') === "true"){
                         $query->orWhere('length', '=', '7/8');
                     }
@@ -144,8 +147,10 @@ class PagesController extends Controller
                         $query->orWhere('color', '=', 'black');
                     }
                     if(request()->input('vMin') === "true"){
-                        $query->orWhere('collection_id', '===', $id);
-                        dd($id);
+                        $query->orWhere('price', '=>', 'vMin');
+                    }
+                    if(request()->input('vMin') === "true"){
+                        $query->orWhere('price', '<=', 'vMax');
                     }
                 })
 //                    ->where('price', '<', 'vMax')
