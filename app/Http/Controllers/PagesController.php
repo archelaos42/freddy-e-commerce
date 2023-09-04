@@ -72,10 +72,11 @@ class PagesController extends Controller
         return Inertia::render('Collection', [
             'collection' => Collection::findOrFail($id),
             'categories' => Category::query()->where('collection_id', '=', $id)->get(),
+            $theproducts = Product::$query->where('collection_id', '=', $id),
             $content = Cart::content(),
                 'selectedView' => 'multi',
                 'count' => $content->count(),
-                'products' => Product::$query->where('collection_id', '=', $id)
+                'products' => $theproducts->query()
                 ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'legnthN', 
                                          'sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl',
                                          'waistM', 'waistH', 'waistHi',
