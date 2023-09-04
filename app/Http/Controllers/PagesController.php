@@ -72,6 +72,8 @@ class PagesController extends Controller
             'collection' => Collection::findOrFail($id),
             'categories' => Category::query()->where('collection_id', '=', $id)->get(),
             $content = Cart::content(),
+            $colid = $id,
+            dd($id),
                 'selectedView' => 'multi',
                 'count' => $content->count(),
                 'products' => Product::query()
