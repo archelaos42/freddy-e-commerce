@@ -276,7 +276,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'CARGO PANTS',
             'slug' => 'CARGO PANTS',
             'featuredimage' => 'placeholder.jpg',
-            'price' => 84',
+            'price' => '84',
             'size' => 'L',
             'color' => 'grey',
             'length' => 'normal',
