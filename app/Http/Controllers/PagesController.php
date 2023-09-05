@@ -93,7 +93,7 @@ class PagesController extends Controller
                         $query->orWhere('length', '=', 'short');
                     }
                     if(request()->input('lengthN') === "true"){
-                        $query->orWhere('length', '=', 'normal';
+                        $query->orWhere('length', '=', 'normal');
                     }
                 })
                 ->when(request()->hasAny('sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl' ), function ($query) {
