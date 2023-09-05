@@ -385,7 +385,10 @@ onMounted(() => {
     // if(props.selectedView === undefined){
     //     props.selectedView = 'zglj';
     // }
-    console.log(props.selectedView)
+    // console.log(props.selectedView)
+    if(col.value === undefined){
+        col.value = collection.id;
+    }
     if(vMin.value === undefined){
         vMin.value = 1;
         vMax.value = 500;
@@ -418,6 +421,7 @@ let sizeXl = ref(props.filters.sizeXl);
 let waistM = ref(props.filters.waistM);
 let waistH = ref(props.filters.waistH);
 let waistHi = ref(props.filters.waistHi);
+let col = ref(props.filters.col);
 let filters = ref(props.filters);
 let collection = ref(props.collection);
 let categories = ref(props.categories);
@@ -437,15 +441,15 @@ watch([
     sizeXxs, sizeXs, sizeS, sizeM, sizeL, sizeXl,
     vMin, vMax,
     waistM, waistH, waistHi,
-    blue, beige, military, pink, black, grey
+    blue, beige, military, pink, black, grey, col
 ], ([
-        val1, val2, val3, val4, val5, val6, val7, val8, val9, val10, val11, val12, val13, val14, val15, val16, val17, val18, val19, val20, val21, val22, data
+        val1, val2, val3, val4, val5, val6, val7, val8, val9, val10, val11, val12, val13, val14, val15, val16, val17, val18, val19, val20, val21, val22, val23, data
     ]) => {
     Inertia.get(window.location, { length34: val1,  length78: val2, lengthBl: val3,  lengthS: val4, lengthN: val5,
                                   sizeXxs: val6,  sizeXs: val7, sizeS: val8,  sizeM: val9, sizeL: val10, sizeXl: val11,
                                   vMin: val12,  vMax: val13,
                                   waistM: val14,  waistH: val15, waistHi: val16,
-                                  blue: val17,  beige: val18, military: val19, pink: val20, black: val21, grey: val22,
+                                  blue: val17,  beige: val18, military: val19, pink: val20, black: val21, grey: val22, col:val23,
                                   filters: data,}, {
         preserveState: true,
     });
