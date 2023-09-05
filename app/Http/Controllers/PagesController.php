@@ -186,7 +186,7 @@ class PagesController extends Controller
                 'waistM', 'waistH', 'waistHi', 'collection',
                 'length78', 'length34', 'lengthBl', 'lengthS', 'lengthN',
                 'vMin', 'vMax',
-                'blue', 'beige', 'grey', 'military', 'pink', 'black'
+                'blue', 'beige', 'grey', 'military', 'pink', 'black', 'col'
             ])
 
         ]);
