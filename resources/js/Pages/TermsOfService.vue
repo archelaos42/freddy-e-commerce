@@ -13,7 +13,7 @@ defineProps({
     <AppLayout>
     <Head title="Terms of Service" />
 
-    <h1 class="font-bold font-ropa pt-10 text-center text-tra text-3xl">Terms of service</h1>
+    <h1 class="font-bold font-ropa pt-10 mb-10 text-center text-tra text-3xl">Terms of service</h1>
 
     <div class="w-2/3 mx-72 flex items-center font-sans text-gray-900 antialiased">
         
