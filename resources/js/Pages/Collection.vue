@@ -371,11 +371,11 @@ let props = defineProps({
 
 
 onMounted(() => {
-    for each (products as product){
-        if(!product.collection_id === collection.id){
-            Vue.delete(products, 'product.id');
-        }
-    }
+    // for each (products as product){
+    //     if(!product.collection_id === collection.id){
+    //         Vue.delete(products, 'product.id');
+    //     }
+    // }
     // if (vMin.value > vMax.value){
     //     vMin.value = vMax.value
     // }
