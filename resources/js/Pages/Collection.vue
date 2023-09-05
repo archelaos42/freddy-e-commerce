@@ -389,6 +389,7 @@ onMounted(() => {
     if(col.value === undefined){
         col.value = collection.id;
         console.log(col.value)
+        console.log(collection.id)
     }
     if(vMin.value === undefined){
         vMin.value = 1;
