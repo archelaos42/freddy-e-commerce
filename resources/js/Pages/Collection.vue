@@ -434,7 +434,7 @@ watch([
     waistM, waistH, waistHi,
     blue, beige, military, pink, black, grey
 ], ([
-        val1, val2, val3, val4, val5, data
+        val1, val2, val3, val4, val5, val6, val7, val8, val9, val10, val11, val12, val13, val14, val15, val16, val17, val18, val19, val20, val21, val22, data
     ]) => {
     Inertia.get(window.location, { length34: val1,  length78: val2, lengthBl: val3,  lengthS: val4, lengthN: val5,
                                   sizeXxs: val6,  sizeXs: val7, sizeS: val8,  sizeM: val9, sizeL: val10, sizeXl: val11,
