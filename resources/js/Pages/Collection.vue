@@ -217,9 +217,9 @@
                      <p>No products matching your parameters were found</p>
                  </div>
                  <div class="flex flex-wrap" v-if="$page.props.selectedView === 'multi'">
-                    <div v-for="product in products.data">
+                    <div class="w-1/4" v-for="product in products.data">
     <!--                    <div v-if="!products.data.length">No product were found within the set parameters</div>-->
-                        <div v-if="product.collection_id === collection.id" class="w-1/4 mr-6 font-ropa text-base text-left text-gray-500 border-solid">
+                        <div v-if="product.collection_id === collection.id" class="mr-6 font-ropa text-base text-left text-gray-500 border-solid">
                             <Link v-bind:href="'/product/' + product.id">
                                 <img src="https://freddy.hr/image/cache/catalog/izdelki/BRITNEYF301_Z106X-/BRITNEYF301_Z106X_2-400x600w.jpg" alt="">
                             </Link>
