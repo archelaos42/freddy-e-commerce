@@ -151,10 +151,10 @@ class PagesController extends Controller
                     else if(request()->input('col')){
                         $query->where('collection_id', '=', request()->input('col'));
                     }
-                    else if(request()->input('vMin')){
+                    else if(!request()->input('vMin')){
                         $query->where('price', '>=', request()->input('vMin'));
                     }
-                    else if(request()->input('vMax')){
+                    else if(!request()->input('vMax')){
                         $query->where('price', '<=', request()->input('vMax'));
                     }
                 }) 
