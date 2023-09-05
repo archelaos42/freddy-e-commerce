@@ -81,19 +81,19 @@ class PagesController extends Controller
                  // orWhere('collection_id', '=', '1')
                 ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query, $col) {
                     if(request()->input('length78') === "true"){
-                        $query->orWhere('length', '=', '7/8')andWhere('collection_id', '=', '1');
+                        $query->orWhere('length', '=', '7/8')->andWhere('collection_id', '=', '1');
                     }
                     if(request()->input('length34') === "true"){
-                        $query->orWhere('length', '=', '3/4')andWhere('collection_id', '=', '1');
+                        $query->orWhere('length', '=', '3/4')->andWhere('collection_id', '=', '1');
                     }
                     if(request()->input('lengthBl') === "true"){
-                        $query->orWhere('length', '=', 'bicycle length')andWhere('collection_id', '=', '1');
+                        $query->orWhere('length', '=', 'bicycle length')->andWhere('collection_id', '=', '1');
                     }
                     if(request()->input('lengthS') === "true"){
-                        $query->orWhere('length', '=', 'short')andWhere('collection_id', '=', '1');
+                        $query->orWhere('length', '=', 'short')->andWhere('collection_id', '=', '1');
                     }
                     if(request()->input('lengthN') === "true"){
-                        $query->orWhere('length', '=', 'normal')andWhere('collection_id', '=', '1');
+                        $query->orWhere('length', '=', 'normal')->andWhere('collection_id', '=', '1');
                     }
                 })
                 ->when(request()->hasAny('sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl' ), function ($query) {
