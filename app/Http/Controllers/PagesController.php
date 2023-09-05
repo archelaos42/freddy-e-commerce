@@ -184,8 +184,8 @@ class PagesController extends Controller
                     if(request()->input('pink') === "true"){
                         $query->orWhere('color', '=', 'pink')->where('collection_id', '=', request()->input('col'));;
                     }
-                })               
-                ->when(request()->hasAny('blue', 'beige', 'grey', 'military', 'pink', 'black', 'col'), function ($query, $id
+                })
+                ->when(request()->hasAny('blue', 'beige', 'grey', 'military', 'pink', 'black', 'col'), function ($query, $id) {
                     if(request()->input('black') === "true"){
                         $query->orWhere('color', '=', 'black')->where('collection_id', '=', request()->input('col'));;
                     }
