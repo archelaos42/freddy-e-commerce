@@ -43,6 +43,7 @@ Route::get('reviews/{id}', [PagesController::class, 'reviews'])->name('reviews')
 Route::post('/postreview', [PagesController::class, 'postreview'])->name('postreview');
 Route::get('/sizetable', [PagesController::class, 'sizetable'])->name('sizetable');
 Route::get('/account/{id}', [PagesController::class, 'account'])->name('account');
+Route::get('/terms', [PagesController::class, 'terms'])->name('terms');
 
 Route::get('cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('cart.store', [CartController::class, 'store'])->name('cart.store');
