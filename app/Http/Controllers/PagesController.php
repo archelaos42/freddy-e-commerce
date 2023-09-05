@@ -78,10 +78,10 @@ class PagesController extends Controller
                 'selectedView' => 'multi',
                 'count' => $content->count(),
                 'products' => Product::
-                               query($id)
+                               query($col)
                  // orWhere('collection_id', '=', '1')
-                ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query, $id) {
-                    if(request()->input('length78') === "true"){
+                ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query, $col) {
+                    if(request()->input('length78') === "true")->where('collection_id', $col->id){
                         // dd($id);
                         $query->orWhere('length', '=', '7/8');
                     }
