@@ -73,9 +73,9 @@
                     </div>
                     <label class="mt-2">
                         <input type="checkbox" id="terms" v-model="form.terms" name="agree">
-                        I have read and agree with the <a href="/">
+                        I have read and agree with the <Link :href="('/terms')">
                         Confidentiality agreement and HTTP cookies
-                    </a>
+                    </Link>
                     </label>
                 </form>
 
