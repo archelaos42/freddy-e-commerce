@@ -72,8 +72,6 @@ class PagesController extends Controller
         return Inertia::render('Collection', [
             'collection' => Collection::findOrFail($id),
             $col = Collection::where('id', $id)->first(),
-           // $post = Post::where('title', 'Post 1')->first();
-                               // dd($col),
             'categories' => Category::query()->where('collection_id', '=', $id)->get(),
             $content = Cart::content(),
                 'selectedView' => 'multi',
@@ -81,7 +79,6 @@ class PagesController extends Controller
                 'products' => Product::query()
                 ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query, $col) {
                     if(request()->input('length78') === "true"){
-                        // dd($col->first()->id);
                         $query->orWhere('length', '=', '7/8');
                     }
                     if(request()->input('length34') === "true"){
