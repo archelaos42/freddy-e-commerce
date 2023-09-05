@@ -13,7 +13,7 @@ defineProps({
     <AppLayout>
     <Head title="Terms of Service" />
 
-    <div class="w-1/3 flex justify-center font-sans text-gray-900 antialiased">
+    <div class="w-1/3 flex items-center font-sans text-gray-900 antialiased">
         
             The standard Lorem Ipsum passage, used since the 1500s
 
