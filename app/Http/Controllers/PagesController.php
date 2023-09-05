@@ -78,9 +78,8 @@ class PagesController extends Controller
             $content = Cart::content(),
                 'selectedView' => 'multi',
                 'count' => $content->count(),
-                'products' => Product::query('collection_id', '=', $id)
+                'products' => Product::query
                 ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query, $col) {
-                    // $query->orWhere('collection_id', '=', '1');
                     if(request()->input('length78') === "true"){
                         // dd($col->first()->id);
                         $query->orWhere('length', '=', '7/8');
@@ -161,7 +160,7 @@ class PagesController extends Controller
                         $query->where('price', '<=', request()->input('vMax'));
 
                     })
-                   // ->where('collection_id', '=', $id)
+                   ->where('collection_id', '=', $id)
 //                    ->where('price', '<', 'vMax')
 //                    ->where('price', '>', 'vMin')
                 ->paginate(10)
