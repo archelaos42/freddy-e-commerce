@@ -80,7 +80,7 @@ class PagesController extends Controller
                 'products' => Product::query($col)
                 ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query, $col) {
                     if(request()->input('length78') === "true"){
-                        dd($col.data->id);
+                        dd($col.attributes->id);
                         $query->orWhere('length', '=', '7/8');
                     }
                     if(request()->input('length34') === "true"){
