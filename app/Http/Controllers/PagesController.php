@@ -85,16 +85,16 @@ class PagesController extends Controller
                         // dd($id);
                         $query->orWhere('length', '=', '7/8');
                     }
-                    if(request()->input('length34') === "true"){
+                    else if(request()->input('length34') === "true"){
                         $query->orWhere('length', '=', '3/4');
                     }
-                    if(request()->input('lengthBl') === "true"){
+                    else if(request()->input('lengthBl') === "true"){
                         $query->orWhere('length', '=', 'bicycle length');
                     }
-                    if(request()->input('lengthS') === "true"){
+                    else if(request()->input('lengthS') === "true"){
                         $query->orWhere('length', '=', 'short');
                     }
-                    if(request()->input('lengthN') === "true"){
+                    else if(request()->input('lengthN') === "true"){
                         $query->orWhere('length', '=', 'normal');
                     }
                 })
@@ -102,19 +102,19 @@ class PagesController extends Controller
                     if(request()->input('sizeXxs') === "true"){
                         $query->orWhere('size', '=', 'XXS');
                     }
-                    if(request()->input('sizeXs') === "true"){
+                    else if(request()->input('sizeXs') === "true"){
                         $query->orWhere('size', '=', 'XS');
                     }
-                    if(request()->input('sizeS') === "true"){
+                    else if(request()->input('sizeS') === "true"){
                         $query->orWhere('size', '=', 'S');
                     }
-                    if(request()->input('sizeM') === "true"){
+                    else if(request()->input('sizeM') === "true"){
                         $query->orWhere('size', '=', 'M');
                     }
-                    if(request()->input('sizeL') === "true"){
+                    else if(request()->input('sizeL') === "true"){
                         $query->orWhere('size', '=', 'L');
                     }
-                    if(request()->input('sizeXl') === "true"){
+                    else if(request()->input('sizeXl') === "true"){
                         $query->orWhere('size', '=', 'XL');
                     }
                 })
@@ -122,10 +122,10 @@ class PagesController extends Controller
                     if(request()->input('waistM') === "true"){
                         $query->orWhere('waist', '=', 'medium');
                     }
-                    if(request()->input('waistH') === "true"){
+                    else if(request()->input('waistH') === "true"){
                         $query->orWhere('waist', '=', 'high');
                     }
-                    if(request()->input('waistHi') === "true"){
+                    else if(request()->input('waistHi') === "true"){
                         $query->orWhere('waist', '=', 'higher');
                     }
 
@@ -134,19 +134,19 @@ class PagesController extends Controller
                     if(request()->input('blue') === "true"){
                         $query->orWhere('color', '=', 'blue');
                     }
-                    if(request()->input('beige') === "true"){
+                    else if(request()->input('beige') === "true"){
                         $query->orWhere('color', '=', 'beige');
                     }
-                    if(request()->input('grey') === "true"){
+                    else if(request()->input('grey') === "true"){
                         $query->orWhere('color', '=', 'grey');
                     }
-                    if(request()->input('military') === "true"){
+                    else if(request()->input('military') === "true"){
                         $query->orWhere('color', '=', 'military');
                     }
-                    if(request()->input('pink') === "true"){
+                    else if(request()->input('pink') === "true"){
                         $query->orWhere('color', '=', 'pink');
                     }
-                    if(request()->input('black') === "true"){
+                    else if(request()->input('black') === "true"){
                         $query->orWhere('color', '=', 'black');
                     }
 
