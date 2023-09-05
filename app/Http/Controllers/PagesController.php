@@ -151,12 +151,12 @@ class PagesController extends Controller
                 })
                     ->when(request()->has('vMin'), function ($query) {
 
-                        $query->where('price', '>=', request()->input('vMin'))->where('collection_id', '=', $col);
+                        $query->where('price', '>=', request()->input('vMin'));
 
                     })
                     ->when(request()->has('vMax'), function ($query) {
 
-                        $query->where('price', '<=', request()->input('vMax'))->where('collection_id', '=', $col);
+                        $query->where('price', '<=', request()->input('vMax'));
 
                     })
             
