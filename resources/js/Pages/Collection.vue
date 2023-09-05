@@ -387,7 +387,7 @@ onMounted(() => {
     // }
     // console.log(props.selectedView)
     if(col.value === undefined){
-        col.value = props.collection.id.value;
+        col.value = props.collection.id;
         console.log(col.value)
         console.log(props.collection.id)
     }
