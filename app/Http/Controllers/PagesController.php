@@ -160,7 +160,7 @@ class PagesController extends Controller
                         $query->where('price', '<=', request()->input('vMax'));
 
                     })
-                   ->where('collection_id', '=', $id)
+                   ->orWhere('collection_id', '=', $id)
 //                    ->where('price', '<', 'vMax')
 //                    ->where('price', '>', 'vMin')
                 ->paginate(10)
