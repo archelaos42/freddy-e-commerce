@@ -298,4 +298,11 @@ class PagesController extends Controller
         $count = $content->count();
         return Inertia::render(('Wishlist'), compact('count', 'user'));
     }
+
+    public function terms()
+    {
+        $content = Cart::content();
+        $count = $content->count();
+        return Inertia::render(('TermsOfService'), compact('count'));
+    }
 }
