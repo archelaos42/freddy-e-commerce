@@ -81,9 +81,9 @@ class PagesController extends Controller
                                query($col)
                  // orWhere('collection_id', '=', '1')
                 ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query, $col) {
-                    if(request()->input('length78') === "true")->where('collection_id', $col->id){
+                    if(request()->input('length78') === "true"){
                         // dd($id);
-                        $query->orWhere('length', '=', '7/8');
+                        $query->orWhere('length', '=', '7/8')->where('collection_id', $col->id);
                     }
                     if(request()->input('length34') === "true"){
                         $query->orWhere('length', '=', '3/4');
