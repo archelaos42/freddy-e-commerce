@@ -78,8 +78,6 @@ class PagesController extends Controller
                 'count' => $content->count(),
                 'products' => Product::query()
                 ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query, $col) {
-                    $query->$where->{
-                        'collection_id' '=' 4
                     if(request()->input('length78') === "true"){
                         $query->orWhere('length', '=', '7/8');
                     }
@@ -159,7 +157,7 @@ class PagesController extends Controller
                         $query->where('price', '<=', request()->input('vMax'));
 
                     })
-                }
+            
                    // ->orWhere('collection_id', '=', $id)
 //                    ->where('price', '<', 'vMax')
 //                    ->where('price', '>', 'vMin')
