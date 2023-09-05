@@ -81,13 +81,13 @@ class PagesController extends Controller
                  // orWhere('collection_id', '=', '1')
                 ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query, $col) {
                     if(request()->input('length78') === "true"){
-                        $query->orWhere('length', '=', '7/8')->where('collection_id', '=', '1');
+                        $query->orWhere('length', '=', '7/8')->where('collection_id', '=', $col);
                     }
                     if(request()->input('length34') === "true"){
-                        $query->orWhere('length', '=', '3/4')->where('collection_id', '=', '1');
+                        $query->orWhere('length', '=', '3/4')->where('collection_id', '=', $col);
                     }
                     if(request()->input('lengthBl') === "true"){
-                        $query->orWhere('length', '=', 'bicycle length')->where('collection_id', '=', '1');
+                        $query->orWhere('length', '=', 'bicycle length')->where('collection_id', '=', $col);
                     }
                     if(request()->input('lengthS') === "true"){
                         $query->orWhere('length', '=', 'short')->where('collection_id', '=', '1');
