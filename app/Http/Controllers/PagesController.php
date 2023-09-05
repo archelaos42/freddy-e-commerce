@@ -73,7 +73,7 @@ class PagesController extends Controller
             'collection' => Collection::findOrFail($id),
             $col = Collection::where('id', $id)->first(),
            // $post = Post::where('title', 'Post 1')->first();
-                               // dd($col),
+                               dd($col),
             'categories' => Category::query()->where('collection_id', '=', $id)->get(),
             $content = Cart::content(),
                 'selectedView' => 'multi',
