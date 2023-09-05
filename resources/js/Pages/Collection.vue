@@ -426,66 +426,86 @@ let categories = ref(props.categories);
 //     // do something with newValue and oldValue.
 // });
 
-  
+
 watch([
     length34, length78, lengthBl, lengthS, lengthN,
+    sizeXxs, sizeXs, sizeS, sizeM, sizeL, sizeXl,
+    vMin, vMax,
+    waistM, waistH, waistHi,
+    blue, beige, military, pink, black, grey
 ], ([
         val1, val2, val3, val4, val5, data
     ]) => {
-    Inertia.get(window.location, { length34: val1,  length78: val2, lengthBl: val3,  lengthS: val4, lengthN: val5, filters: data,}, {
+    Inertia.get(window.location, { length34: val1,  length78: val2, lengthBl: val3,  lengthS: val4, lengthN: val5,
+                                  sizeXxs: val6,  sizeXs: val7, sizeS: val8,  sizeM: val9, sizeL: val10, sizeXl: val11,
+                                  vMin: val12,  vMax: val13,
+                                  waistM: val14,  waistH: val15, waistHi: val16,
+                                  blue: val17,  beige: val18, military: val19, pink: val20, black: val21, grey: val22,
+                                  filters: data,}, {
         preserveState: true,
     });
 
 });
+  
+// watch([
+//     length34, length78, lengthBl, lengthS, lengthN,
+// ], ([
+//         val1, val2, val3, val4, val5, data
+//     ]) => {
+//     Inertia.get(window.location, { length34: val1,  length78: val2, lengthBl: val3,  lengthS: val4, lengthN: val5, filters: data,}, {
+//         preserveState: true,
+//     });
 
-watch([
-    sizeXxs, sizeXs, sizeS, sizeM, sizeL, sizeXl,
-], ([
-        val1, val2, val3, val4, val5, val6, data
-    ]) => {
-    Inertia.get(window.location, { sizeXxs: val1,  sizeXs: val2, sizeS: val3,  sizeM: val4, sizeL: val5, sizeXl: val6, filters: data,}, {
-        preserveState: true,
-    });
+// });
 
-});
+// watch([
+//     sizeXxs, sizeXs, sizeS, sizeM, sizeL, sizeXl,
+// ], ([
+//         val1, val2, val3, val4, val5, val6, data
+//     ]) => {
+//     Inertia.get(window.location, { sizeXxs: val1,  sizeXs: val2, sizeS: val3,  sizeM: val4, sizeL: val5, sizeXl: val6, filters: data,}, {
+//         preserveState: true,
+//     });
 
-watch([
-    vMin, vMax
-], ([
-        val1, val2,  data
-    ]) => {
-    // if(val1 > val2){
-    //     val1 = val2
-    // }else if(val2 < val1){
-    //     val2 = val1
-    // }
+// });
 
-    Inertia.get(window.location, { vMin: val1,  vMax: val2, filters: data,   }, {
-        preserveState: true,
-    });
-});
+// watch([
+//     vMin, vMax
+// ], ([
+//         val1, val2,  data
+//     ]) => {
+//     // if(val1 > val2){
+//     //     val1 = val2
+//     // }else if(val2 < val1){
+//     //     val2 = val1
+//     // }
 
-watch([
-    waistM, waistH, waistHi,
-], ([
-        val1, val2, val3, data,
-    ]) => {
-    Inertia.get(window.location, { waistM: val1,  waistH: val2, waistHi: val3, filters: data,}, {
-        preserveState: true,
-    });
+//     Inertia.get(window.location, { vMin: val1,  vMax: val2, filters: data,   }, {
+//         preserveState: true,
+//     });
+// });
 
-});
+// watch([
+//     waistM, waistH, waistHi,
+// ], ([
+//         val1, val2, val3, data,
+//     ]) => {
+//     Inertia.get(window.location, { waistM: val1,  waistH: val2, waistHi: val3, filters: data,}, {
+//         preserveState: true,
+//     });
 
-watch([
-    blue, beige, military, pink, black, grey
-], ([
-        val1, val2, val3, val4, val5, val6, data,
-    ]) => {
-    Inertia.get(window.location, { blue: val1,  beige: val2, military: val3, pink: val4, black: val5, grey: val6, filters: data,}, {
-        preserveState: true,
-    });
+// });
 
-});
+// watch([
+//     blue, beige, military, pink, black, grey
+// ], ([
+//         val1, val2, val3, val4, val5, val6, data,
+//     ]) => {
+//     Inertia.get(window.location, { blue: val1,  beige: val2, military: val3, pink: val4, black: val5, grey: val6, filters: data,}, {
+//         preserveState: true,
+//     });
+
+// });
 </script>
 
 <style scoped>
