@@ -1,4 +1,5 @@
 <script setup>
+import AppLayout from "../Layouts/AppLayout.vue";
 import { Head } from '@inertiajs/inertia-vue3';
 import AuthenticationCardLogo from '@/Components/AuthenticationCardLogo.vue';
 
@@ -12,7 +13,7 @@ defineProps({
     <AppLayout>
     <Head title="Terms of Service" />
 
-    <div class="text-center font-sans text-gray-900 antialiased">
+    <div class="w-1/3 text-center font-sans text-gray-900 antialiased">
         <p>
             The standard Lorem Ipsum passage, used since the 1500s
 
