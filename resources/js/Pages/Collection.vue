@@ -388,6 +388,7 @@ onMounted(() => {
     // console.log(props.selectedView)
     if(col.value === undefined){
         col.value = collection.id;
+        console.log(col.value)
     }
     if(vMin.value === undefined){
         vMin.value = 1;
