@@ -81,8 +81,8 @@ class PagesController extends Controller
                  // orWhere('collection_id', '=', '1')
                 ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query, $id) {
                     if(request()->input('length78') === "true"){
-                        dd($id);
-                        $query->orWhere('length', '=', '7/8')->where('collection_id', '=', '$id');
+                        // dd($id);
+                        $query->orWhere('length', '=', '7/8')->where('collection_id', '=', 'id');
                     }
                     if(request()->input('length34') === "true"){
                         $query->orWhere('length', '=', '3/4')->where('collection_id', '=', $id);
@@ -152,12 +152,12 @@ class PagesController extends Controller
                 })
                     ->when(request()->has('vMin'), function ($query, $id) {
 
-                        $query->where('price', '>=', request()->input('vMin'))->where('collection_id', '=', $id);
+                        $query->where('price', '>=', request()->input('vMin'))->where('collection_id', '=', '$id');
 
                     })
                     ->when(request()->has('vMax'), function ($query, $id) {
 
-                        $query->where('price', '<=', request()->input('vMax'))->where('collection_id', '=', $id);
+                        $query->where('price', '<=', request()->input('vMax'))->where('collection_id', '=', '$id');
 
                     })
             
