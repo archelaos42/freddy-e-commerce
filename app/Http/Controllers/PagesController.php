@@ -151,11 +151,11 @@ class PagesController extends Controller
                     }
 
                 })
-                    ->when(request()->has('col'), function ($query, $id) {
+                    // ->when(request()->has('col'), function ($query, $id) {
 
-                        $query->where('collection_id', '=', request()->input('col'));
+                    //     $query->where('collection_id', '=', request()->input('col'));
 
-                    })
+                    // })
                     ->when(request()->has('vMin'), function ($query, $id) {
 
                         $query->where('price', '>=', request()->input('vMin'));
