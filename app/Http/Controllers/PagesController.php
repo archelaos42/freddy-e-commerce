@@ -71,7 +71,7 @@ class PagesController extends Controller
     {
         return Inertia::render('Collection', [
             'collection' => Collection::findOrFail($id),
-            $col = Collection::findOrFail($id)->get(),
+            $col = Collection::findOrFail($id),
                                dd($col),
             'categories' => Category::query()->where('collection_id', '=', $id)->get(),
             $content = Cart::content(),
