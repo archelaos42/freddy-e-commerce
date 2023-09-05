@@ -216,7 +216,7 @@
                  <div class="flex grid grid-cols-4" v-if="!$page.props.products.data.length">
                      <p>No products matching your parameters were found</p>
                  </div>
-                 <div class="flex grid grid-cols-4" v-if="$page.props.selectedView === 'multi'">
+                 <div class="flex" v-if="$page.props.selectedView === 'multi'">
                     <div v-for="product in products.data">
     <!--                    <div v-if="!products.data.length">No product were found within the set parameters</div>-->
                         <div v-if="product.collection_id === collection.id" class="mr-6 font-ropa text-base text-left text-gray-500 border-solid">
