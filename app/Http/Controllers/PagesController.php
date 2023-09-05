@@ -76,6 +76,7 @@ class PagesController extends Controller
             $content = Cart::content(),
                 'selectedView' => 'multi',
                 'count' => $content->count(),
+                               dd($id);
                 'products' => Product::
                                query($id)
                  // orWhere('collection_id', '=', '1')
