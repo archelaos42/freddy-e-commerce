@@ -70,14 +70,16 @@ class PagesController extends Controller
     public function collection($id)
     {
         return Inertia::render('Collection', [
-            'collection' => Collection::findOrFail($id),
+            // 'collection' => Collection::findOrFail($id),
+            $collection = Collection::findOrFail($id),
             'categories' => Category::query()->where('collection_id', '=', $id)->get(),
             $content = Cart::content(),
                 'selectedView' => 'multi',
                 'count' => $content->count(),
-                'products' => Product::query()
-                ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query) {
+                'products' => Product::query($collection)
+                ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN' ), function ($query, $collection) {
                     if(request()->input('length78') === "true"){
+                        dd($collection)
                         $query->orWhere('length', '=', '7/8');
                     }
                     if(request()->input('length34') === "true"){
@@ -156,7 +158,7 @@ class PagesController extends Controller
                         $query->where('price', '<=', request()->input('vMax'));
 
                     })
-                   ->where('collection_id', '=', $id)
+                   // ->where('collection_id', '=', $id)
 //                    ->where('price', '<', 'vMax')
 //                    ->where('price', '>', 'vMin')
                 ->paginate(10)
