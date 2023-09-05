@@ -13,10 +13,11 @@ defineProps({
     <AppLayout>
     <Head title="Terms of Service" />
 
+    <h1 class="font-bold font-ropa pt-10 text-center text-tra text-3xl">Terms of service</h1>
+
     <div class="w-2/3 mx-72 flex items-center font-sans text-gray-900 antialiased">
         
-            <h1 class="font-bold font-ropa pt-10 text-center text-tra text-3xl">Terms of service</h1>
-
+            
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC<br><br>
 
