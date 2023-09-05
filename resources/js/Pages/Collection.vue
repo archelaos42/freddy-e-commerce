@@ -274,7 +274,7 @@
                  </div>
             <div v-if="$page.props.selectedView === 'single'">
                 <div class="flex grid grid-cols-1 mt-5" v-for="product in products.data">
-                    <div class="mr-6 font-ropa text-base text-left text-gray-500 border-solid flex">
+                    <div v-if="product.collection_id === collection.id" class="mr-6 font-ropa text-base text-left text-gray-500 border-solid flex">
                         <div class="pr-4">
                             <Link v-bind:href="'/product/' + product.id">
                                 <img src="https://freddy.hr/image/cache/catalog/izdelki/BRITNEYF301_Z106X-/BRITNEYF301_Z106X_2-400x600w.jpg" alt="">
@@ -371,6 +371,11 @@ let props = defineProps({
 
 
 onMounted(() => {
+    for each (products as product){
+        if(!product.collection_id === collection.id){
+            Vue.delete(products, 'product.id');
+        }
+    }
     // if (vMin.value > vMax.value){
     //     vMin.value = vMax.value
     // }
