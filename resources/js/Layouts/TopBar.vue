@@ -2,7 +2,7 @@
     <div class="flex justify-between bg-black text-white font-ropa text-sm py-2 text-transform: uppercase">
         <div class="w-6/12">
             <ul class="flex">
-                <li class="mx-4"><span class="text-white">Freddy Srbija</span></li>
+                <li class="mx-4"><span class="text-white">Freddy Serbia</span></li>
                 <li class="absolute right-2/4 .translate-x-1/2">Free delivery over 49€</li>
             </ul>
         </div>
