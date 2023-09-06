@@ -106,7 +106,7 @@
 </template>
 
 <script setup>
-import {Link} from "@inertiajs/inertia-vue3";
+import {Link,} from "@inertiajs/inertia-vue3";
 import {reactive} from "vue";
 import {Inertia} from "@inertiajs/inertia";
 // export default {
@@ -121,7 +121,7 @@ const form = reactive({
 
 function submit() {
 
-    form.post('/mailinglist', form)
+    Inertia.post('/mailinglist', form)
     // console.log(form)
 }
 </script>
