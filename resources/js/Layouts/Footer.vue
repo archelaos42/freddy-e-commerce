@@ -121,7 +121,7 @@ const form = useForm({
 
 function submit() {
     console.log(form)
-    form.post(route('/mailinglist').url, form)
+    form.post(route('mailinglist').url(), form)
     // console.log(form)
 }
 </script>
