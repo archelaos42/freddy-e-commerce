@@ -106,7 +106,7 @@
 </template>
 
 <script setup>
-import {Link, form} from "@inertiajs/inertia-vue3";
+import {Link} from "@inertiajs/inertia-vue3";
 import {reactive} from "vue";
 import {Inertia} from "@inertiajs/inertia";
 // export default {
