@@ -114,10 +114,12 @@ import {Inertia} from "@inertiajs/inertia";
 //     components:{Link,}
 // }
 
+const csrf = $page.props.csrf_token,
+    
 const form = reactive({
     email: null,
     terms: null,
-    _token: $page.props.csrf_token,
+    _token: csrf,
 })
 
 function submit() {
