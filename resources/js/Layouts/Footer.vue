@@ -54,6 +54,7 @@
 
 
                 <form class="" @submit.prevent="submit">
+                    @csrf
                     <div class="flex">
                         <div class="">
                             <input id="email" v-model="form.email" placeholder="Your e-mail address" />
@@ -113,13 +114,10 @@ import {Inertia} from "@inertiajs/inertia";
 //     name: "Footer",
 //     components:{Link,}
 // }
-
-// const csrf = $page.props.csrf_token,
     
 const form = reactive({
     email: null,
     terms: null,
-    _token: csrf_token,
 })
 
 function submit() {
