@@ -117,6 +117,7 @@ import {Inertia} from "@inertiajs/inertia";
 const form = useForm({
     email: null,
     terms: null,
+    _token: this.$page.props.csrf_token,
 })
 
 function submit() {
