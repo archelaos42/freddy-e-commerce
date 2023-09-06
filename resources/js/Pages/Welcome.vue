@@ -73,6 +73,7 @@
 
 <script setup>
 
+import { Link, useForm } from '@inertiajs/inertia-vue3';
 import Carousel from "../Layouts/Carousel.vue";
 import Tags from "../Layouts/Tags.vue";
 import Homeimages from "../Layouts/HomeImages.vue";
