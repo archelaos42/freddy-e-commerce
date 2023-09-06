@@ -54,7 +54,6 @@
 
 
                 <form class="" @submit.prevent="submit">
-                    @csrf
                     <div class="flex">
                         <div class="">
                             <input id="email" v-model="form.email" placeholder="Your e-mail address" />
@@ -107,7 +106,7 @@
 </template>
 
 <script setup>
-import {Link} from "@inertiajs/inertia-vue3";
+import {Link, form} from "@inertiajs/inertia-vue3";
 import {reactive} from "vue";
 import {Inertia} from "@inertiajs/inertia";
 // export default {
@@ -122,7 +121,7 @@ const form = reactive({
 
 function submit() {
 
-    Inertia.post('/mailinglist', form)
+    form.post('/mailinglist', form)
     // console.log(form)
 }
 </script>
