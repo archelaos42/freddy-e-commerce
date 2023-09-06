@@ -120,7 +120,7 @@ const form = reactive({
 })
 
 function submit() {
-
+    console.log(form)
     Inertia.post('/mailinglist', form)
     // console.log(form)
 }
