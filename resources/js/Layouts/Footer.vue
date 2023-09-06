@@ -114,14 +114,14 @@ import {Inertia} from "@inertiajs/inertia";
 //     components:{Link,}
 // }
     
-const form = useForm({
+const form = reactive({
     email: null,
     terms: null,
 })
 
 function submit() {
     console.log(form)
-    form.post('mailinglist', form)
+    Inertia.post('/mailinglist', form)
     // console.log(form)
 }
 </script>
