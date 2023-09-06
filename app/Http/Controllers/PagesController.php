@@ -305,7 +305,7 @@ class PagesController extends Controller
     public function mailinglist(Request $request)
     {
         $email = $request->email;
-        // dd($email);
+        dd($email);
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return \redirect()->back()->with('message', 'Please provide a valid email!');
         }
