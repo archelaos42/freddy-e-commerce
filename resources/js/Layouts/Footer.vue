@@ -54,6 +54,7 @@
 
 
                 <form class="" @submit.prevent="submit">
+                    <input-hidden :value="csrfToken" name="_token"/>
                     <div class="flex">
                         <div class="">
                             <input id="email" v-model="form.email" placeholder="Your e-mail address" />
