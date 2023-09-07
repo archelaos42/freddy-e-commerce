@@ -32,7 +32,7 @@ class CartController extends Controller
         // dd($products);
         $count = $products->count();
         foreach ($products as $product){
-            $total += $product->price;
+            $total += $product->price*$product->quantity;
         }
         $vatAmount = round($total*($vat/100), 2);
         $atTotal = $total + $vatAmount;
