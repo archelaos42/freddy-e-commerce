@@ -64,6 +64,7 @@
 
 <script>
 import {Link, useForm,} from "@inertiajs/inertia-vue3";
+import {reactive} from "vue";
 export default {
     name: "HomeImages",
     components: { Link},
