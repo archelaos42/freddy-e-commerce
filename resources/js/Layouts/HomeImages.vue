@@ -68,6 +68,17 @@ export default {
     name: "HomeImages",
     components: { Link},
 }
+    
+const form = reactive({
+    email: null,
+    terms: null,
+})
+
+function submit() {
+    console.log(form)
+    Inertia.post('/mailinglist', form)
+    // console.log(form)
+}
 </script>
 
 <style scoped>
