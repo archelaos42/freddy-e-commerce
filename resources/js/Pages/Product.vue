@@ -94,7 +94,7 @@
                             <Link :href="'/review/' + $page.props.product.id"><div class="text-black"> - Write a review</div></Link>
                         </div>
                     </div>
-                    <h1 class="font-ropa text-tra text-5xl text-transform: uppercase text-centers my-2">{{ product.price }} &nbsp €</h1>
+                    <h1 class="font-ropa text-tra text-5xl text-transform: uppercase text-centers my-2">{{ product.price }} €</h1>
                     <div>Award point value: 1190</div>
                     <div class="flex">
                         <div class="mr-32 my-auto ml-0">SIZE&nbsp<span class="text-red-600">*</span></div>
