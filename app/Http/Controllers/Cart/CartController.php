@@ -27,6 +27,10 @@ class CartController extends Controller
     {
         $products = Cart::content();
         $count = $products->count();
+        foreach ($products as $product){
+            $total += $product->price;
+        }
+        dd($total);
         return Inertia::render('Cart', compact('products', 'count'));
 //        dd($products);
     }
