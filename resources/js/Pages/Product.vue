@@ -94,7 +94,7 @@
                             <Link :href="'/review/' + $page.props.product.id"><div class="text-black"> - Write a review</div></Link>
                         </div>
                     </div>
-                    <h1 class="font-ropa text-tra text-5xl text-transform: uppercase text-centers my-2">117,23 €</h1>
+                    <h1 class="font-ropa text-tra text-5xl text-transform: uppercase text-centers my-2">{{ product.price }} &nbsp €</h1>
                     <div>Award point value: 1190</div>
                     <div class="flex">
                         <div class="mr-32 my-auto ml-0">SIZE&nbsp<span class="text-red-600">*</span></div>
@@ -197,7 +197,7 @@
                     </div>
                     <div id="slider" class="">
                         <h1 class="font-bold font-ropa text-tra text-base text-transform: uppercase mt-6">You have also looked at</h1>
-                        <div class="relative bottom-3">________</div>
+                        <div class="relative bottom-3 mb-10">________</div>
 
                         <div id="carouselExampleIndicators" class="carousel slide relative" data-bs-ride="carousel">
                             <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
@@ -232,7 +232,7 @@
                                                 alt="Camera"
                                             />
                                             <div>
-                                                <div class="text-sm text-black">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>
+                                                <div class="text-sm text-black">WR.UP®, HIGH WAIST, SKINNY, BLACK</div>
                                                 <span class="text-lg">127,05 EUR</span>
                                             </div>
                                         </div>
@@ -243,7 +243,7 @@
                                                 alt="Camera"
                                             />
                                             <div>
-                                                <div class="text-sm text-black">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>
+                                                <div class="text-sm text-black">NOW®, NORMAL WAIST, CRNE</div>
                                                 <span class="text-lg">127,05 EUR</span>
                                             </div>
                                         </div>
