@@ -1,7 +1,7 @@
 <template>
     <AppLayout>
-    <div>
-    <div class="text-sm mt-1 mr-2"><span class="underline">
+    <div class="flex justify-center bg-gradient-to-b from-gray-200 pt-2">
+        <div class="text-sm mt-1 mr-2"><span class="underline">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                              width="12" height="12"
                              viewBox="0 0 50 50">
