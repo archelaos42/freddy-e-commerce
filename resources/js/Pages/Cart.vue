@@ -132,13 +132,13 @@
                     </div>
                     <div className="font-ropa">
                         <div className="bg-white border-b border-solid border-gray-200 py-2">
-                            <span>{{ total }} %nbsp€</span>
+                            <span>{{ total }} %nbsp €</span>
                         </div>
                         <div className="bg-white border-b border-solid border-gray-200 py-2">
-                            <span>{{ vatAmount }} %nbsp€</span>
+                            <span>{{ vatAmount }} %nbsp €</span>
                         </div>
                         <div className="bg-white py-2">
-                            <span>{{ atTotal }} %nbsp€</span>
+                            <span>{{ atTotal }} %nbsp €</span>
                         </div>
                     </div>
                 </div>
