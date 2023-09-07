@@ -42,7 +42,7 @@
                     <div className="font-ropa w-3/12 flex justify-start">
                         <div className="my-auto mx-1">
                             <div className="">
-                                1{{ product.quantity }}
+                                1{{ product.qty }}
                             </div>
                         </div>
                         <div className="flex">
