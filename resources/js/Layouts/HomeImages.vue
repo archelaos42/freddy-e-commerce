@@ -63,8 +63,10 @@
 </template>
 
 <script>
+import {Link, useForm,} from "@inertiajs/inertia-vue3";
 export default {
-    name: "HomeImages"
+    name: "HomeImages",
+    components: { Link},
 }
 </script>
 
