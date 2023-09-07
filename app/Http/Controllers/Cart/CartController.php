@@ -34,8 +34,7 @@ class CartController extends Controller
             $total += $product->price;
         }
         $atTotal = $total + $total*($vat/100);
-        dd($atTotal);
-        return Inertia::render('Cart', compact('products', 'count', 'total'));
+        return Inertia::render('Cart', compact('products', 'count', 'total', 'atTotal'));
 //        dd($products);
     }
 
