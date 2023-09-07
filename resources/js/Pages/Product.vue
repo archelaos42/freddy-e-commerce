@@ -275,7 +275,7 @@
                                     <!--    </div>-->
                                     <!--</div>-->
                                     <!--</div>
-<!--                                <div class="carousel-item float-left w-full">-->
+                                   <div class="carousel-item float-left w-full">-->
 <!--                                    <div class="flex">-->
 <!--                                        <div class="w-1/2 h-40 flex">-->
 <!--                                            <img-->
