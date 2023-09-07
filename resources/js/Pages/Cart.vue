@@ -142,6 +142,7 @@
                 </div>
             </div>
             <div className="flex justify-between bg-[#EEEEEE] px-5 pb-5 pt-3">
+                <Link :href='/'>
                 <button className="flex font-ropa text-white text-transform: uppercase bg-black pr-1 pt-2 pl-2">
 
                     <div className="px-1 pb-1">
@@ -157,6 +158,7 @@
                     <h1>Keep shopping</h1>
 
                 </button>
+                </Link>
                 <button className="flex font-ropa text-white text-transform: uppercase bg-black pr-1 pt-2 pl-2">
 
 <!--                    <h1>Checkout</h1>-->
