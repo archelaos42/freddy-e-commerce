@@ -56,7 +56,7 @@
                             class="slider"
                         />
                         <div class="flex">
-                            <input v-model="vMin" type="number" class="input, w-20 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" />
+                            <input v-model="vMin" type="number" class="input, w-20 [appearance:textfield] [&::-webkit-outer-spin-button]:text-black [&::-webkit-inner-spin-button]:appearance-none" />
                             <div class="flex text-center">Price in Euros</div>
                             <input v-model="vMax" type="number" class="input, w-20"  />
                         </div>
