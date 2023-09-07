@@ -57,7 +57,7 @@
                         />
                         <div class="flex">
                             <input v-model="vMin" type="number" class="input, w-20" />
-                            <div class="mx-auto my-auto">€</div>
+                            <div class="mx-auto my-auto">Price in Euros</div>
                             <input v-model="vMax" type="number" class="input, w-20"  />
                         </div>
                     </div>
