@@ -101,8 +101,8 @@
                         <div>
                             <button class="border-1 border-solid ml-2 h-8 w-10"
                                     @click="$page.props.selectedSize = 'XXS'"
-                                    :class="$page.props.selectedSize === 'XXS' ? 'border-red-600' : 'border-black'"
-                                    :class="$page.props.selectedSize === 'XXS' ? 'border-2' : 'border-1'"
+                                    :class="$page.props.selectedSize === 'XXS' ? 'border-red-600' : 'border-black'
+                                            $page.props.selectedSize === 'XXS' ? 'border-2' : 'border-1'"
                             >XXS</button>
                             <button class="border-1 border-solid ml-2 h-8 w-8"
                                     @click="$page.props.selectedSize = 'XS'"
