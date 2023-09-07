@@ -31,9 +31,9 @@
 
             </div>
 
-            <div class="relative pt-1 text-transform: uppercase">
+            <div class="relative pt-1">
                 <div class="flex justify-between">
-                    <h1 class="font-bold font-ropa text-tra text-base">Price</h1>
+                    <h1 class="text-transform: uppercase font-bold font-ropa text-tra text-base">Price</h1>
                     <svg class="mt-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m5.214 14.522s4.505 4.502 6.259 6.255c.146.147.338.22.53.22s.384-.073.53-.22c1.754-1.752 6.249-6.244 6.249-6.244.144-.144.216-.334.217-.523 0-.193-.074-.386-.221-.534-.293-.293-.766-.294-1.057-.004l-4.968 4.968v-14.692c0-.414-.336-.75-.75-.75s-.75.336-.75.75v14.692l-4.979-4.978c-.289-.289-.761-.287-1.054.006-.148.148-.222.341-.221.534 0 .189.071.377.215.52z" fill-rule="nonzero"/></svg>
                 </div>
                 <div class="pt-4">
