@@ -62,14 +62,14 @@
         </div>
 </template>
 
-<script>
+<script setup>
 import {Link, useForm,} from "@inertiajs/inertia-vue3";
 import {reactive} from "vue";
 import {Inertia} from "@inertiajs/inertia";
-export default {
-    name: "HomeImages",
-    components: {Link, useForm,},
-}
+// export default {
+//     name: "HomeImages",
+//     components: {Link, useForm,},
+// }
     
 const form = reactive({
     email: null,
