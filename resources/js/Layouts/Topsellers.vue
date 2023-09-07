@@ -37,7 +37,7 @@
                             class="block"
                             alt="Camera"
                         />
-                        <div class="text-sm text-gray-500">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>
+                        <div class="text-sm text-gray-500">WR.UP®, NORMAL WAIST, SKINNY, BLUE</div>
                         <span class="text-lg">127,05 EUR</span>
                     </div>
                     <div class="w-1/5 mx-2">
@@ -46,7 +46,7 @@
                             class="block"
                             alt="Camera"
                         />
-                        <div class="text-sm text-gray-500">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>
+                        <div class="text-sm text-gray-500">BUSINESS, HIGH WAIST, SKINNY, GREY</div>
                         <span class="text-lg">127,05 EUR</span>
                     </div><div class="w-1/5 mx-2">
                     <img
@@ -54,7 +54,7 @@
                         class="block"
                         alt="Camera"
                     />
-                    <div class="text-sm text-gray-500">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>
+                    <div class="text-sm text-gray-500">BLACK®, NORMALN WAIST, SKINNY, DARK BLUE</div>
                     <span class="text-lg">127,05 EUR</span>
                 </div><div class="w-1/5 mx-2">
                     <img
@@ -62,7 +62,7 @@
                         class="block"
                         alt="Camera"
                     />
-                    <div class="text-sm text-gray-500">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>
+                    <div class="text-sm text-gray-500">WR.UP®, HIGHER WAIST, SKINNY, DARK GREY</div>
                     <span class="text-lg">127,05 EUR</span>
                 </div><div class="w-1/5 mx-2">
                     <img
@@ -70,7 +70,7 @@
                         class="block"
                         alt="Camera"
                     />
-                    <div class="text-sm text-gray-500">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>
+                    <div class="text-sm text-gray-500">NOW®, NORMALNI WAIST, SKINNY, BLACK</div>
                     <span class="text-lg">127,05 EUR</span>
                 </div>
                 </div>
