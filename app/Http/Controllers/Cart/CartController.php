@@ -29,7 +29,7 @@ class CartController extends Controller
         $atTotal = 0;
         $vat = 20;
         $products = Cart::content();
-        dd($products);
+        // dd($products);
         $count = $products->count();
         foreach ($products as $product){
             $total += $product->price;
