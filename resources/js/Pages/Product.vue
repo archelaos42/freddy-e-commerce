@@ -101,29 +101,34 @@
                         <div>
                             <button class="border-1 border-solid ml-2 h-8 w-10"
                                     @click="$page.props.selectedSize = 'XXS'"
-                                    :class="$page.props.selectedSize === 'XXS' ? 'border-red-600' : 'border-black',
+                                    :class="$page.props.selectedSize === 'XXS' ? 'border-blue-600' : 'border-black',
                                             $page.props.selectedSize === 'XXS' ? 'border-2' : 'border-1'"
                             >XXS</button>
                             <button class="border-1 border-solid ml-2 h-8 w-8"
                                     @click="$page.props.selectedSize = 'XS'"
-                                    :class="$page.props.selectedSize === 'XS' ? 'border-blue-600' : 'border-black'"
+                                    :class="$page.props.selectedSize === 'XS' ? 'border-blue-600' : 'border-black',
+                                            $page.props.selectedSize === 'XS' ? 'border-2' : 'border-1'"
                             >XS</button>
                             <button class="border-1 border-solid ml-2 h-8 w-8"
                                     @click="$page.props.selectedSize = 'S'"
-                                    :class="$page.props.selectedSize === 'S' ? 'border-blue-600' : 'border-black'"
+                                    :class="$page.props.selectedSize === 'S' ? 'border-blue-600' : 'border-black',
+                                            $page.props.selectedSize === 'S' ? 'border-2' : 'border-1'"
                             >S</button>
                             <button class="border-1 border-solid ml-2 h-8 w-8"
                                     @click="$page.props.selectedSize = 'M'"
-                                    :class="$page.props.selectedSize === 'M' ? 'border-blue-600' : 'border-black'"
+                                    :class="$page.props.selectedSize === 'M' ? 'border-blue-600' : 'border-black',
+                                            $page.props.selectedSize === 'M' ? 'border-2' : 'border-1'"
                             >M</button>
                             <button class="border-1 border-solid ml-2 h-8 w-8"
                                     @click="$page.props.selectedSize = 'L'"
-                                    :class="$page.props.selectedSize === 'L' ? 'border-blue-600' : 'border-black'"
+                                    :class="$page.props.selectedSize === 'L' ? 'border-blue-600' : 'border-black',
+                                            $page.props.selectedSize === 'L' ? 'border-2' : 'border-1'"
                             >L</button>
 <!--                            <button class="border-1 border-solid ml-2 h-8 w-8" @click="$page.props.selectedSize = 'XL'">XL</button>-->
                             <button class="border-1 border-solid ml-2 h-8 w-8"
                                     @click="$page.props.selectedSize = 'XL'"
-                                    :class="$page.props.selectedSize === 'XL' ? 'border-blue-600' : 'border-black'"
+                                    :class="$page.props.selectedSize === 'XL' ? 'border-blue-600' : 'border-black',
+                                            $page.props.selectedSize === 'XL' ? 'border-2' : 'border-1'"
                             >XL</button>
                         </div>
                     </div>
