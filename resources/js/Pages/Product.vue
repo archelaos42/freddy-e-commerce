@@ -13,7 +13,7 @@
             >
         </div>
 
-        <Link href="'/collection' + collection.id" class="text-sm "><span class="underline">{{ collection.name }}</span></Link>
+        <Link :href="'/collection/' + collection.id" class="text-sm "><span class="underline">{{ collection.name }}</span></Link>
     </div>
 
     <h1 class="font-ropa text-tra text-3xl text-transform: uppercase text-center mb-14 mt-12">{{ product.name }}</h1>
