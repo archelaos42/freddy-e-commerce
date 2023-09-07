@@ -38,7 +38,7 @@
                             alt="Camera"
                         />
                         <div class="text-sm text-gray-500">WR.UP®, NORMAL WAIST, SKINNY, BLUE</div>
-                        <span class="text-lg">127,05 EUR</span>
+                        <span class="text-lg">100 EUR</span>
                     </div>
                     <div class="w-1/5 mx-2">
                         <img
@@ -47,7 +47,7 @@
                             alt="Camera"
                         />
                         <div class="text-sm text-gray-500">BUSINESS, HIGH WAIST, SKINNY, GREY</div>
-                        <span class="text-lg">127,05 EUR</span>
+                        <span class="text-lg">118 EUR</span>
                     </div><div class="w-1/5 mx-2">
                     <img
                         src="https://freddy.hr/image/cache/catalog/izdelki/WRUP1RC002_J0Y/wrup1rc002_j0_y_02-400x600w.jpg"
@@ -55,7 +55,7 @@
                         alt="Camera"
                     />
                     <div class="text-sm text-gray-500">BLACK®, NORMALN WAIST, SKINNY, DARK BLUE</div>
-                    <span class="text-lg">127,05 EUR</span>
+                    <span class="text-lg">127 EUR</span>
                 </div><div class="w-1/5 mx-2">
                     <img
                         src="https://freddy.hr/image/cache/catalog/izdelki/WRUP1RC003_J3Y/WRUP1RC003_J3Y1M-400x600w.jpg"
@@ -63,7 +63,7 @@
                         alt="Camera"
                     />
                     <div class="text-sm text-gray-500">WR.UP®, HIGHER WAIST, SKINNY, DARK GREY</div>
-                    <span class="text-lg">127,05 EUR</span>
+                    <span class="text-lg">129 EUR</span>
                 </div><div class="w-1/5 mx-2">
                     <img
                         src="https://freddy.hr/image/cache/catalog/izdelki/WRUP1RC005_N0/WRUP1RC005_N_0_02M-400x600h.jpg"
@@ -71,7 +71,7 @@
                         alt="Camera"
                     />
                     <div class="text-sm text-gray-500">NOW®, NORMALNI WAIST, SKINNY, BLACK</div>
-                    <span class="text-lg">127,05 EUR</span>
+                    <span class="text-lg">107 EUR</span>
                 </div>
                 </div>
             </div>
