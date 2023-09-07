@@ -41,15 +41,8 @@
                     </div>
                     <div className="font-ropa w-3/12 flex justify-start">
                         <div className="my-auto mx-1">
-                            <div>{{ product.quantity }}</div>
                             <div className="">
-                                <button>
-                                    <svg width="12" height="12" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                                         fill-rule="evenodd" clip-rule="evenodd">
-                                        <path
-                                            d="M23.245 20l-11.245-14.374-11.219 14.374-.781-.619 12-15.381 12 15.391-.755.609z"/>
-                                    </svg>
-                                </button>
+                                1{{ product.quantity }}
                             </div>
                         </div>
                         <div className="flex">
