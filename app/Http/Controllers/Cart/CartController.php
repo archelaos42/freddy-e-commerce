@@ -117,6 +117,11 @@ class CartController extends Controller
 * //     */
     public function checkout()
     {
+        $content = Cart::content();
+         $content->count();
+        if ($content->count() < 1) {
+            return \redirect()->back()->with('message', 'Cart is empty!');
+        }
 
         \Stripe\Stripe::setApiKey('sk_test_51M3On7IJyyVcaOuSIYcxqumsUbjmDvuUr07NmB7NhjBDnMg8zGgfHWaEWHY6udaZDNkiy3sztaioQtNmUYMVE68V00ySUsQ5Hl');
 
