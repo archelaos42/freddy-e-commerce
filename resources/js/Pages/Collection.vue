@@ -59,8 +59,9 @@
                             <input v-model="vMin" type="number" class="w-20 input [bg:textfield] [&::-webkit-outer-spin-button]:bg-black [bg:textfield] [&::-webkit-inner-spin-button]:bg-black" />
                             <div class="flex text-center">Price in Euros</div>
                             <input v-model="vMax" type="number" class="w-20 input 
-                                [-moz-appearance:_textfield] [&::-webkit-inner-spin-button]:m-0 
-                                [&::-webkit-inner-spin-button]:appearance-none 
+                                [-moz-appearance:_textfield] 
+                                [&::-webkit-inner-spin-button]:bg-black 
+                                [&::-webkit-inner-spin-button]:text-white 
                                 [&::-webkit-outer-spin-button]:m-0 
                                 [&::-webkit-outer-spin-button]:appearance-none" 
                                 />
