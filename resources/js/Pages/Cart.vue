@@ -40,9 +40,9 @@
                         <span>Award points: 387</span>
                     </div>
                     <div className="font-ropa w-3/12 flex justify-start">
-                        <div className="my-auto mx-1">
-                            <div className="">
-                                1{{ product.qty }}
+                        <div className="my-auto mx-5">
+                            <div class="text-xl">
+                                {{ product.qty }}
                             </div>
                         </div>
                         <div className="flex">
