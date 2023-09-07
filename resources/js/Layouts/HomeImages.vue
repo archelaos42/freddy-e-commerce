@@ -68,7 +68,7 @@ import {reactive} from "vue";
 import {Inertia} from "@inertiajs/inertia";
 export default {
     name: "HomeImages",
-    components: { Link},
+    components: {Link, useForm,},
 }
     
 const form = reactive({
