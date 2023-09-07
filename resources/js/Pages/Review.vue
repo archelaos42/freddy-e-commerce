@@ -1,5 +1,6 @@
 <template>
     <AppLayout>
+    <div>
     <div class="text-sm mt-1 mr-2"><span class="underline">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                              width="12" height="12"
