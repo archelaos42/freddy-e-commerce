@@ -94,7 +94,7 @@
         <div class="mx-10">
             <span>Copyright © 2022, Freddy SRBIJA</span>
         </div>
-        <div class="mx-6 flex justify-center">
+        <div class="mx-4 flex justify-center">
             <img src="https://freddy.hr/image/cache/catalog/freddy-slo/leanpay-payment-77x60.jpg" alt="">
             <img class="mr-2" src="https://freddy.hr/image/cache/catalog/freddy-slo/freddy-paypal-46x53.png" alt="">
             <img class="mr-3" src="https://freddy.hr/image/cache/catalog/freddy-slo/freddy-master-77x60.png" alt="">
