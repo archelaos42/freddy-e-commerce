@@ -88,10 +88,10 @@
         </div>
     </div>
     <div class="flex justify-center mt-36 h-8 mb-8">
-        <div class="mr-6 flex">
+        <div class="mr-4 flex">
             <img src="https://freddy.hr/image/cache/catalog/freddy-slo/securessl-184x60.jpg" alt="">
         </div>
-        <div class="mr-20">
+        <div class="mr-22">
             <span>Copyright © 2022, Freddy SRBIJA</span>
         </div>
         <div class="flex">
