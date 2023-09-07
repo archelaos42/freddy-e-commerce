@@ -26,11 +26,15 @@ class CartController extends Controller
     public function index()
     {
         $total = 0;
+        $atTotal = 0;
+        $vat = 20;
         $products = Cart::content();
         $count = $products->count();
         foreach ($products as $product){
             $total += $product->price;
         }
+        $atTotal = $total*($vat/100);
+        dd($atTotal);
         return Inertia::render('Cart', compact('products', 'count', 'total'));
 //        dd($products);
     }
