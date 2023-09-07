@@ -249,32 +249,32 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="carousel-item float-left w-full">
-                                    <div class="flex">
-                                        <div class="w-1/2 h-40 flex">
-                                            <img
-                                                src="https://freddy.hr/image/cache/catalog/izdelki/WRUP4HC006/nCF704dQ-98x150h.jpeg"
-                                                class="block"
-                                                alt="Camera"
-                                            />
-                                            <div>
-                                                <div class="text-sm text-black">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>
-                                                <span class="text-lg">127,05 EUR</span>
-                                            </div>
-                                        </div>
-                                        <div class="w-1/2 h-40 flex">
-                                            <img
-                                                src="https://freddy.hr/image/cache/catalog/izdelki/WRUP4RC006/usnje-98x150h.jpeg"
-                                                class="block"
-                                                alt="Camera"
-                                            />
-                                            <div>
-                                                <div class="text-sm text-black">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>
-                                                <span class="text-lg">127,05 EUR</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <!--<div class="carousel-item float-left w-full">-->
+                                    <!--<div class="flex">-->
+                                    <!--    <div class="w-1/2 h-40 flex">-->
+                                    <!--        <img-->
+                                    <!--            src="https://freddy.hr/image/cache/catalog/izdelki/WRUP4HC006/nCF704dQ-98x150h.jpeg"-->
+                                    <!--            class="block"-->
+                                    <!--            alt="Camera"-->
+                                    <!--        />-->
+                                    <!--        <div>-->
+                                    <!--            <div class="text-sm text-black">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>-->
+                                    <!--            <span class="text-lg">127,05 EUR</span>-->
+                                    <!--        </div>-->
+                                    <!--    </div>-->
+                                    <!--    <div class="w-1/2 h-40 flex">-->
+                                    <!--        <img-->
+                                    <!--            src="https://freddy.hr/image/cache/catalog/izdelki/WRUP4RC006/usnje-98x150h.jpeg"-->
+                                    <!--            class="block"-->
+                                    <!--            alt="Camera"-->
+                                    <!--        />-->
+                                    <!--        <div>-->
+                                    <!--            <div class="text-sm text-black">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>-->
+                                    <!--            <span class="text-lg">127,05 EUR</span>-->
+                                    <!--        </div>-->
+                                    <!--    </div>-->
+                                    <!--</div>-->
+                                    <!--</div>
 <!--                                <div class="carousel-item float-left w-full">-->
 <!--                                    <div class="flex">-->
 <!--                                        <div class="w-1/2 h-40 flex">-->
