@@ -10,6 +10,12 @@
                     </span></div>
         </div>
 
+        <div class="flex justify-center">
+        <div v-if="$page.props.flash.message" class="mt-12 text-xl text-blue-600 mb-4">
+            {{ $page.props.flash.message }}
+        </div>
+    </div>
+
     <h1 className="font-ropa text-tra text-3xl text-center mb-14 mt-12">Cart</h1>
     <div className="text-center bg-[#dfe7f7] mx-64 text-sm">
         <div className="py-1.5">Should you require any assistance with placing your order, it is available 24/7 at
