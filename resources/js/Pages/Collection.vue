@@ -225,7 +225,7 @@
                                 <img src="https://freddy.hr/image/cache/catalog/izdelki/BRITNEYF301_Z106X-/BRITNEYF301_Z106X_2-400x600w.jpg" alt="">
                             </Link>
                             <div class="bg-gray-200 text-center text-transform: uppercase text-xs h-4  bg-green-400 bg-[#97C19B] font-ropa text-white py-0.5">Eco Friendly</div>
-                            <div class="text-black bg-gray-200 text-center font-ibm text-xs mb-3 h-4 py-1">Code:WRUP4RC001ORG_Z64</div>
+                            <div class="text-black bg-gray-200 text-center font-ropa text-xs mb-3 h-4 py-1">Code:WRUP4RC001ORG_Z64</div>
                             <h1>{{ product.name }}</h1>
                             <div class="text-black text-xl mt-2 border-t border-solid">{{ product.price }}&nbsp;€ </div>
                             <div v-if="$page.props.flash.message" class="text-blue-600 mb-4">
