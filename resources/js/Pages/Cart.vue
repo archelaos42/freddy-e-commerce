@@ -40,9 +40,8 @@
                         <span>Award points: 387</span>
                     </div>
                     <div className="font-ropa w-3/12 flex justify-start">
-                        <div className="my-auto ml-0"><input className="w-6 h-8" type="text"></div>
-
                         <div className="my-auto mx-1">
+                            <div>{{ product.quantity }}</div>
                             <div className="">
                                 <button>
                                     <svg width="12" height="12" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
@@ -54,15 +53,6 @@
                             </div>
                         </div>
                         <div className="flex">
-                            <button>
-                                <svg class="bg-black" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                                     fill="white" viewBox="-5 -5 36 36">
-                                    <path
-                                        d="M5 18c4.667 4.667 12 1.833 12-4.042h-3l5-6 5 6h-3c-1.125 7.98-11.594 11.104-16 4.042zm14-11.984c-4.667-4.667-12-1.834-12 4.041h3l-5 6-5-6h3c1.125-7.979 11.594-11.104 16-4.041z"/>
-                                </svg>
-                            </button>
-
-
                             <Link
                                 :href="('/cart.remove')"
                                 method="post"
