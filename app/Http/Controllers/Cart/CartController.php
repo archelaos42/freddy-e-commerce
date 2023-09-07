@@ -25,6 +25,7 @@ class CartController extends Controller
      */
     public function index()
     {
+        $total = 0;
         $products = Cart::content();
         $count = $products->count();
         foreach ($products as $product){
