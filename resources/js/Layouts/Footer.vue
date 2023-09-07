@@ -87,7 +87,7 @@
             </div>
         </div>
     </div>
-    <div class="flex justify-center mt-36 mb-8">
+    <div class="flex justify-center mt-36 h-32 mb-8">
         <div class="mr-16">
             <img src="https://freddy.hr/image/cache/catalog/freddy-slo/securessl-184x60.jpg" alt="">
         </div>
