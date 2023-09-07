@@ -121,24 +121,24 @@
                 <div className="flex font-ropa">
                     <div className="w-3/4 font-bold">
                         <div className="bg-white border-b border-solid border-gray-200 py-2 text-right">
-                            <span className="mr-12">Median Sum:</span>
+                            <span className="mr-12">Total:</span>
                         </div>
                         <div className="bg-white border-b border-solid border-gray-200 py-2 text-right">
-                            <span className="mr-12">VAT 22%:</span>
+                            <span className="mr-12">VAT 20%:</span>
                         </div>
                         <div className="bg-white py-2 text-right">
-                            <span className="mr-12">Total:</span>
+                            <span className="mr-12">Grand total:</span>
                         </div>
                     </div>
                     <div className="font-ropa">
                         <div className="bg-white border-b border-solid border-gray-200 py-2">
-                            <span>127.89 €</span>
+                            <span>{{ total }} %nbsp€</span>
                         </div>
                         <div className="bg-white border-b border-solid border-gray-200 py-2">
-                            <span>13.15 €</span>
+                            <span>{{ vatAmount }} %nbsp€</span>
                         </div>
                         <div className="bg-white py-2">
-                            <span>141.04 €</span>
+                            <span>{{ atTotal }} %nbsp€</span>
                         </div>
                     </div>
                 </div>
@@ -231,6 +231,9 @@ import AppLayout from "../Layouts/AppLayout.vue";
 
 let props = defineProps({
     products: Object,
+    total: Number,
+    atTotal: Number,
+    vatAmount: Number,
 });
 
 // export default {
