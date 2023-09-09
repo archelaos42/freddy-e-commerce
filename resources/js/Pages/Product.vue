@@ -160,6 +160,7 @@
                                 <Link
                                     :href="('/cart.store')"
                                     method="post"
+                                    preserve-scroll
                                     :data="{
                                             id: product.id,
                                             name: product.name,
