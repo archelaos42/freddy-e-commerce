@@ -78,7 +78,9 @@ const form = reactive({
 
 function submit() {
     console.log(form)
-    Inertia.post('/mailinglist', form)
+    Inertia.post('/mailinglist', form, {
+      preserveScroll: true
+   })
     // console.log(form)
 }
 </script>
