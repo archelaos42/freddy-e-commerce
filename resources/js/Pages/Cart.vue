@@ -171,28 +171,28 @@
                         src="https://freddy.hr/image/cache/catalog/izdelki/CITYWALKLXCM_NV1/citywalklxcm_nv1_-_02M-400x600w.jpg"
                         alt="">
                 </a>
-                <h1>SPORTSKE TENISICE U VOJNOM UZORKU</h1>
+                <h1>SPORT SHOES WITH MILITARY PRINT</h1>
                 <div className="text-black text-xl">79,54 €</div>
             </div>
             <div className="mr-6">
                 <a href="/">
                     <img src="https://freddy.hr/image/cache/catalog/izdelki/WRUP4RC006/usnje-400x600w.jpeg" alt="">
                 </a>
-                <h1>WR.UP® 7/8 SUPERSKINNY EKOLOŠKE KOŽNE HLAČE</h1>
+                <h1>NOW® 7/8 SUPERSKINNY ECO LEATHER BLACK PANTS</h1>
                 <div className="text-black text-xl">89,55 €</div>
             </div>
             <div className="mr-6">
                 <a href="/">
                     <img src="https://freddy.hr/image/cache/catalog/izdelki/WRUP4HC006/nCF704dQ-400x600w.jpeg" alt="">
                 </a>
-                <h1>WR.UP® 7/8 SUPERSKINNY EKOLOŠKE KOŽNE HLAČE</h1>
+                <h1>WR.UP® 7/8 SUPERSKINNY ECO LEATHER BLACK PANTS</h1>
                 <div className="text-black text-xl">191,22 €</div>
             </div>
             <div className="mr-6">
                 <a href="/">
                     <img src="https://freddy.hr/image/cache/catalog/izdelki/S2WTWS1/rn%20pulover-400x600w.jpeg" alt="">
                 </a>
-                <h1 className="">Lagan i udoban crni džemper s metalnim netima</h1>
+                <h1 className="">BLACK® LIGHT BLACK SWEATER WITH METAL NETS</h1>
                 <div className="text-black text-xl">111,87 €</div>
             </div>
         </div>
