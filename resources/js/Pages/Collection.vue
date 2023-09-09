@@ -474,6 +474,7 @@ watch([
                                   blue: val17,  beige: val18, military: val19, pink: val20, black: val21, grey: val22, col:val23,
                                   filters: data,}, {
         preserveState: true,
+        preserveScroll: true,
     });
 
 });
