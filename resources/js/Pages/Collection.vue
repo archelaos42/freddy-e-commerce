@@ -56,8 +56,8 @@
                             class="slider"
                         />
                         <div class="flex">
-                            <input v-model="vMin" type="number" class="w-20 input [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none " />
-                            <div class="my-auto mr-1 mb-3">
+                            <input v-model="vMin" type="number" class="w-14 mt-3 input [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none " />
+                            <div class="my-auto mx-1">
                             <div>
                                 <button @click="vMin += 1 "><svg width="12" height="12" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"><path d="M23.245 20l-11.245-14.374-11.219 14.374-.781-.619 12-15.381 12 15.391-.755.609z"/>
                                 </svg></button>
@@ -68,8 +68,8 @@
                             </div>
                         </div>
                             <div class="flex text-center">Price in Euros</div>
-                            <input v-model="vMax" type="number" class="w-20 input [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none " />
-                            <div class="my-auto ml-1 mb-3">
+                            <input v-model="vMax" type="number" class="w-14 mt-3 input [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none " />
+                            <div class="my-auto mx-1">
                             <div>
                                 <button @click="vMax += 1 "><svg width="12" height="12" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"><path d="M23.245 20l-11.245-14.374-11.219 14.374-.781-.619 12-15.381 12 15.391-.755.609z"/>
                                 </svg></button>
