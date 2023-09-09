@@ -49,6 +49,7 @@
                             <Link
                                 :href="('/cart.remove')"
                                 method="post"
+                                preserve-scroll
                                 :data="{
                                             id: product.rowId,
 
