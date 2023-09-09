@@ -178,14 +178,14 @@
                 <a href="/">
                     <img src="https://freddy.hr/image/cache/catalog/izdelki/WRUP4RC006/usnje-400x600w.jpeg" alt="">
                 </a>
-                <h1>NOW® 7/8 SUPERSKINNY ECO LEATHER BLACK PANTS</h1>
+                <h1>NOW® 7/8 SUPERSKINNY LEATHER BLACK PANTS</h1>
                 <div className="text-black text-xl">89,55 €</div>
             </div>
             <div className="mr-6">
                 <a href="/">
                     <img src="https://freddy.hr/image/cache/catalog/izdelki/WRUP4HC006/nCF704dQ-400x600w.jpeg" alt="">
                 </a>
-                <h1>WR.UP® 7/8 SUPERSKINNY ECO LEATHER BLACK PANTS</h1>
+                <h1>WR.UP® 7/8 SUPERSKINNY LEATHER WHITE PANTS</h1>
                 <div className="text-black text-xl">191,22 €</div>
             </div>
             <div className="mr-6">
