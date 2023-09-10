@@ -412,8 +412,8 @@ onMounted(() => {
         console.log(props.collection.id)
     }
     if(vMin.value === undefined){
-        vMin.value = 1;
-        vMax.value = 500;
+        vMin.value = '1';
+        vMax.value = '500';
     }
 // }
 
