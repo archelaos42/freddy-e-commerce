@@ -15,11 +15,11 @@ The backend utilises the Laravel framework, with the front being coded using Vue
 
 Though not 100% complete, all of the core functionalities are present, and the application features:
 <ul>
-    <li>-admin section build using Laravel Nova, allowing for CRUD operations for all of the data models used.</li>    
-    <li>-reviewing, as well as filtering, all of the products available.</li>
-    <li>-viewing, in greater detail, specific products.</li>
-    <li>-full cart functionality.</li>
-    <li>-payments via Stripe.</li>
+    <li>admin section build using Laravel Nova, allowing for CRUD operations for all of the data models used.</li>    
+    <li>reviewing, as well as filtering, all of the products available.</li>
+    <li>viewing, in greater detail, specific products.</li>
+    <li>full cart functionality.</li>
+    <li>payments via Stripe.</li>
 </ul>
 Although several minor bugs fixes and additional finishing touches still need to be implemented, the core functionalities are all preent and fully operational.
 
