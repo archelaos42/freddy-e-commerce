@@ -14,13 +14,13 @@ Freddy is a single page e-commerce application intended for the sale of clothing
 The backend utilises the Laravel framework, with the front being coded using Vue.js The application also makes use of Inertia.js, acting as an additional layer between the front nad back, which allows for the mitigating of a number of downsides associated with using single page applications for commercial applications. 
 
 Though not 100% complete, all of the core functionalities are present, and the application features:
-
--admin section build using Laravel Nova, allowing for CRUD operations for all of the data models used.
--reviewing, as well as filtering, all of the products available.
--viewing, in greater detail, specific products.
--full cart functionality.
--payments via Stripe.
-
+<ul>
+    <li>-admin section build using Laravel Nova, allowing for CRUD operations for all of the data models used.</li>    
+    <li>-reviewing, as well as filtering, all of the products available.</li>
+    <li>-viewing, in greater detail, specific products.</li>
+    <li>-full cart functionality.</li>
+    <li>-payments via Stripe.</li>
+</ul>
 Although several minor bugs fixes and additional finishing touches still need to be implemented, the core functionalities are all preent and fully operational.
 
 As this was the author's first serious project, a fair bit of code optimization can also be conducted.
