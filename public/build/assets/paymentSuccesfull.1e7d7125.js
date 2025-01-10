@@ -1,0 +1,1 @@
+import{_ as e}from"./_plugin-vue_export-helper.cdc0426e.js";import{e as s,o as t}from"./app.323777e2.js";const c={name:"paymentSuccesfull"};function o(n,r,a,p,l,f){return t(),s("p",null,"sss")}const _=e(c,[["render",o]]);export{_ as default};

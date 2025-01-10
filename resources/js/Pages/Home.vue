@@ -1,80 +1,65 @@
 <template>
 <div class="text-center">
-    <div class="flex justify-between mb-6">
-        <h1 class="text-3xl">{{ lengths }}</h1>
+    <button class="flex font-ropa text-white text-transform: uppercase bg-black pr-1 pt-2 pl-2 mr-3">
 
 
-    </div>
 
-    <div>
-        <div class="flex items-center mb-4">
-            <input v-model="lengthNormal" id="normal" type="checkbox" value="normal" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-            <label for="normal" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">1</label>
-        </div>
+        <!--                                <h1>Add to Cart</h1>-->
+        <Link
+            :href="('/cart.store')"
+            method="post"
+            :data="{
+                                            id: 1,
+                                            }"
+            classes="px-3 py-1 mr-2 rounded text-white text-sm font-bold whitespace-no-wrap bg-blue-600 hover:bg-blue-800"
+            as="button"
+        ><div class="px-1 pt-1">
+            <svg width="25" height="25" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" fill="currentColor" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9.474 5.209s-4.501 4.505-6.254 6.259c-.147.146-.22.338-.22.53s.073.384.22.53c1.752 1.754 6.252 6.257 6.252 6.257.145.145.336.217.527.217.191-.001.383-.074.53-.221.293-.293.294-.766.004-1.057l-4.976-4.976h14.692c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-14.692l4.978-4.979c.289-.289.287-.761-.006-1.054-.147-.147-.339-.221-.53-.221-.191-.001-.38.071-.525.215z" fill-rule="nonzero"/>
+            </svg>
+        </div>Add to Cart</Link>
 
-
-        <div class="flex items-center mb-4">
-            <input v-model="lengthRegular"  id="regular" type="checkbox" value="regular" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-            <label for="regular" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">2</label>
-        </div>
-    </div>
-
-    <div>
-        <ul>
-            <li v-for="product in products.data" :key="product.id" v-text="product.length">
-            </li>
-        </ul>
-    </div>
+    </button>
+    <div v-if="$page.props.flash.message" class="message"><span>{{$page.props.flash.message}}</span></div>
+    <div v-if="!$page.props.flash.message">nema</div>
+<!--    {{ fm }}-->
 </div>
 </template>
 
 <script setup>
-import {ref, watch, watchEffect} from "vue";
+import {Link} from "@inertiajs/inertia-vue3";
+import {onMounted, ref, watch} from "vue";
+import NavLink from "@/Components/NavLink.vue";
 import {Inertia} from "@inertiajs/inertia";
-import throttle from "lodash/throttle";
+// import {onMounted, computed} from "vue";
+// let fff = ref(page.props.flash.message);
+// const page = usePage()
+// let {fm} = () =>{
+//     return page.props.flash.message;
+// }
+// const flash = computed(() => page.props.flash)
 
-let props = defineProps({
-    products: Object,
-    filters: Object,
-    lengths: Object,
+// watch($page.props.flash.message, value => {
+//     Inertia.get('users',
+//         { search: value },
+//         { preserveState: true, replace: true }
+//     );
+// });
+// watch([usePage().props.flash.message], () => {
+//     search.value = $page.props.flash.message
+// })
+
+// let flash = ref(false)
+onMounted(() => {
+    // setTimeout(() => {
+    //     console.log(page.props.flash.message);
+    //
+    // }, 3000)
 
 });
-
-let lengthNormal = ref(props.filters.lengthNormal);
-let lengthRegular = ref(props.filters.lengthRegular);
-let filters = ref(props.filters);
-let lengths = ref(props.lengths);
-
-
-watch([
-     lengthRegular, lengthNormal
-], ([
-    newreg, newnor, data,
-          ]) => {
-    Inertia.get('/', { lengthRegular: newreg,  lengthNormal: newnor, filters: data,   }, {
-        preserveState: true,
-    });
-
-});
-
-// watch(filters, throttle(function(value){
-//     Inertia.get(window.location, { lengthRegular: value, lengthNormal: value }, {
-//         preserveState: true,
-//         replace:true
-//     });
-// } ));
-//
-// watch(lengthNormal, throttle(function(value){
-//     Inertia.get(window.location, { lengthNormal: value }, {
-//         preserveState: true,
-//         replace:true
-//     });
-// } ));
-
-
 
 </script>
 
 <style scoped>
+
 
 </style>

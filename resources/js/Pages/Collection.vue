@@ -67,9 +67,14 @@
             <div class="border-t-2 border-solid border-gray-300">
                 <div class="flex justify-between mt-3">
                     <h1 class="font-bold font-ropa text-tra text-transform: uppercase text-base">Size</h1>
-                    <svg class="mt-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m5.214 14.522s4.505 4.502 6.259 6.255c.146.147.338.22.53.22s.384-.073.53-.22c1.754-1.752 6.249-6.244 6.249-6.244.144-.144.216-.334.217-.523 0-.193-.074-.386-.221-.534-.293-.293-.766-.294-1.057-.004l-4.968 4.968v-14.692c0-.414-.336-.75-.75-.75s-.75.336-.75.75v14.692l-4.979-4.978c-.289-.289-.761-.287-1.054.006-.148.148-.222.341-.221.534 0 .189.071.377.215.52z" fill-rule="nonzero"/></svg>
+                    <div v-if="sizeView === 1">
+                        <svg @click="$page.props.sizeView = 0" class="mt-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m5.214 14.522s4.505 4.502 6.259 6.255c.146.147.338.22.53.22s.384-.073.53-.22c1.754-1.752 6.249-6.244 6.249-6.244.144-.144.216-.334.217-.523 0-.193-.074-.386-.221-.534-.293-.293-.766-.294-1.057-.004l-4.968 4.968v-14.692c0-.414-.336-.75-.75-.75s-.75.336-.75.75v14.692l-4.979-4.978c-.289-.289-.761-.287-1.054.006-.148.148-.222.341-.221.534 0 .189.071.377.215.52z" fill-rule="nonzero"/></svg>
+                    </div>
+                    <div v-if="sizeView === 0">
+                        <svg @click="$page.props.sizeView = 1" class="mt-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m5.214 14.522s4.505 4.502 6.259 6.255c.146.147.338.22.53.22s.384-.073.53-.22c1.754-1.752 6.249-6.244 6.249-6.244.144-.144.216-.334.217-.523 0-.193-.074-.386-.221-.534-.293-.293-.766-.294-1.057-.004l-4.968 4.968v-14.692c0-.414-.336-.75-.75-.75s-.75.336-.75.75v14.692l-4.979-4.978c-.289-.289-.761-.287-1.054.006-.148.148-.222.341-.221.534 0 .189.071.377.215.52z" fill-rule="nonzero"/></svg>
+                    </div>
                 </div>
-                <div>
+                <div v-if="sizeView === 1">
                     <div class="flex items-center mb-4">
                         <input v-model="sizeXxs" id="xxs" type="checkbox" value="xxs" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                         <label for="xxs" class="ml-2 text-sm font-medium text-gray-900 ">XXS</label>
@@ -99,9 +104,14 @@
 
             <div class="flex justify-between mt-3">
                 <h1 class="font-bold font-ropa text-tra text-transform: uppercase text-base">Waist</h1>
-                <svg class="mt-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m5.214 14.522s4.505 4.502 6.259 6.255c.146.147.338.22.53.22s.384-.073.53-.22c1.754-1.752 6.249-6.244 6.249-6.244.144-.144.216-.334.217-.523 0-.193-.074-.386-.221-.534-.293-.293-.766-.294-1.057-.004l-4.968 4.968v-14.692c0-.414-.336-.75-.75-.75s-.75.336-.75.75v14.692l-4.979-4.978c-.289-.289-.761-.287-1.054.006-.148.148-.222.341-.221.534 0 .189.071.377.215.52z" fill-rule="nonzero"/></svg>
+                <div v-if="waistView === 1">
+                    <svg @click="$page.props.waistView = 0" class="mt-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m5.214 14.522s4.505 4.502 6.259 6.255c.146.147.338.22.53.22s.384-.073.53-.22c1.754-1.752 6.249-6.244 6.249-6.244.144-.144.216-.334.217-.523 0-.193-.074-.386-.221-.534-.293-.293-.766-.294-1.057-.004l-4.968 4.968v-14.692c0-.414-.336-.75-.75-.75s-.75.336-.75.75v14.692l-4.979-4.978c-.289-.289-.761-.287-1.054.006-.148.148-.222.341-.221.534 0 .189.071.377.215.52z" fill-rule="nonzero"/></svg>
+                </div>
+                <div v-if="waistView === 0">
+                    <svg @click="$page.props.waistView = 1" class="mt-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m5.214 14.522s4.505 4.502 6.259 6.255c.146.147.338.22.53.22s.384-.073.53-.22c1.754-1.752 6.249-6.244 6.249-6.244.144-.144.216-.334.217-.523 0-.193-.074-.386-.221-.534-.293-.293-.766-.294-1.057-.004l-4.968 4.968v-14.692c0-.414-.336-.75-.75-.75s-.75.336-.75.75v14.692l-4.979-4.978c-.289-.289-.761-.287-1.054.006-.148.148-.222.341-.221.534 0 .189.071.377.215.52z" fill-rule="nonzero"/></svg>
+                </div>
             </div>
-            <div>
+            <div v-if="waistView === 1">
                 <div class="flex items-center mb-4">
                     <input v-model="waistM" id="medium" type="checkbox" value="medium" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                     <label for="medium" class="ml-2 text-sm font-medium text-gray-900 ">Medium</label>
@@ -118,9 +128,14 @@
 
             <div class="flex justify-between mt-3">
                 <h1 class="font-bold font-ropa text-tra text-transform: uppercase text-base">Length</h1>
-                <svg class="mt-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m5.214 14.522s4.505 4.502 6.259 6.255c.146.147.338.22.53.22s.384-.073.53-.22c1.754-1.752 6.249-6.244 6.249-6.244.144-.144.216-.334.217-.523 0-.193-.074-.386-.221-.534-.293-.293-.766-.294-1.057-.004l-4.968 4.968v-14.692c0-.414-.336-.75-.75-.75s-.75.336-.75.75v14.692l-4.979-4.978c-.289-.289-.761-.287-1.054.006-.148.148-.222.341-.221.534 0 .189.071.377.215.52z" fill-rule="nonzero"/></svg>
+                <div v-if="lengthView === 1">
+                    <svg @click="$page.props.lengthView = 0" class="mt-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m5.214 14.522s4.505 4.502 6.259 6.255c.146.147.338.22.53.22s.384-.073.53-.22c1.754-1.752 6.249-6.244 6.249-6.244.144-.144.216-.334.217-.523 0-.193-.074-.386-.221-.534-.293-.293-.766-.294-1.057-.004l-4.968 4.968v-14.692c0-.414-.336-.75-.75-.75s-.75.336-.75.75v14.692l-4.979-4.978c-.289-.289-.761-.287-1.054.006-.148.148-.222.341-.221.534 0 .189.071.377.215.52z" fill-rule="nonzero"/></svg>
+                </div>
+                <div v-if="lengthView === 0">
+                    <svg @click="$page.props.lengthView = 1" class="mt-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m5.214 14.522s4.505 4.502 6.259 6.255c.146.147.338.22.53.22s.384-.073.53-.22c1.754-1.752 6.249-6.244 6.249-6.244.144-.144.216-.334.217-.523 0-.193-.074-.386-.221-.534-.293-.293-.766-.294-1.057-.004l-4.968 4.968v-14.692c0-.414-.336-.75-.75-.75s-.75.336-.75.75v14.692l-4.979-4.978c-.289-.289-.761-.287-1.054.006-.148.148-.222.341-.221.534 0 .189.071.377.215.52z" fill-rule="nonzero"/></svg>
+                </div>
             </div>
-            <div>
+            <div v-if="lengthView === 1">
                 <div class="flex items-center mb-4">
                     <input v-model="length34" id="3/4" type="checkbox" value="3/4" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                     <label for="3/4" class="ml-2 text-sm font-medium text-gray-900 ">3/4</label>
@@ -145,9 +160,14 @@
 
             <div class="flex justify-between mt-3">
                 <h1 class="font-bold font-ropa text-tra text-transform: uppercase text-base">Color</h1>
-                <svg class="mt-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m5.214 14.522s4.505 4.502 6.259 6.255c.146.147.338.22.53.22s.384-.073.53-.22c1.754-1.752 6.249-6.244 6.249-6.244.144-.144.216-.334.217-.523 0-.193-.074-.386-.221-.534-.293-.293-.766-.294-1.057-.004l-4.968 4.968v-14.692c0-.414-.336-.75-.75-.75s-.75.336-.75.75v14.692l-4.979-4.978c-.289-.289-.761-.287-1.054.006-.148.148-.222.341-.221.534 0 .189.071.377.215.52z" fill-rule="nonzero"/></svg>
+                <div v-if="colorView === 1">
+                    <svg @click="$page.props.colorView = 0" class="mt-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m5.214 14.522s4.505 4.502 6.259 6.255c.146.147.338.22.53.22s.384-.073.53-.22c1.754-1.752 6.249-6.244 6.249-6.244.144-.144.216-.334.217-.523 0-.193-.074-.386-.221-.534-.293-.293-.766-.294-1.057-.004l-4.968 4.968v-14.692c0-.414-.336-.75-.75-.75s-.75.336-.75.75v14.692l-4.979-4.978c-.289-.289-.761-.287-1.054.006-.148.148-.222.341-.221.534 0 .189.071.377.215.52z" fill-rule="nonzero"/></svg>
+                </div>
+                <div v-if="colorView === 0">
+                    <svg @click="$page.props.colorView = 1" class="mt-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m5.214 14.522s4.505 4.502 6.259 6.255c.146.147.338.22.53.22s.384-.073.53-.22c1.754-1.752 6.249-6.244 6.249-6.244.144-.144.216-.334.217-.523 0-.193-.074-.386-.221-.534-.293-.293-.766-.294-1.057-.004l-4.968 4.968v-14.692c0-.414-.336-.75-.75-.75s-.75.336-.75.75v14.692l-4.979-4.978c-.289-.289-.761-.287-1.054.006-.148.148-.222.341-.221.534 0 .189.071.377.215.52z" fill-rule="nonzero"/></svg>
+                </div>
             </div>
-            <div>
+            <div  v-if="colorView === 1">
                 <div class="flex items-center mb-4">
                     <input v-model="blue" id="blue" type="checkbox" value="blue" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                     <label for="blue" class="ml-2 text-sm font-medium text-gray-900 ">Blue</label>
@@ -180,17 +200,7 @@
 
 
         <div class="w-4/5">
-
-
-<!--                <div class="h-78" v-for="category in categories">-->
-<!--                    <a href="/" class="">-->
-<!--                        <img src="https://freddy.hr/image/cache/catalog/bannerji/k-klasik-500x500.jpg" alt="">-->
-<!--                            {{ category.name }}-->
-<!--                    </a>-->
-<!--                </div>-->
-
                 <div class="mt-16">
-<!--                    {{ selectedView }}{{ products.data.length }}-->
                     <div class="flex border-b border-t border-gray-100 border-solid py-3 mb-3 flex justify-between">
                         <div class="pt-2">
                             <button @click="$page.props.selectedView = 'multi'" class="mr-3">
@@ -203,22 +213,14 @@
                             </button>
                         </div>
                         <div class="flex">
-<!--                            <label class="mr-3 text-sm my-auto" for="cars">Sort by:</label>-->
-<!--                            <select class="h-8 w-36 p-0 text-sm" id="cars" name="cars">-->
-<!--                                <option value="volvo">Choice</option>-->
-<!--                                <option value="saab">Name</option>-->
-<!--                                <option value="fiat">Review</option>-->
-<!--                                <option value="audi">Model</option>-->
-<!--                            </select>-->
                         </div>
                     </div>
                 </div>
                  <div class="flex grid grid-cols-4" v-if="!$page.props.products.data.length">
                      <p>No products matching your parameters were found</p>
                  </div>
-                 <div v-if="$page.props.selectedView === 'multi'">
-                    <div class="flex grid grid-cols-4" v-for="product in products.data">
-    <!--                    <div v-if="!products.data.length">No product were found within the set parameters</div>-->
+                 <div class="flex grid grid-cols-4" v-if="$page.props.selectedView === 'multi'">
+                    <div  v-for="product in products.data">
                         <div class="mr-6 font-ropa text-base text-left text-gray-500 border-solid">
                             <Link v-bind:href="'/product/' + product.id">
                                 <img src="https://freddy.hr/image/cache/catalog/izdelki/BRITNEYF301_Z106X-/BRITNEYF301_Z106X_2-400x600w.jpg" alt="">
@@ -231,45 +233,6 @@
                                 {{ $page.props.flash.message }}
                             </div>
                         </div>
-    <!--                    <div class="mr-6 font-ropa text-base text-left text-gray-500 border-solid" v-if="$page.props.selectedView = 'multi'" >-->
-    <!--                        <Link v-bind:href="'/product/' + product.id">-->
-    <!--                            <img src="https://freddy.hr/image/cache/catalog/izdelki/BRITNEYF301_Z106X-/BRITNEYF301_Z106X_2-400x600w.jpg" alt="">-->
-    <!--                        </Link>-->
-    <!--                        <div class="bg-gray-200 text-center text-transform: uppercase text-sm  bg-green-400 bg-[#97C19B] font-ropa text-white py-0.5">Eco Friendly</div>-->
-    <!--                        <div class="text-black bg-gray-200 text-center font-ibm text-sm mb-3 py-1">Code:WRUPs4RC001ORG_Z64</div>-->
-    <!--                        <h1>{{ product.name }}</h1>-->
-    <!--                        <div class="text-black text-xl mt-2 border-t border-solid">{{ product.price }}&nbsp;€ </div>-->
-    <!--                    </div>-->
-    <!--                    <div class="mr-6 font-ropa text-base text-left text-gray-500" >-->
-    <!--                        <a href="/">-->
-    <!--                            <img src="https://freddy.hr/image/cache/catalog/izdelki/WRUP1RC002ORG_J4B/wrup1rc002org_j4b_&#45;&#45;400x600w.jpg" alt="">-->
-    <!--                        </a>-->
-    <!--                        <div class="bg-gray-200 text-center text-transform: uppercase text-sm w-4/5 bg-green-400 bg-[#97C19B] font-ropa text-white py-0.5">Eco Friendly</div>-->
-    <!--                        <div class="text-black bg-gray-200 text-center font-ibm text-sm mb-3 py-1">Code:WRUP4RC001ORG_Z64</div>-->
-    <!--                        <h1>WR.UP®, NORMALAN STRUK, SKINNY, DENIM EFEKT, SVIJETLO ISPRANE</h1>-->
-    <!--                        <div class="text-black text-xl mt-2 border-t border-solid">119,21 €</div>-->
-    <!--                    </div>-->
-    <!--                    <div class="mr-6 font-ropa text-base text-left text-gray-500" >-->
-    <!--                        <a href="/">-->
-    <!--                            <img src="https://freddy.hr/image/cache/catalog/izdelki/WRUPSNUG2RS239_J79Y/wrupsnug2rs239_j79y_-_02-400x600w.jpg" alt="">-->
-    <!--                        </a>-->
-    <!--                        <div class="bg-gray-200 text-center text-transform: uppercase text-sm w-4/5 bg-green-400 bg-[#97C19B] font-ropa text-white py-0.5">Eco Friendly</div>-->
-    <!--                        <div class="text-black bg-gray-200 text-center font-ibm text-sm mb-3 py-1">Code:WRUP4RC001ORG_Z64</div>-->
-    <!--                        <h1>WR.UP® SUPERSKINNY SVIJETLE TRAPERICE OD EKO TRAPERA</h1>-->
-    <!--                        <div class="text-black text-xl mt-2 border-t border-solid">45,59 €</div>-->
-    <!--                    </div>-->
-    <!--                    <div class="mr-6 font-ropa text-base text-left text-gray-500" >-->
-    <!--                        <a href="/">-->
-    <!--                            <img src="https://freddy.hr/image/cache/catalog/izdelki/WRUP1HS259/F2ReI6lU-400x600w.jpeg" alt="">-->
-    <!--                        </a>-->
-    <!--                        <div class="bg-gray-200 text-center text-transform: uppercase text-sm w-4/5 bg-green-400 bg-[#97C19B] font-ropa text-white py-0.5">Eco Friendly</div>-->
-    <!--                        <div class="text-black bg-gray-200 text-center font-ibm text-sm mb-3 py-1">Code:WRUP4RC001ORG_Z64</div>-->
-    <!--                        <h1>WR.UP® CRN TRAPERAC S RAZVEZIVOM CRNOM TRAKOM U POJASU</h1>-->
-    <!--                        <div class="text-black text-xl mt-2 border-t border-solid">91,88 €</div>-->
-    <!--                    </div>-->
-    <!--                        <div class="mr-6 font-ropa text-base text-left text-gray-500" v-for="product in products.data" >-->
-    <!--                            <div> {{ product.id }} </div>-->
-    <!--                        </div>-->
                     </div>
                  </div>
             <div v-if="$page.props.selectedView === 'single'">
@@ -331,8 +294,7 @@
 
 <script setup>
 import {onMounted, ref, watch} from "vue";
-import {Inertia} from "@inertiajs/inertia";
-import { Link, useForm } from '@inertiajs/inertia-vue3';
+import {Link, router} from '@inertiajs/vue3';
 import AppLayout from "../Layouts/AppLayout.vue";
 
 
@@ -342,53 +304,27 @@ let props = defineProps({
     categories: Object,
     filters: Object,
     selectedView: String,
-    // selectedView: String,
-    // sliderValue: ref(50),
-
-    // vMin:{
-    //     Number,
-    //     methods: {
-    //         minChange(e) {
-    //             if (e > vMax){
-    //                 e = vMax
-    //             }
-    //         },},
-    // vMax: {
-    //     Number,
-    //     methods:{
-    //         maxChange(e) {
-    //             if (e < vMin){
-    //                 e = vMin
-    //             }
-    //         }
-    //     }
-    // },
-    // }
-
-    // sMin:ref(vMin),
-    // sMax:ref(vMax),
+    sizeView: Number,
+    lengthView: Number,
+    waistView: Number,
+    colorView: Number,
 });
+
+function size() {
+if(props.sizeView === 1){
+    props.sizeView = 0;
+}else{
+    props.sizeView = 1;
+}
+}
 
 
 onMounted(() => {
-    // if (vMin.value > vMax.value){
-    //     vMin.value = vMax.value
-    // }
-    // if (vMax.value < vMin.value){
-    //     vMax.value = vMin.value
-    // }
-    // if(props.selectedView === undefined){
-    //     props.selectedView = 'zglj';
-    // }
-    // console.log(props.selectedView)
     if(vMin.value === undefined){
         vMin.value = 1;
         vMax.value = 500;
     }
-
-
-
-})
+});
 
 let vMin = ref(props.filters.vMin);
 let vMax = ref(props.filters.vMax);
@@ -415,34 +351,31 @@ let waistHi = ref(props.filters.waistHi);
 let filters = ref(props.filters);
 let collection = ref(props.collection);
 let categories = ref(props.categories);
+let col = ref(props.col);
 
-// watch( (vMin, vMax) => {
-//     if (vMin.value > vMax.value){
-//         vMin.value = vMax.value
-//     }
-// });
-// watch(vMin, (newValue, oldValue) => {
-//     // do something with newValue and oldValue.
-// });
-
-watch([
-    length34, length78, lengthBl, lengthS, lengthN,
-], ([
-        val1, val2, val3, val4, val5, data
-    ]) => {
-    Inertia.get(window.location, { length34: val1,  length78: val2, lengthBl: val3,  lengthS: val4, lengthN: val5, filters: data,}, {
-        preserveState: true,
-    });
-
-});
 
 watch([
     sizeXxs, sizeXs, sizeS, sizeM, sizeL, sizeXl,
 ], ([
         val1, val2, val3, val4, val5, val6, data
     ]) => {
-    Inertia.get(window.location, { sizeXxs: val1,  sizeXs: val2, sizeS: val3,  sizeM: val4, sizeL: val5, sizeXl: val6, filters: data,}, {
+    router.get(window.location, { sizeXxs: val1,  sizeXs: val2, sizeS: val3,  sizeM: val4, sizeL: val5, sizeXl: val6, filters: data,}, {
         preserveState: true,
+        replace:true,
+        preserveScroll: true,
+    });
+
+});
+
+watch([
+    length34, length78, lengthBl, lengthS, lengthN,
+], ([
+        val1, val2, val3, val4, val5, data
+    ]) => {
+    router.get(window.location, { length34: val1,  length78: val2, lengthBl: val3,  lengthS: val4, lengthN: val5, filters: data,}, {
+        preserveState: true,
+        replace:true,
+        preserveScroll: true,
     });
 
 });
@@ -452,14 +385,10 @@ watch([
 ], ([
         val1, val2,  data
     ]) => {
-    // if(val1 > val2){
-    //     val1 = val2
-    // }else if(val2 < val1){
-    //     val2 = val1
-    // }
-
-    Inertia.get(window.location, { vMin: val1,  vMax: val2, filters: data,   }, {
+    router.get(window.location, { vMin: val1,  vMax: val2, filters: data,   }, {
         preserveState: true,
+        replace:true,
+        preserveScroll: true,
     });
 });
 
@@ -468,8 +397,10 @@ watch([
 ], ([
         val1, val2, val3, data,
     ]) => {
-    Inertia.get(window.location, { waistM: val1,  waistH: val2, waistHi: val3, filters: data,}, {
+    router.get(window.location, { waistM: val1,  waistH: val2, waistHi: val3, filters: data,}, {
         preserveState: true,
+        replace:true,
+        preserveScroll: true,
     });
 
 });
@@ -479,8 +410,10 @@ watch([
 ], ([
         val1, val2, val3, val4, val5, val6, data,
     ]) => {
-    Inertia.get(window.location, { blue: val1,  beige: val2, military: val3, pink: val4, black: val5, grey: val6, filters: data,}, {
+    router.get(window.location, { blue: val1,  beige: val2, military: val3, pink: val4, black: val5, grey: val6, filters: data,}, {
         preserveState: true,
+        replace:true,
+        preserveScroll: true,
     });
 
 });

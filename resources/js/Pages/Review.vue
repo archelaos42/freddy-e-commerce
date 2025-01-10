@@ -9,6 +9,7 @@
             </svg>
         </span></a>
     </div>
+
         <h1 class="font-bold font-ropa pt-10 text-center text-tra text-3xl">Write a review</h1>
     <div class="flex px-20 pt-20">
         <div>

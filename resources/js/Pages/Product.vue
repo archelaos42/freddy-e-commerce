@@ -78,16 +78,6 @@
 
                     <div class="flex mt-1">
                         <div class="text-3xl">{{ $page.props.averageGrade }}</div>
-<!--                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="grey" viewBox="-5 0 30 30"><path d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"/>-->
-<!--                            </svg>-->
-<!--                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="grey" viewBox="-5 0 30 30"><path d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"/>-->
-<!--                            </svg>-->
-<!--                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="grey" viewBox="-5 0 30 30"><path d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"/>-->
-<!--                            </svg>-->
-<!--                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="grey" viewBox="-5 0 30 30"><path d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"/>-->
-<!--                            </svg>-->
-<!--                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="grey" viewBox="-5 0 30 30"><path d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"/>-->
-<!--                            </svg>-->
                         <div class="flex  pt-2">
                             <div class="">Based on {{ $page.props.reviewCount }} reviews&nbsp</div>
                             <Link :href="'/reviews/' + $page.props.product.id"><div class="text-black"> - View reviews</div></Link>&nbsp;
@@ -101,28 +91,28 @@
                         <div>
                             <button class="border-1 border-solid ml-2 h-8 w-10"
                                     @click="$page.props.selectedSize = 'XXS'"
-                                    :class="$page.props.selectedSize === 'XXS' ? 'border-blue-600' : 'border-black'"
+                                    :class="$page.props.selectedSize === 'XXS' ? 'bg-green-600' : 'bg-white'"
                             >XXS</button>
                             <button class="border-1 border-solid ml-2 h-8 w-8"
                                     @click="$page.props.selectedSize = 'XS'"
-                                    :class="$page.props.selectedSize === 'XS' ? 'border-blue-600' : 'border-black'"
+                                    :class="$page.props.selectedSize === 'XS' ? 'bg-green-600' : 'bg-white'"
                             >XS</button>
                             <button class="border-1 border-solid ml-2 h-8 w-8"
                                     @click="$page.props.selectedSize = 'S'"
-                                    :class="$page.props.selectedSize === 'S' ? 'border-blue-600' : 'border-black'"
+                                    :class="$page.props.selectedSize === 'S' ? 'bg-green-600' : 'bg-white'"
                             >S</button>
                             <button class="border-1 border-solid ml-2 h-8 w-8"
                                     @click="$page.props.selectedSize = 'M'"
-                                    :class="$page.props.selectedSize === 'M' ? 'border-blue-600' : 'border-black'"
+                                    :class="$page.props.selectedSize === 'M' ? 'bg-green-600' : 'bg-white'"
                             >M</button>
                             <button class="border-1 border-solid ml-2 h-8 w-8"
                                     @click="$page.props.selectedSize = 'L'"
-                                    :class="$page.props.selectedSize === 'L' ? 'border-blue-600' : 'border-black'"
+                                    :class="$page.props.selectedSize === 'L' ? 'bg-green-600' : 'bg-white'"
                             >L</button>
 <!--                            <button class="border-1 border-solid ml-2 h-8 w-8" @click="$page.props.selectedSize = 'XL'">XL</button>-->
                             <button class="border-1 border-solid ml-2 h-8 w-8"
                                     @click="$page.props.selectedSize = 'XL'"
-                                    :class="$page.props.selectedSize === 'XL' ? 'border-blue-600' : 'border-black'"
+                                    :class="$page.props.selectedSize === 'XL' ? 'bg-green-600' : 'bg-white'"
                             >XL</button>
                         </div>
                     </div>
@@ -143,9 +133,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="flex font-ropa text-white text-transform: uppercase bg-black pr-1 pt-2 pl-2 mr-3">
+                            <button v-if="$page.props.carted === 0" class="flex font-ropa text-white text-transform: uppercase bg-black pr-1 pl-2 mr-3">
 
-                                <div class="px-1 pt-1">
+                                <div class="px-1 pt-3">
                                     <svg width="25" height="25" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" fill="currentColor" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9.474 5.209s-4.501 4.505-6.254 6.259c-.147.146-.22.338-.22.53s.073.384.22.53c1.752 1.754 6.252 6.257 6.252 6.257.145.145.336.217.527.217.191-.001.383-.074.53-.221.293-.293.294-.766.004-1.057l-4.976-4.976h14.692c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-14.692l4.978-4.979c.289-.289.287-.761-.006-1.054-.147-.147-.339-.221-.53-.221-.191-.001-.38.071-.525.215z" fill-rule="nonzero"/>
                                     </svg>
                                 </div>
@@ -157,32 +147,71 @@
                                     :data="{
                                             id: product.id,
                                             name: product.name,
-                                            qty: 1,
+                                            qty: this.$page.props.quantity,
                                             price: product.price,
                                             size: selectedSize,
-                                            _token: this.$page.props.csrf_token,
+                                            // _token: this.$page.props.csrf_token
                                             }"
+                                    class="pr-2"
                                     classes="px-3 py-1 mr-2 rounded text-white text-sm font-bold whitespace-no-wrap bg-blue-600 hover:bg-blue-800"
                                     as="button"
                                 >Add to Cart</Link>
 
                             </button>
+                            <button v-if="$page.props.carted === 1" class="flex font-ropa text-white text-transform: uppercase bg-black pr-1 pl-2 mr-3">
+
+                                <div class="px-1 pt-3">
+                                    <svg width="25" height="25" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" fill="currentColor" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9.474 5.209s-4.501 4.505-6.254 6.259c-.147.146-.22.338-.22.53s.073.384.22.53c1.752 1.754 6.252 6.257 6.252 6.257.145.145.336.217.527.217.191-.001.383-.074.53-.221.293-.293.294-.766.004-1.057l-4.976-4.976h14.692c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-14.692l4.978-4.979c.289-.289.287-.761-.006-1.054-.147-.147-.339-.221-.53-.221-.191-.001-.38.071-.525.215z" fill-rule="nonzero"/>
+                                    </svg>
+                                </div>
+
+                                <!--                                <h1>Add to Cart</h1>-->
+                                <Link
+                                      :href="('/cart.store')"
+                                      method="post"
+                                      :data="{
+                                            id: product.id,
+                                            name: product.name,
+                                            qty: this.$page.props.quantity,
+                                            price: product.price,
+                                            size: selectedSize,
+                                            // _token: this.$page.props.csrf_token
+                                            }"
+                                      class="pr-2"
+                                      classes="px-3 py-1 mr-2 rounded text-white text-sm font-bold whitespace-no-wrap bg-blue-600 hover:bg-blue-800"
+                                      as="button"
+                                >Remove from Cart</Link>
+
+                            </button>
                             <div v-if="$page.props.flash.message" class="text-blue-600 mb-4">
                                 {{ $page.props.flash.message }}
                             </div>
-<!--                            <button class="flex bg-[#3D568F] font-ropa text-white text-transform: uppercase pr-1 pt-2 pl-2">-->
-
-<!--                                <div class="px-1 pb-1">-->
-<!--                                    <svg width="25" height="25" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" fill="currentColor" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9.474 5.209s-4.501 4.505-6.254 6.259c-.147.146-.22.338-.22.53s.073.384.22.53c1.752 1.754 6.252 6.257 6.252 6.257.145.145.336.217.527.217.191-.001.383-.074.53-.221.293-.293.294-.766.004-1.057l-4.976-4.976h14.692c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-14.692l4.978-4.979c.289-.289.287-.761-.006-1.054-.147-.147-.339-.221-.53-.221-.191-.001-.38.071-.525.215z" fill-rule="nonzero"/>-->
-<!--                                    </svg>-->
-<!--                                </div>-->
-
-<!--                                <h1>Buy Now</h1>-->
-
-<!--                            </button>-->
                         </div>
-                        <button><svg clip-rule="evenodd" width="20" height="20" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m7.234 3.004c-2.652 0-5.234 1.829-5.234 5.177 0 3.725 4.345 7.727 9.303 12.54.194.189.446.283.697.283s.503-.094.697-.283c4.977-4.831 9.303-8.814 9.303-12.54 0-3.353-2.58-5.168-5.229-5.168-1.836 0-3.646.866-4.771 2.554-1.13-1.696-2.935-2.563-4.766-2.563zm0 1.5c1.99.001 3.202 1.353 4.155 2.7.14.198.368.316.611.317.243 0 .471-.117.612-.314.955-1.339 2.19-2.694 4.159-2.694 1.796 0 3.729 1.148 3.729 3.668 0 2.671-2.881 5.673-8.5 11.127-5.454-5.285-8.5-8.389-8.5-11.127 0-1.125.389-2.069 1.124-2.727.673-.604 1.625-.95 2.61-.95z" fill-rule="nonzero"/>
-                        </svg></button>
+                        <div class="">
+                            <Link
+                                v-if="$page.props.status === 0"
+                                :href="('/favorite')"
+                                method="post"
+                                :data="{
+                                            id: product.id,
+                                    }"
+                                as="button"><button>stat0<svg clip-rule="evenodd" width="20" height="20" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m7.234 3.004c-2.652 0-5.234 1.829-5.234 5.177 0 3.725 4.345 7.727 9.303 12.54.194.189.446.283.697.283s.503-.094.697-.283c4.977-4.831 9.303-8.814 9.303-12.54 0-3.353-2.58-5.168-5.229-5.168-1.836 0-3.646.866-4.771 2.554-1.13-1.696-2.935-2.563-4.766-2.563zm0 1.5c1.99.001 3.202 1.353 4.155 2.7.14.198.368.316.611.317.243 0 .471-.117.612-.314.955-1.339 2.19-2.694 4.159-2.694 1.796 0 3.729 1.148 3.729 3.668 0 2.671-2.881 5.673-8.5 11.127-5.454-5.285-8.5-8.389-8.5-11.127 0-1.125.389-2.069 1.124-2.727.673-.604 1.625-.95 2.61-.95z" fill-rule="nonzero"/>
+                            </svg></button></Link>
+                            <Link
+                                v-if="$page.props.status === 1"
+                                :href="('/unfavorite')"
+                                method="post"
+                                :data="{
+                                                id: product.id,
+                                        }"
+                                as="button"><button>stat1<svg clip-rule="evenodd" width="20" height="20" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m7.234 3.004c-2.652 0-5.234 1.829-5.234 5.177 0 3.725 4.345 7.727 9.303 12.54.194.189.446.283.697.283s.503-.094.697-.283c4.977-4.831 9.303-8.814 9.303-12.54 0-3.353-2.58-5.168-5.229-5.168-1.836 0-3.646.866-4.771 2.554-1.13-1.696-2.935-2.563-4.766-2.563zm0 1.5c1.99.001 3.202 1.353 4.155 2.7.14.198.368.316.611.317.243 0 .471-.117.612-.314.955-1.339 2.19-2.694 4.159-2.694 1.796 0 3.729 1.148 3.729 3.668 0 2.671-2.881 5.673-8.5 11.127-5.454-5.285-8.5-8.389-8.5-11.127 0-1.125.389-2.069 1.124-2.727.673-.604 1.625-.95 2.61-.95z" fill-rule="nonzero"/>
+                            </svg></button></Link>
+                            <Link
+                                v-if="$page.props.log === 0"
+                                href="/login"
+                                as="button"><button>log0<svg clip-rule="evenodd" width="20" height="20" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m7.234 3.004c-2.652 0-5.234 1.829-5.234 5.177 0 3.725 4.345 7.727 9.303 12.54.194.189.446.283.697.283s.503-.094.697-.283c4.977-4.831 9.303-8.814 9.303-12.54 0-3.353-2.58-5.168-5.229-5.168-1.836 0-3.646.866-4.771 2.554-1.13-1.696-2.935-2.563-4.766-2.563zm0 1.5c1.99.001 3.202 1.353 4.155 2.7.14.198.368.316.611.317.243 0 .471-.117.612-.314.955-1.339 2.19-2.694 4.159-2.694 1.796 0 3.729 1.148 3.729 3.668 0 2.671-2.881 5.673-8.5 11.127-5.454-5.285-8.5-8.389-8.5-11.127 0-1.125.389-2.069 1.124-2.727.673-.604 1.625-.95 2.61-.95z" fill-rule="nonzero"/>
+                            </svg></button></Link>
+                        </div>
                     </div>
                     <div class="font-ibm mt-8">
                         <div>> Stock: In stock</div>
@@ -269,51 +298,7 @@
                                         </div>
                                     </div>
                                 </div>
-<!--                                <div class="carousel-item float-left w-full">-->
-<!--                                    <div class="flex">-->
-<!--                                        <div class="w-1/2 h-40 flex">-->
-<!--                                            <img-->
-<!--                                                src="https://freddy.hr/image/cache/catalog/izdelki/WRUP4RC006/usnje-98x150h.jpeg"-->
-<!--                                                class="block"-->
-<!--                                                alt="Camera"-->
-<!--                                            />-->
-<!--                                            <div>-->
-<!--                                                <div class="text-sm text-black">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>-->
-<!--                                                <span class="text-lg">127,05 EUR</span>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                        <div class="w-1/2 h-40 flex">-->
-<!--                                            <img-->
-<!--                                                src="https://freddy.hr/image/cache/catalog/izdelki/CITYWALKLXCM_NV1/citywalklxcm_nv1_-_02M-98x150h.jpg"-->
-<!--                                                class="block"-->
-<!--                                                alt="Camera"-->
-<!--                                            />-->
-<!--                                            <div>-->
-<!--                                                <div class="text-sm text-black">WR.UP®, NORMALNI STRUK, SKINNY, CRNE</div>-->
-<!--                                                <span class="text-lg">127,05 EUR</span>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
                             </Link>
-<!--                            <button-->
-<!--                                class="carousel-control-prev absolute bottom-full text-black flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-16"-->
-<!--                                type="button"-->
-<!--                                data-bs-target="#carouselExampleIndicators"-->
-<!--                                data-bs-slide="prev"-->
-<!--                            >-->
-<!--                                <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>-->
-<!--                                <span class="text-black">Previous</span>-->
-<!--                            </button>-->
-<!--                            <button-->
-<!--                                class="carousel-control-next absolute bottom-full flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"-->
-<!--                                type="button"-->
-<!--                                data-bs-target="#carouselExampleIndicators"-->
-<!--                                data-bs-slide="next"-->
-<!--                            >-->
-<!--                                <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>-->
-<!--                                <span class="text-black">Next</span>-->
-<!--                            </button>-->
                         </div>
                     </div>
                 </div>
@@ -387,26 +372,27 @@
 </template>
 
 <script setup>
-import { Link, useForm } from '@inertiajs/inertia-vue3';
-import 'tw-elements';
+import { Link } from '@inertiajs/inertia-vue3';
+// import 'tw-elements';
 import AppLayout from "../Layouts/AppLayout.vue";
 
 let props = defineProps({
     product: Object,
     collection: Object,
     selectedSize: String,
-    // quantity: Number,
+    quantity: Number,
     selectedPhoto: String,
     averageGrade: Number,
     reviewCount: Number,
     selectedTab: String,
+    status: Number,
+    log: Number,
+    carted: Number,
     // flash: {
     //     message: "Item added successfully!"
     // }
 
 });
-
-
 
 </script>
 

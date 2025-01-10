@@ -15,12 +15,12 @@
 <!--                            </NavLink>-->
 <!--                        </div>-->
 <!--                </li>-->
-                <li class="ml-auto mr-3"><NavLink href="/collection/2" class="hover:underline" :class="{'font-bold underline': $page.component === 'Users'}"><span class="font-bold text-lg text-black">WR.UP®</span></NavLink></li>
-                <li class="mr-3"><NavLink href="/collection/3" class="hover:underline" :class="{'font-bold underline': $page.component === 'Welcome'}"><span class="font-bold text-lg text-black">N.O.W®</span></NavLink></li>
-                <li class="mr-3"><NavLink href="/collection/1" class=" hover:underline" :class="{'font-bold underline': $page.component === 'Products'}"><span class="font-bold text-lg text-black">Black®</span></NavLink></li>
-                <li class="mr-3"><NavLink href="/products" class=" hover:underline" :class="{'font-bold underline': $page.component === 'Products'}"><span class="font-bold text-lg text-black">Popular</span></NavLink></li>
-                <li class="mr-3"><NavLink href="/products" class=" hover:underline" :class="{'font-bold underline': $page.component === 'Products'}"><span class="font-bold text-lg text-black">Collections</span></NavLink></li>
-                <li class="mr-3"><NavLink href="/products" class=" hover:underline" :class="{'font-bold underline': $page.component === 'Products'}"><span class="font-bold text-lg text-black">Sport and Leisure</span></NavLink></li>
+                <li class="ml-auto mr-3"><NavLink href="/collection/2" class="hover:underline" :class="{'font-bold underline': $page.url === '/collection/2'}"><span class="font-bold text-lg text-black">WR.UP®</span></NavLink></li>
+                <li class="mr-3"><NavLink href="/collection/3" class="hover:underline" :class="{'font-bold underline': $page.url === '/collection/3'}"><span class="font-bold text-lg text-black">N.O.W®</span></NavLink></li>
+                <li class="mr-3"><NavLink href="/collection/1" class=" hover:underline" :class="{'font-bold underline': $page.url === '/collection/1'}"><span class="font-bold text-lg text-black">Black®</span></NavLink></li>
+                <li class="mr-3"><NavLink href="/collection/6" class=" hover:underline" :class="{'font-bold underline': $page.url === '/collection/6'}"><span class="font-bold text-lg text-black">Business</span></NavLink></li>
+                <li class="mr-3"><NavLink href="/popular" class=" hover:underline" :class="{'font-bold underline': $page.component === 'Popular'}"><span class="font-bold text-lg text-black">Popular</span></NavLink></li>
+                <li class="mr-3"><NavLink href="/collection/4" class=" hover:underline" :class="{'font-bold underline': $page.url === '/collection/4'}"><span class="font-bold text-lg text-black">Sport and Leisure</span></NavLink></li>
                 <li class="mr-auto" v-if="$page.props.user"><NavLink :href="route('account')" method="get" as="button" class="text-black hover:underline">
                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 22c-3.123 0-5.914-1.441-7.749-3.69.259-.588.783-.995 1.867-1.246 2.244-.518 4.459-.981 3.393-2.945-3.155-5.82-.899-9.119 2.489-9.119 3.322 0 5.634 3.177 2.489 9.119-1.035 1.952 1.1 2.416 3.393 2.945 1.082.25 1.61.655 1.871 1.241-1.836 2.253-4.628 3.695-7.753 3.695z"/></svg>
                     <span class="font-bold text-lg text-black text-transform: uppercase">My account</span></NavLink></li>
@@ -53,14 +53,13 @@
 
 <!--                </div>-->
             </div>
-            <div class="ml-6">
+            <div class="">
                 <Link :href="('/cart')">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d="M20 7h-4v-3c0-2.209-1.791-4-4-4s-4 1.791-4 4v3h-4l-2 17h20l-2-17zm-11-3c0-1.654 1.346-3 3-3s3 1.346 3 3v3h-6v-3zm-4.751 18l1.529-13h2.222v1.5c0 .276.224.5.5.5s.5-.224.5-.5v-1.5h6v1.5c0 .276.224.5.5.5s.5-.224.5-.5v-1.5h2.222l1.529 13h-15.502z"/></svg>
-                    <div class="left-5 bottom-8">
-                        <div class="position absolute bg-blue-800 rounded-full text-gray-200 grid place-items-center text-xs h-4 w-4">
+                    <svg class="absolute" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d="M20 7h-4v-3c0-2.209-1.791-4-4-4s-4 1.791-4 4v3h-4l-2 17h20l-2-17zm-11-3c0-1.654 1.346-3 3-3s3 1.346 3 3v3h-6v-3zm-4.751 18l1.529-13h2.222v1.5c0 .276.224.5.5.5s.5-.224.5-.5v-1.5h6v1.5c0 .276.224.5.5.5s.5-.224.5-.5v-1.5h2.222l1.529 13h-15.502z"/></svg>
+                        <div v-if="$page.props.user"
+                             class="relative mt-6 mr-1 bg-blue-800 rounded-full text-gray-200 grid place-items-center text-xs h-4 w-4">
                             {{ $page.props.count }}
                         </div>
-                    </div>
                 </Link>
 <!--                <a href="/">-->
 <!--                    <div>-->
@@ -83,9 +82,9 @@
         </div>
     </nav>
     <div class="flex justify-center">
-        <div v-if="$page.props.flash.message" class="mt-12 text-xl text-blue-600 mb-4">
-            {{ $page.props.flash.message }}
-        </div>
+<!--        <div v-if="$page.props.flash.message" class="mt-12 text-xl text-blue-600 mb-4">-->
+<!--            {{ $page.props.flash.message }}-->
+<!--        </div>-->
     </div>
 </template>
 

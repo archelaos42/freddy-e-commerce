@@ -14,7 +14,7 @@
         <div class="mx-60">
 
             <div class="mx-20">
-                <h1 class="font-bold font-ropa text-transform: uppercase text-tra text-xl">My user account</h1>
+                <h1 class="font-bold font-ropa text-transform: uppercase text-tra text-xl">Account information</h1>
                 <div class="relative bottom-3">________</div>
             </div>
             <div class="flex mt-5 mx-20">
@@ -68,7 +68,7 @@
             </div>
 
             <div class="mx-20">
-                <h1 class=" mt-8 font-bold font-ropa text-transform: uppercase text-tra text-xl">My user account</h1>
+                <h1 class=" mt-8 font-bold font-ropa text-transform: uppercase text-tra text-xl">Account statistics</h1>
                 <div class="relative bottom-3">________</div>
             </div>
             <div class="flex mt-5 mx-20 mb-16">

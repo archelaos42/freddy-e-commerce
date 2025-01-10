@@ -1,0 +1,281 @@
+<template>
+    <AppLayout>
+        <div class="flex justify-center bg-gradient-to-b from-gray-200 pt-2">
+            <a href="/login" class="text-sm mt-1 mr-2"><span class="underline">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                 width="12" height="12"
+                 viewBox="0 0 50 50">
+                <path d="M 25 1.0507812 C 24.7825 1.0507812 24.565859 1.1197656 24.380859 1.2597656 L 1.3808594 19.210938 C 0.95085938 19.550938 0.8709375 20.179141 1.2109375 20.619141 C 1.5509375 21.049141 2.1791406 21.129062 2.6191406 20.789062 L 4 19.710938 L 4 46 C 4 46.55 4.45 47 5 47 L 19 47 L 19 29 L 31 29 L 31 47 L 45 47 C 45.55 47 46 46.55 46 46 L 46 19.710938 L 47.380859 20.789062 C 47.570859 20.929063 47.78 21 48 21 C 48.3 21 48.589063 20.869141 48.789062 20.619141 C 49.129063 20.179141 49.049141 19.550938 48.619141 19.210938 L 25.619141 1.2597656 C 25.434141 1.1197656 25.2175 1.0507812 25 1.0507812 z M 35 5 L 35 6.0507812 L 41 10.730469 L 41 5 L 35 5 z"></path>
+            </svg>
+        </span></a>
+
+            <div class="mr-1 text-gray-400 text-sm">
+                >
+            </div>
+
+            <a href="/login" class="text-sm "><span class="underline">Popular</span></a>
+        </div>
+
+        <div class="flex justify-center mx-32">
+<!--            <div class="w-1/6 mr-6 mt-12">-->
+<!--                <div class="flex">-->
+<!--                    <div>-->
+<!--                        <h1 class="font-bold font-ropa text-transform: uppercase text-tra text-base">Filters</h1>-->
+<!--                        <div class="relative bottom-3">________</div>-->
+<!--                    </div>-->
+<!--                    <Link class="flex my-auto text-sm py-1 px-2" href="/popular">-->
+<!--                        <button class="flex my-auto font-ropa text-sm py-1 px-2 mb-3 text-white bg-black">-->
+<!--                            <svg class="fill-white my-auto mr-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="12" height="12" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.002 2.005c5.518 0 9.998 4.48 9.998 9.997 0 5.518-4.48 9.998-9.998 9.998-5.517 0-9.997-4.48-9.997-9.998 0-5.517 4.48-9.997 9.997-9.997zm0 8.933-2.721-2.722c-.146-.146-.339-.219-.531-.219-.404 0-.75.324-.75.749 0 .193.073.384.219.531l2.722 2.722-2.728 2.728c-.147.147-.22.34-.22.531 0 .427.35.75.751.75.192 0 .384-.073.53-.219l2.728-2.728 2.729 2.728c.146.146.338.219.53.219.401 0 .75-.323.75-.75 0-.191-.073-.384-.22-.531l-2.727-2.728 2.717-2.717c.146-.147.219-.338.219-.531 0-.425-.346-.75-.75-.75-.192 0-.385.073-.531.22z" fill-rule="nonzero"/></svg>-->
+<!--                            <h1>Clear</h1>-->
+<!--                        </button>-->
+<!--                    </Link>-->
+
+<!--                </div>-->
+
+<!--                <div class="relative pt-1 text-transform: uppercase">-->
+<!--                    <div class="flex justify-between">-->
+<!--                        <h1 class="font-bold font-ropa text-tra text-base">Price</h1>-->
+<!--                        <svg class="mt-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m5.214 14.522s4.505 4.502 6.259 6.255c.146.147.338.22.53.22s.384-.073.53-.22c1.754-1.752 6.249-6.244 6.249-6.244.144-.144.216-.334.217-.523 0-.193-.074-.386-.221-.534-.293-.293-.766-.294-1.057-.004l-4.968 4.968v-14.692c0-.414-.336-.75-.75-.75s-.75.336-.75.75v14.692l-4.979-4.978c-.289-.289-.761-.287-1.054.006-.148.148-.222.341-.221.534 0 .189.071.377.215.52z" fill-rule="nonzero"/></svg>-->
+<!--                    </div>-->
+<!--                    <div class="pt-4">-->
+
+<!--                        <div class="custom-slider">-->
+<!--                            <input-->
+<!--                                v-model="vMin"-->
+<!--                                type="range"-->
+<!--                                min="1"-->
+<!--                                max="500"-->
+<!--                                class="slider"-->
+<!--                            />-->
+<!--                        </div>-->
+<!--                        <div class="custom-slider">-->
+<!--                            <input-->
+<!--                                v-model="vMax"-->
+<!--                                type="range"-->
+<!--                                min="100"-->
+<!--                                max="500"-->
+<!--                                class="slider"-->
+<!--                            />-->
+<!--                            <div class="flex">-->
+<!--                                <input v-model="vMin" type="number" class="input, w-20" />-->
+<!--                                <div class="mx-auto my-auto">€</div>-->
+<!--                                <input v-model="vMax" type="number" class="input, w-20"  />-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="border-t-2 border-solid border-gray-300">-->
+<!--                    <div class="flex justify-between mt-3">-->
+<!--                        <h1 class="font-bold font-ropa text-tra text-transform: uppercase text-base">Size</h1>-->
+<!--                        <svg class="mt-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m5.214 14.522s4.505 4.502 6.259 6.255c.146.147.338.22.53.22s.384-.073.53-.22c1.754-1.752 6.249-6.244 6.249-6.244.144-.144.216-.334.217-.523 0-.193-.074-.386-.221-.534-.293-.293-.766-.294-1.057-.004l-4.968 4.968v-14.692c0-.414-.336-.75-.75-.75s-.75.336-.75.75v14.692l-4.979-4.978c-.289-.289-.761-.287-1.054.006-.148.148-.222.341-.221.534 0 .189.071.377.215.52z" fill-rule="nonzero"/></svg>-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        <div class="flex items-center mb-4">-->
+<!--                            <input v-model="sizeXxs" id="xxs" type="checkbox" value="xxs" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">-->
+<!--                            <label for="xxs" class="ml-2 text-sm font-medium text-gray-900 ">XXS</label>-->
+<!--                        </div>-->
+<!--                        <div class="flex items-center mb-4">-->
+<!--                            <input v-model="sizeXs"  id="xs" type="checkbox" value="xs" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">-->
+<!--                            <label for="xs" class="ml-2 text-sm font-medium text-gray-900 ">XS</label>-->
+<!--                        </div>-->
+<!--                        <div class="flex items-center mb-4">-->
+<!--                            <input v-model="sizeS" id="s" type="checkbox" value="s" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">-->
+<!--                            <label for="s" class="ml-2 text-sm font-medium text-black">S</label>-->
+<!--                        </div>-->
+<!--                        <div class="flex items-center mb-4">-->
+<!--                            <input v-model="sizeM" id="m" type="checkbox" value="m" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">-->
+<!--                            <label for="m" class="ml-2 text-sm font-medium text-gray-900 ">M</label>-->
+<!--                        </div>-->
+<!--                        <div class="flex items-center mb-4">-->
+<!--                            <input v-model="sizeL" id="l" type="checkbox" value="l" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">-->
+<!--                            <label for="l" class="ml-2 text-sm font-medium text-gray-900 ">L</label>-->
+<!--                        </div>-->
+<!--                        <div class="flex items-center mb-4">-->
+<!--                            <input v-model="sizeXl" id="xl" type="checkbox" value="xl" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">-->
+<!--                            <label for="xl" class="ml-2 text-sm font-medium text-gray-900 ">XL</label>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="flex justify-between mt-3">-->
+<!--                    <h1 class="font-bold font-ropa text-tra text-transform: uppercase text-base">Waist</h1>-->
+<!--                    <svg class="mt-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m5.214 14.522s4.505 4.502 6.259 6.255c.146.147.338.22.53.22s.384-.073.53-.22c1.754-1.752 6.249-6.244 6.249-6.244.144-.144.216-.334.217-.523 0-.193-.074-.386-.221-.534-.293-.293-.766-.294-1.057-.004l-4.968 4.968v-14.692c0-.414-.336-.75-.75-.75s-.75.336-.75.75v14.692l-4.979-4.978c-.289-.289-.761-.287-1.054.006-.148.148-.222.341-.221.534 0 .189.071.377.215.52z" fill-rule="nonzero"/></svg>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <div class="flex items-center mb-4">-->
+<!--                        <input v-model="waistM" id="medium" type="checkbox" value="medium" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">-->
+<!--                        <label for="medium" class="ml-2 text-sm font-medium text-gray-900 ">Medium</label>-->
+<!--                    </div>-->
+<!--                    <div class="flex items-center mb-4">-->
+<!--                        <input v-model="waistH"  id="High" type="checkbox" value="high" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">-->
+<!--                        <label for="high" class="ml-2 text-sm font-medium text-gray-900 ">High</label>-->
+<!--                    </div>-->
+<!--                    <div class="flex items-center mb-4">-->
+<!--                        <input v-model="waistHi" id="Higher" type="checkbox" value="higher" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">-->
+<!--                        <label for="higher" class="ml-2 text-sm font-medium text-black">Higher</label>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="flex justify-between mt-3">-->
+<!--                    <h1 class="font-bold font-ropa text-tra text-transform: uppercase text-base">Length</h1>-->
+<!--                    <svg class="mt-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m5.214 14.522s4.505 4.502 6.259 6.255c.146.147.338.22.53.22s.384-.073.53-.22c1.754-1.752 6.249-6.244 6.249-6.244.144-.144.216-.334.217-.523 0-.193-.074-.386-.221-.534-.293-.293-.766-.294-1.057-.004l-4.968 4.968v-14.692c0-.414-.336-.75-.75-.75s-.75.336-.75.75v14.692l-4.979-4.978c-.289-.289-.761-.287-1.054.006-.148.148-.222.341-.221.534 0 .189.071.377.215.52z" fill-rule="nonzero"/></svg>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <div class="flex items-center mb-4">-->
+<!--                        <input v-model="length34" id="3/4" type="checkbox" value="3/4" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">-->
+<!--                        <label for="3/4" class="ml-2 text-sm font-medium text-gray-900 ">3/4</label>-->
+<!--                    </div>-->
+<!--                    <div class="flex items-center mb-4">-->
+<!--                        <input v-model="length78"  id="7/8" type="checkbox" value="7/8" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">-->
+<!--                        <label for="7/8" class="ml-2 text-sm font-medium text-gray-900 ">7/8</label>-->
+<!--                    </div>-->
+<!--                    <div class="flex items-center mb-4">-->
+<!--                        <input v-model="lengthBl" id="bicycle length" type="checkbox" value="bicycle length" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">-->
+<!--                        <label for="bicycle length" class="ml-2 text-sm font-medium text-black">Bicycle length</label>-->
+<!--                    </div>-->
+<!--                    <div class="flex items-center mb-4">-->
+<!--                        <input v-model="lengthS" id="short" type="checkbox" value="short" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">-->
+<!--                        <label for="short" class="ml-2 text-sm font-medium text-black">Short</label>-->
+<!--                    </div>-->
+<!--                    <div class="flex items-center mb-4">-->
+<!--                        <input v-model="lengthN" id="normal" type="checkbox" value="normal" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">-->
+<!--                        <label for="normal" class="ml-2 text-sm font-medium text-black">Normal</label>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="flex justify-between mt-3">-->
+<!--                    <h1 class="font-bold font-ropa text-tra text-transform: uppercase text-base">Color</h1>-->
+<!--                    <svg class="mt-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m5.214 14.522s4.505 4.502 6.259 6.255c.146.147.338.22.53.22s.384-.073.53-.22c1.754-1.752 6.249-6.244 6.249-6.244.144-.144.216-.334.217-.523 0-.193-.074-.386-.221-.534-.293-.293-.766-.294-1.057-.004l-4.968 4.968v-14.692c0-.414-.336-.75-.75-.75s-.75.336-.75.75v14.692l-4.979-4.978c-.289-.289-.761-.287-1.054.006-.148.148-.222.341-.221.534 0 .189.071.377.215.52z" fill-rule="nonzero"/></svg>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <div class="flex items-center mb-4">-->
+<!--                        <input v-model="blue" id="blue" type="checkbox" value="blue" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">-->
+<!--                        <label for="blue" class="ml-2 text-sm font-medium text-gray-900 ">Blue</label>-->
+<!--                    </div>-->
+<!--                    <div class="flex items-center mb-4">-->
+<!--                        <input v-model="beige"  id="beige" type="checkbox" value="beige" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">-->
+<!--                        <label for="beige" class="ml-2 text-sm font-medium text-gray-900 ">Beige</label>-->
+<!--                    </div>-->
+<!--                    <div class="flex items-center mb-4">-->
+<!--                        <input v-model="grey" id="grey" type="checkbox" value="grey" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">-->
+<!--                        <label for="grey" class="ml-2 text-sm font-medium text-black">Grey</label>-->
+<!--                    </div>-->
+<!--                    <div class="flex items-center mb-4">-->
+<!--                        <input v-model="military" id="military" type="checkbox" value="military" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">-->
+<!--                        <label for="military" class="ml-2 text-sm font-medium text-black">Military</label>-->
+<!--                    </div>-->
+<!--                    <div class="flex items-center mb-4">-->
+<!--                        <input v-model="pink" id="pink" type="checkbox" value="pink" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">-->
+<!--                        <label for="pink" class="ml-2 text-sm font-medium text-black">Pink</label>-->
+<!--                    </div>-->
+<!--                    <div class="flex items-center mb-4">-->
+<!--                        <input v-model="black" id="black" type="checkbox" value="black" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">-->
+<!--                        <label for="black" class="ml-2 text-sm font-medium text-black">Black</label>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+            <div class="w-4/5">
+
+                <div class="mt-16 flex justify-between">
+                    <!--                    {{ selectedView }}{{ products.data.length }}-->
+                    <div class="flex border-b border-t border-gray-100 border-solid py-3 mb-3 flex justify-between">
+                        <div class="pt-2">
+                            <button @click="$page.props.selectedView = 'multi'" class="mr-3">
+                                <svg  xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path d="M6 6h-6v-6h6v6zm9-6h-6v6h6v-6zm9 0h-6v6h6v-6zm-18 9h-6v6h6v-6zm9 0h-6v6h6v-6zm9 0h-6v6h6v-6zm-18 9h-6v6h6v-6zm9 0h-6v6h6v-6zm9 0h-6v6h6v-6z"/>
+                                </svg>
+                            </button>
+                            <button @click="$page.props.selectedView = 'single'">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path d="M24 3h-16v-2h16v2zm0 3h-16v2h16v-2zm0 5h-16v2h16v-2zm0 5h-16v2h16v-2zm0 5h-16v2h16v-2zm-18-20h-6v6h6v-6zm0 8h-6v6h6v-6zm0 8h-6v6h6v-6z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="flex">
+                        </div>
+                    </div>
+                </div>
+                <div class="flex grid grid-cols-4" v-if="$page.props.selectedView === 'multi'">
+                    <div  v-for="product in products">
+                        <!--                    <div v-if="!products.data.length">No product were found within the set parameters</div>-->
+                        <div class="mr-6 font-ropa text-base text-left text-gray-500 border-solid">
+                            <Link v-bind:href="'/product/' + product.id">
+                                <img src="https://freddy.hr/image/cache/catalog/izdelki/BRITNEYF301_Z106X-/BRITNEYF301_Z106X_2-400x600w.jpg" alt="">
+                            </Link>
+                            <div class="bg-gray-200 text-center text-transform: uppercase text-sm  bg-green-400 bg-[#97C19B] font-ropa text-white py-0.5">Eco Friendly</div>
+                            <div class="text-black bg-gray-200 text-center font-ibm text-sm mb-3 py-1">Code:WRUP4RC001ORG_Z64</div>
+                            <h1>{{ product.name }}</h1>
+                            <div class="text-black text-xl mt-2 border-t border-solid">{{ product.price }}&nbsp;€ </div>
+                            <div v-if="$page.props.flash.message" class="text-blue-600 mb-4">
+                                {{ $page.props.flash.message }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div v-if="$page.props.selectedView === 'single'">
+                    <div class="flex grid grid-cols-1" v-for="product in products">
+                        <div class="mr-6 font-ropa text-base text-left text-gray-500 border-solid flex">
+                            <div class="pr-4">
+                                <Link v-bind:href="'/product/' + product.id">
+                                    <img src="https://freddy.hr/image/cache/catalog/izdelki/BRITNEYF301_Z106X-/BRITNEYF301_Z106X_2-400x600w.jpg" alt="">
+                                </Link>
+                            </div>
+                            <div>
+                                <div class="text-black text-center text-md mb-3 py-1">Code:WRUPs4RC001ORG_Z64</div>
+                                <h1 class="font-medium text-black text-2xl">{{ product.name }}</h1>
+                                <div>{{ product.description }}</div>
+                                <div class="text-black text-3xl mt-2 mb-2">{{ product.price }}&nbsp;€ </div>
+                                <button class="flex font-ropa text-white text-transform: uppercase bg-black pr-1 pt-2  mt-3 pl-2 mr-3 w-40">
+
+                                    <div class="px-3 pb-1 h-8 w-16">
+                                        <svg width="25" height="25" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" fill="currentColor" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9.474 5.209s-4.501 4.505-6.254 6.259c-.147.146-.22.338-.22.53s.073.384.22.53c1.752 1.754 6.252 6.257 6.252 6.257.145.145.336.217.527.217.191-.001.383-.074.53-.221.293-.293.294-.766.004-1.057l-4.976-4.976h14.692c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-14.692l4.978-4.979c.289-.289.287-.761-.006-1.054-.147-.147-.339-.221-.53-.221-.191-.001-.38.071-.525.215z" fill-rule="nonzero"/>
+                                        </svg>
+                                    </div>
+
+                                    <!--                                <h1>Add to Cart</h1>-->
+                                    <Link
+                                        :href="('/cart.store')"
+                                        method="post"
+                                        :data="{
+                                                id: product.id,
+                                                name: product.name,
+                                                qty: 1,
+                                                price: product.price,
+                                                size: selectedSize,
+                                                _token: this.$page.props.csrf_token,
+                                                }"
+                                        classes="px-3 py-2 mr-2 rounded text-white text-sm font-bold whitespace-no-wrap bg-blue-600 hover:bg-blue-800"
+                                        as="button"
+                                    >Add to Cart</Link>
+
+                                </button>
+                                <div class="bg-gray-200 text-center text-transform: uppercase text-sm  bg-green-400 bg-[#97C19B] font-ropa text-white mt-3 py-0.5">Eco Friendly</div>
+
+    <!--                            <div v-if="$page.props.flash.message" class="text-blue-600 mb-4">-->
+    <!--                                {{ $page.props.flash.message }}-->
+    <!--                            </div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </AppLayout>
+</template>
+
+<script setup>
+import AppLayout from "@/Layouts/AppLayout.vue";
+import {Link} from "@inertiajs/vue3";
+
+let props = defineProps({
+    products: Object,
+    selectedView: String,
+});
+
+</script>
+
+
+<style scoped>
+
+</style>

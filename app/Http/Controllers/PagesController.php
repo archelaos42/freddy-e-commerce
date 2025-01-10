@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Collection;
+use App\Models\Favorite;
 use App\Models\Product;
+use App\Models\User;
 use App\Models\Review;
 use App\Models\Subcategory;
-use App\Models\User;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -45,6 +46,28 @@ class PagesController extends Controller
      */
     public function product($id)
     {
+        $content = Cart::content();
+        $count = $content->count();
+        $log = 0;
+        $status = null;
+        $carted = 0;
+        if(auth()->user()){
+            $log = 1;
+            $status = 0;
+
+//            $productId = $id;
+            $user = auth()->user();
+            $favorites = Favorite::query()->where('user_id', '=', $user->id)->where('product_id', '=', $id)->get();
+            if(sizeof($favorites)>0){
+                $status = 1;
+            }
+            foreach ($content as $item) {
+                if($item->id === $id){
+                    $carted = 1;
+                }
+            };
+        }
+//        dd($carted);
         $reviews = Review::query()->where('product_id', '=', $id)->get();
         $reviewMap = $reviews->map(function($item, $key){
             return (object)$item;
@@ -52,14 +75,15 @@ class PagesController extends Controller
         $averageGrade = $reviewMap->avg('grade');
         $reviewCount = count($reviews);
         $selectedTab = "description";
+        $selectedSize = "XXS";
 //        dd($reviewCount);
         $selectedPhoto = "https://freddy.hr/image/cache/catalog/izdelki/NOW1HC006P_N/NOW1HC006P_N-667x1000h.jpg";
         $quantity = 1;
-        $content = Cart::content();
-        $count = $content->count();
         $product = Product::findOrFail($id);
         $collection = Collection::findOrFail($product->collection_id);
-        return Inertia::render('Product', compact('product', 'collection', 'count', 'quantity', 'selectedPhoto', 'averageGrade', 'reviewCount', 'selectedTab'));
+
+
+        return Inertia::render('Product', compact('product', 'collection', 'count', 'quantity', 'selectedPhoto', 'averageGrade', 'reviewCount', 'selectedTab', 'selectedSize', 'log', 'status', 'carted'));
 //        dd($products);
     }
 
@@ -69,123 +93,181 @@ class PagesController extends Controller
      */
     public function collection($id)
     {
+//        dd($id);
         return Inertia::render('Collection', [
             'collection' => Collection::findOrFail($id),
+            $col = Collection::where('id', $id)->first(),
             'categories' => Category::query()->where('collection_id', '=', $id)->get(),
             $content = Cart::content(),
-                'selectedView' => 'multi',
-                'count' => $content->count(),
-                'products' => Product::query()
-                ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'legnthN' ), function ($query) {
-                    if(request()->input('length78') === "true"){
-                        $query->orWhere('length', '=', '7/8');
-                    }
-                    if(request()->input('length34') === "true"){
-                        $query->orWhere('length', '=', '3/4');
-                    }
-                    if(request()->input('lengthBl') === "true"){
-                        $query->orWhere('length', '=', 'Bl');
-                    }
-                    if(request()->input('lengthS') === "true"){
-                        $query->orWhere('length', '=', 'S');
-                    }
-                    if(request()->input('legnthN') === "true"){
-                        $query->orWhere('length', '=', 'N');
-                    }
-                })
-                ->when(request()->hasAny('sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl' ), function ($query) {
-                    if(request()->input('sizeXxs') === "true"){
-                        $query->orWhere('size', '=', 'XXS');
-                    }
-                    if(request()->input('sizeXs') === "true"){
-                        $query->orWhere('size', '=', 'XS');
-                    }
-                    if(request()->input('sizeS') === "true"){
-                        $query->orWhere('size', '=', 'S');
-                    }
-                    if(request()->input('sizeM') === "true"){
-                        $query->orWhere('size', '=', 'M');
-                    }
-                    if(request()->input('sizeL') === "true"){
-                        $query->orWhere('size', '=', 'L');
-                    }
-                    if(request()->input('sizeXl') === "true"){
-                        $query->orWhere('size', '=', 'XL');
-                    }
-                })
-                ->when(request()->hasAny('waistM', 'waistH', 'waistHi'), function ($query) {
-                    if(request()->input('waistM') === "true"){
-                        $query->orWhere('waist', '=', 'M');
-                    }
-                    if(request()->input('waistH') === "true"){
-                        $query->orWhere('waist', '=', 'H');
-                    }
-                    if(request()->input('waistHi') === "true"){
-                        $query->orWhere('waist', '=', 'Hi');
-                    }
+            'selectedView' => 'multi',
+            'sizeView' => 1,
+            'waistView' => 0,
+            'lengthView' => 0,
+            'colorView' => 0,
+            'count' => $content->count(),
+            'products' => Product::
+            query($id)
 
+                ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN', 'col' ), function ($query, $id) {
+//                    dd(request());
+                    if(request()->input('length78') === "true"){
+                        $query->orWhere('length', '=', '7/8')->where('collection_id', '=', request()->input('col'));;
+                    }
                 })
-                ->when(request()->hasAny('blue', 'beige', 'grey', 'military', 'pink', 'black'), function ($query) {
+                ->when(request()->hasAny('length78', 'length78', 'lengthBl', 'lengthS', 'lengthN', 'col' ), function ($query, $id) {
+                    if(request()->input('length34') === "true"){
+                        $query->orWhere('length', '=', '3/4')->where('collection_id', '=', request()->input('col'));;
+                    }
+                })
+                ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN', 'col' ), function ($query, $id) {
+                    if(request()->input('lengthBl') === "true"){
+                        $query->orWhere('length', '=', 'bicycle length')->where('collection_id', '=', request()->input('col'));;
+                    }
+                })
+                ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN', 'col' ), function ($query, $id) {
+                    if(request()->input('lengthS') === "true"){
+                        $query->orWhere('length', '=', 'short')->where('collection_id', '=', request()->input('col'));;
+                    }
+                })
+                ->when(request()->hasAny('length78', 'length34', 'lengthBl', 'lengthS', 'lengthN', 'col' ), function ($query, $id) {
+                    if(request()->input('lengthN') === "true"){
+                        $query->orWhere('length', '=', 'normal')->where('collection_id', '=', request()->input('col'));;
+                    }
+                })
+
+
+
+                ->when(request()->hasAny('sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl', 'col' ), function ($query, $id) {
+                    if(request()->input('sizeXxs') === "true"){
+                        $query->orWhere('size', '=', 'XXS')->where('collection_id', '=', request()->input('col'));;
+                    }
+                })
+                ->when(request()->hasAny('sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl', 'col' ), function ($query, $id) {
+                    if(request()->input('sizeXs') === "true"){
+                        $query->orWhere('size', '=', 'XS')->where('collection_id', '=', request()->input('col'));;
+                    }
+                })
+                ->when(request()->hasAny('sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl', 'col' ), function ($query, $id) {
+                    if(request()->input('sizeS') === "true"){
+                        $query->orWhere('size', '=', 'S')->where('collection_id', '=', request()->input('col'));;
+                    }
+                })
+                ->when(request()->hasAny('sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl', 'col' ), function ($query, $id) {
+                    if(request()->input('sizeM') === "true"){
+                        $query->orWhere('size', '=', 'M')->where('collection_id', '=', request()->input('col'));;
+                    }
+                })
+                ->when(request()->hasAny('sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl', 'col' ), function ($query, $id) {
+                    if(request()->input('sizeL') === "true"){
+                        $query->orWhere('size', '=', 'L')->where('collection_id', '=', request()->input('col'));;
+                    }
+                })
+                ->when(request()->hasAny('sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl', 'col' ), function ($query, $id) {
+                    if(request()->input('sizeXl') === "true"){
+                        $query->orWhere('size', '=', 'XL')->where('collection_id', '=', request()->input('col'));;
+                    }
+                })
+
+
+
+                ->when(request()->hasAny('waistM', 'waistH', 'waistHi', 'col'), function ($query, $id) {
+                    if(request()->input('waistM') === "true"){
+                        $query->orWhere('waist', '=', 'medium')->where('collection_id', '=', request()->input('col'));;
+                    }
+                })
+                ->when(request()->hasAny('waistM', 'waistH', 'waistHi', 'col'), function ($query, $id) {
+                    if(request()->input('waistH') === "true"){
+                        $query->orWhere('waist', '=', 'high')->where('collection_id', '=', request()->input('col'));;
+                    }
+                })
+                ->when(request()->hasAny('waistM', 'waistH', 'waistHi', 'col'), function ($query, $id) {
+                    if(request()->input('waistHi') === "true"){
+                        $query->orWhere('waist', '=', 'higher')->where('collection_id', '=', request()->input('col'));;
+                    }
+                })
+
+
+
+                ->when(request()->hasAny('blue', 'beige', 'grey', 'military', 'pink', 'black', 'col'), function ($query, $id) {
                     if(request()->input('blue') === "true"){
                         $query->orWhere('color', '=', 'blue');
                     }
+                })
+                ->when(request()->hasAny('blue', 'beige', 'grey', 'military', 'pink', 'black', 'col'), function ($query, $id) {
                     if(request()->input('beige') === "true"){
-                        $query->orWhere('color', '=', 'beige');
+                        $query->orWhere('color', '=', 'beige')->where('collection_id', '=', request()->input('col'));;
                     }
+                })
+                ->when(request()->hasAny('blue', 'beige', 'grey', 'military', 'pink', 'black', 'col'), function ($query, $id) {
                     if(request()->input('grey') === "true"){
-                        $query->orWhere('color', '=', 'grey');
+                        $query->orWhere('color', '=', 'grey')->where('collection_id', '=', request()->input('col'));;
                     }
+                })
+                ->when(request()->hasAny('blue', 'beige', 'grey', 'military', 'pink', 'black', 'col'), function ($query, $id) {
                     if(request()->input('military') === "true"){
-                        $query->orWhere('color', '=', 'military');
+                        $query->orWhere('color', '=', 'military')->where('collection_id', '=', request()->input('col'));;
                     }
+                })
+                ->when(request()->hasAny('blue', 'beige', 'grey', 'military', 'pink', 'black', 'col'), function ($query, $id) {
                     if(request()->input('pink') === "true"){
-                        $query->orWhere('color', '=', 'pink');
+                        $query->orWhere('color', '=', 'pink')->where('collection_id', '=', request()->input('col'));;
                     }
+                })
+                ->when(request()->hasAny('blue', 'beige', 'grey', 'military', 'pink', 'black', 'col'), function ($query, $id) {
                     if(request()->input('black') === "true"){
-                        $query->orWhere('color', '=', 'black');
+                        $query->orWhere('color', '=', 'black')->where('collection_id', '=', request()->input('col'));;
                     }
+                })
+//                ->when(request()->has('col'), function ($query, $id) {
+//
+//                    $query->where('collection_id', '=', request()->input('col'));
+//
+//                })
+
+                ->when(request()->has('vMin'), function ($query) {
+
+                    $query->where('price', '>=', request()->input('vMin'));
 
                 })
-                    ->when(request()->has('vMin'), function ($query) {
+                ->when(request()->has('vMax'), function ($query) {
 
-                        $query->where('price', '>=', request()->input('vMin'));
+                    $query->where('price', '<=', request()->input('vMax'));
 
-                    })
-                    ->when(request()->has('vMax'), function ($query) {
+                })
 
-                        $query->where('price', '<=', request()->input('vMax'));
-
-                    })
-                ->where('collection_id', '=', $id)
+                // ->orWhere('collection_id', '=', $id)
+                 ->where('collection_id', '=', $id)
 //                    ->where('price', '<', 'vMax')
 //                    ->where('price', '>', 'vMin')
                 ->paginate(10)
-                ->withQueryString()
+//                ->withQueryString()
                 ->through(fn($product) => [
                     'id' => $product->id,
                     'name' => $product->name,
                     'size' => $product->size,
                     'waist' => $product->size,
                     'price' => $product->price,
+                    'length' => $product->length,
+                    'color' => $product->color,
                     'collection_id' => $product->collection_id,
                     'description' => $product->description
                 ]),
             'filters' => (new \Illuminate\Http\Request)->only([
                 'sizeXxs', 'sizeXs', 'sizeS', 'sizeM', 'sizeL', 'sizeXl', 'filters',
                 'waistM', 'waistH', 'waistHi', 'collection',
-                'length78', 'length34', 'lengthBl', 'lengthS', 'legnthN',
+                'length78', 'length34', 'lengthBl', 'lengthS', 'lengthN',
                 'vMin', 'vMax',
-                'blue', 'beige', 'grey', 'military', 'pink', 'black'
+                'blue', 'beige', 'grey', 'military', 'pink', 'black', 'col'
             ])
 
         ]);
 
 
     }
-
     public function tester()
     {
-        return Inertia::render('TermsOfService');
+        $users = User::all();
+        return Inertia::render(('TermsOfService'), compact('users'));
     }
 
     public function review($id)
@@ -209,13 +291,17 @@ class PagesController extends Controller
 
     public function postreview(Request $request)
     {
+        $content = Cart::content();
+        $count = $content->count();
         $review = new Review();
         $review->content = $request->contents;
         $review->grade = $request->grade;
         $review->product_id = $request->productID;
         $review->user_name = $request->user;
         $review->save();
-        return \redirect()->back()->with('message', 'Thank you for your feedback!');
+//        return \redirect()->back()->with('message', 'Thank you for your feedback!');
+        return \redirect()->route('/successreview');
+
     }
 
     public function sizetable()
@@ -235,10 +321,11 @@ class PagesController extends Controller
         return Inertia::render(('Account'), compact('count', 'user'));
     }
 
-    public function awardpoints($id)
+    public function awardpoints()
     {
 //        $user = User::findOrFail($id);
-        $user = User::findOrFail($id);
+        $user = auth()->user();
+//        $user = User::findOrFail($id);
         $content = Cart::content();
         $count = $content->count();
         return Inertia::render(('Awardpoints'), compact('count', 'user'));
@@ -261,7 +348,8 @@ class PagesController extends Controller
         if (!$request->terms){
             return \redirect()->back()->with('message', 'You must accept the confidentiality agreement!');
         }else{
-            return \redirect()->back()->with('message', 'Thank you for signing up!');
+//            return \redirect()->back()->with('message', 'Thank you for signing up!');
+                    return \redirect()->route('/sucessmailinglist');
         }
 //        $review = new MailingL();
 //        $review->content = $request->contents;
@@ -273,9 +361,9 @@ class PagesController extends Controller
 //        dd($request);
     }
 
-    public function orderhistory($id)
+    public function orderhistory()
     {
-        $user = User::findOrFail($id);
+        $user = auth()->user();
         $content = Cart::content();
         $count = $content->count();
         return Inertia::render(('Orderhistory'), compact('count', 'user'));
@@ -296,4 +384,109 @@ class PagesController extends Controller
         $count = $content->count();
         return Inertia::render(('Wishlist'), compact('count', 'user'));
     }
+
+    public function terms()
+    {
+        $content = Cart::content();
+        $count = $content->count();
+        return Inertia::render(('TermsOfService'), compact('count'));
+    }
+
+    public function favorite(Request $request)
+    {
+        $user = auth()->user();
+        $favorite = new Favorite();
+        $favorite->product_id = $request->id;
+        $favorite->user_id = $user->id;
+//        dd($favorite);
+        $favorite->save();
+        return \redirect()->back()->with('message', 'Thank you for your feedback!');
+//        return Inertia::render(('TermsOfService'), compact(''));
+    }
+
+    public function unfavorite(Request $request)
+    {
+        $user = auth()->user();
+        $favorites = Favorite::query()->where('user_id', '=', $user->id)->where('product_id', '=', $request->id)->get();
+        foreach ($favorites as $favorite){
+            $favorite->delete();
+        }
+//        dd($favorite);
+        return \redirect()->back()->with('message', 'Thank you for your feedback!');
+    }
+
+    public function popular()
+    {
+        $products = Product::query()->where('popular', '=', '1')->get();
+        $selectedView = "multi";
+        $content = Cart::content();
+        $count = $content->count();
+//        dd($favorite);
+        return Inertia::render(('Popular'), compact('products', 'selectedView', 'count'));
+    }
+
+    public function privacy()
+    {
+//        $products = Product::query()->where('popular', '=', '1')->get();
+//        $selectedView = "multi";
+        $content = Cart::content();
+        $count = $content->count();
+//        dd($favorite);
+        return Inertia::render(('PrivacyPolicy'), compact( 'count'));
+    }
+
+    public function freddy()
+    {
+//        $products = Product::query()->where('popular', '=', '1')->get();
+//        $selectedView = "multi";
+        $content = Cart::content();
+        $count = $content->count();
+//        dd($favorite);
+        return Inertia::render(('Freddy'), compact( 'count'));
+    }
+
+    public function profile()
+    {
+//        $products = Product::query()->where('popular', '=', '1')->get();
+//        $selectedView = "multi";
+        $content = Cart::content();
+        $count = $content->count();
+//        dd($favorite);
+        return Inertia::render(('Profile'), compact( 'count'));
+    }
+
+    public function whyfreddy()
+    {
+//        $products = Product::query()->where('popular', '=', '1')->get();
+//        $selectedView = "multi";
+        $content = Cart::content();
+        $count = $content->count();
+//        dd($favorite);
+        return Inertia::render(('WhyFreddy'), compact( 'count'));
+    }
+
+    public function news()
+    {
+//        $products = Product::query()->where('popular', '=', '1')->get();
+//        $selectedView = "multi";
+        $content = Cart::content();
+        $count = $content->count();
+//        dd($favorite);
+        return Inertia::render(('News'), compact( 'count'));
+    }
+
+    public function successreview()
+    {
+        $content = Cart::content();
+        $count = $content->count();
+        return Inertia::render(('SuccessReview'), compact( 'count'));
+    }
+
+public function sucessmailinglist()
+    {
+        $content = Cart::content();
+        $count = $content->count();
+        return Inertia::render(('SucessMailinglist'), compact( 'count'));
+    }
+
 }

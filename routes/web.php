@@ -42,7 +42,7 @@ Route::get('review/{id}', [PagesController::class, 'review'])->name('review');
 Route::get('reviews/{id}', [PagesController::class, 'reviews'])->name('reviews');
 Route::post('/postreview', [PagesController::class, 'postreview'])->name('postreview');
 Route::get('/sizetable', [PagesController::class, 'sizetable'])->name('sizetable');
-Route::get('/account/{id}', [PagesController::class, 'account'])->name('account');
+Route::get('/terms', [PagesController::class, 'terms'])->name('terms');
 
 Route::get('cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('cart.store', [CartController::class, 'store'])->name('cart.store');
@@ -55,15 +55,25 @@ Route::get('/billing-portal', BilingPortalController::class)->name('billing-port
 Route::post('/checkout', [CartController::class, 'checkout'])->name('checkout.index');
 Route::post('/mailinglist', [PagesController::class, 'mailinglist'])->name('mailinglist');
 
+Route::post('/favorite', [PagesController::class, 'favorite'])->name('favorite');
+Route::post('/unfavorite', [PagesController::class, 'unfavorite'])->name('unfavorite');
+
 Route::get('/success', [CartController::class, 'success'])->name('checkout.success');
 Route::get('/cancel', [CartController::class, 'cancel'])->name('checkout.cancel');
 Route::get('/tester', [PagesController::class, 'tester'])->name('tester');
-Route::get('/awardpoints/{id}', [PagesController::class, 'awardpoints'])->name('awardpoints');
+Route::get('/awardpoints', [PagesController::class, 'awardpoints'])->name('awardpoints');
 Route::get('/address/{id}', [PagesController::class, 'address'])->name('address');
-Route::get('/orderhistory/{id}', [PagesController::class, 'orderhistory'])->name('orderhistory');
+Route::get('/orderhistory', [PagesController::class, 'orderhistory'])->name('orderhistory');
 Route::get('/transactionhistory/{id}', [PagesController::class, 'transactionhistory'])->name('transactionhistory');
 Route::get('/wishlist/{id}', [PagesController::class, 'wishlist'])->name('wishlist');
-
+Route::get('/popular', [PagesController::class, 'popular'])->name('popular');
+Route::get('/privacy', [PagesController::class, 'privacy'])->name('privacy');
+Route::get('/freddy', [PagesController::class, 'freddy'])->name('freddy');
+Route::get('/profile', [PagesController::class, 'profile'])->name('profile');
+Route::get('/whyfreddy', [PagesController::class, 'whyfreddy'])->name('whyfreddy');
+Route::get('/news', [PagesController::class, 'news'])->name('news');
+Route::get('/successreview', [PagesController::class, 'successreview'])->name('successreview');
+Route::get('/sucessmailinglist', [PagesController::class, 'sucessmailinglist'])->name('sucessmailinglist');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -136,7 +146,6 @@ Route::get('/welcome', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-
 
 
 

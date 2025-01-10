@@ -19,6 +19,11 @@
         <iframe class="mx-auto" width="800" height="450"
             src="https://www.youtube.com/embed/2JsPJTex3gQ">
         </iframe>
+
+            <div class="flex justify-center my-10"><img src="https://freddy.si/image/catalog/bannerji/tabelavelikosti-freddy-skinny.jpg" alt=""></div>
+            <div class="flex justify-center"><img src="https://freddy.si/image/catalog/bannerji/tabelavelikosti-freddy-highwaist.jpg" alt=""></div>
+            <div class="flex justify-center"><img src="https://freddy.si/image/catalog/bannerji/tabelavelikosti-freddy-78.jpg" alt=""></div>
+
 <!--        <iframe class="mx-auto" width="800" height="450"-->
 <!--                src="https://www.youtube.com/watch?v=qd83OFqKKi8?html5=1">-->
 <!--        </iframe>-->

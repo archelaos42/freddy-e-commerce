@@ -25,21 +25,30 @@ class CartController extends Controller
      */
     public function index()
     {
+        $total = 0;
+        $atTotal = 0;
+        $vat = 20;
         $products = Cart::content();
+        // dd($products);
         $count = $products->count();
-        return Inertia::render('Cart', compact('products', 'count'));
+        foreach ($products as $product){
+            $total += ($product->price * $product->qty);
+        }
+        $vatAmount = round($total*($vat/100), 2);
+        $atTotal = $total + $vatAmount;
+        return Inertia::render('Cart', compact('products', 'count', 'total', 'atTotal', 'vatAmount'));
 //        dd($products);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+//    /**
+//     * Show the form for creating a new resource.
+//     *
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function create()
+//    {
+//        //
+//    }
 
 //    /**
 //     * Store a newly created resource in storage.
@@ -47,18 +56,22 @@ class CartController extends Controller
 //     * @param Request $request
 //     * @return RedirectResponse
 //     */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
+//        dd($request);
         Cart::add($request->id, $request->name, $request->qty, $request->price, 0);
-        $id = $request->id;
-        $content = Cart::content();
-        $count = $content->count();
+//        $id = $request->id;
+//        $content = Cart::content();
+//        $count = $content->count();
 //        dd(Cart::content());
 //        return redirect()->route('cart.index');
 //        return redirect()->route('product', $id)
 //            ->with('message', 'Item added successfully!');
+//        session()->flash('message', 'Item added successfully!');
+//        return redirect()->route('sizetable')
+//            ->with('message', 'Item added successfully!');
         return \redirect()->back()->with('message', 'Item added successfully!');
-
+//        Redirect::route('sizetable')->with('message', 'Item added successfully!');
     }
 
     /**
@@ -114,9 +127,14 @@ class CartController extends Controller
      * @param Request $request
      * @param  int  $id
      * @return \Illuminate\Contracts\Foundation\Application|RedirectResponse|\Illuminate\Routing\Redirector
-* //     */
+     * //     */
     public function checkout()
     {
+        $content = Cart::content();
+        $content->count();
+        if ($content->count() < 1) {
+            return \redirect()->back()->with('message', 'Cart is empty!');
+        }
 
         \Stripe\Stripe::setApiKey('sk_test_51M3On7IJyyVcaOuSIYcxqumsUbjmDvuUr07NmB7NhjBDnMg8zGgfHWaEWHY6udaZDNkiy3sztaioQtNmUYMVE68V00ySUsQ5Hl');
 
@@ -139,12 +157,12 @@ class CartController extends Controller
         }
         $session =
             \Stripe\Checkout\Session::create([
-            'line_items' => $lineItems,
-            'mode' => 'payment',
-            'success_url' => route('checkout.success', [], true)."?session_id={CHECKOUT_SESSION_ID}",
-            'cancel_url' => route('checkout.cancel', [], true),
+                'line_items' => $lineItems,
+                'mode' => 'payment',
+                'success_url' => route('checkout.success', [], true)."?session_id={CHECKOUT_SESSION_ID}",
+                'cancel_url' => route('checkout.cancel', [], true),
                 'customer_creation' => 'always',
-        ]);
+            ]);
 
 //        $newestCliente = Order::orderBy('id', 'desc')->first(); // gets the whole row
 //        $maxValue =time();

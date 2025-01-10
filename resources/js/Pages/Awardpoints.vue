@@ -34,10 +34,8 @@
         </div>
     </AppLayout>
 </template>
-<script>
+<script setup>
 import AppLayout from "../Layouts/AppLayout.vue";
 import {Link} from "@inertiajs/inertia-vue3";
-export default {
-    components: {AppLayout, Link}
-}
+
 </script>
