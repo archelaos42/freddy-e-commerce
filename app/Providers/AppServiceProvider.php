@@ -31,10 +31,10 @@ class AppServiceProvider extends ServiceProvider
         //     URL::forceScheme('https');
         // }
 
-//        app(UrlGenerator::class)->forceScheme('https');
-            URL::forceScheme('http');
-//        if (App::environment('production')) {
-//            URL::forceScheme('https');
-//        }
+       app(UrlGenerator::class)->forceScheme('http');
+            // URL::forceScheme('http');
+       // if (App::environment('production')) {
+       //     URL::forceScheme('https');
+       // }
     }
 }
