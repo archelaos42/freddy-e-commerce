@@ -172,7 +172,7 @@
                                       :data="{
                                             id: product.id,
                                             name: product.name,
-                                            qty: this.$page.props.quantity,
+                                            qty: $page.props.quantity,
                                             price: product.price,
                                             size: selectedSize,
                                             // _token: this.$page.props.csrf_token
