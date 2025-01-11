@@ -36,8 +36,5 @@ class AppServiceProvider extends ServiceProvider
        // if (App::environment('production')) {
        //     URL::forceScheme('http');
        // }
-        if(env('REDIRECT_HTTP')) {
-            URL::forceScheme('http');
-        }
     }
 }
