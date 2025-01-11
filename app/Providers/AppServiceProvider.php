@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
         // }
 
        app(UrlGenerator::class)->forceScheme('http');
-            // URL::forceScheme('http');
+            URL::forceScheme('http');
        // if (App::environment('production')) {
        //     URL::forceScheme('https');
        // }
