@@ -27,14 +27,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if($this->app->environment('production') || $this->app->environment('staging')) {
-            URL::forceScheme('http');
-        }
+       //  if($this->app->environment('production') || $this->app->environment('staging')) {
+       //      URL::forceScheme('http');
+       //  }
 
-       app(UrlGenerator::class)->forceScheme('http');
-            URL::forceScheme('http');
-       if (App::environment('production')) {
-           URL::forceScheme('http');
-       }
+       // app(UrlGenerator::class)->forceScheme('http');
+       //      URL::forceScheme('http');
+       // if (App::environment('production')) {
+       //     URL::forceScheme('http');
+       // }
+        if(env('REDIRECT_HTTP')) {
+            $url->forceScheme('http');
+        }
     }
 }
