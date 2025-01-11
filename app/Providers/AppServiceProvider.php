@@ -18,6 +18,9 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         Cashier::ignoreMigrations();
+        if (App::environment('production')) {
+      $this->app['request']->server->set('HTTPS', true);
+    }
     }
 
     /**
