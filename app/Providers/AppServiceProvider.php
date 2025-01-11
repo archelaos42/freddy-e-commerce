@@ -37,7 +37,7 @@ class AppServiceProvider extends ServiceProvider
        //     URL::forceScheme('http');
        // }
         if(env('REDIRECT_HTTP')) {
-            $url->forceScheme('http');
+            URL::forceScheme('http');
         }
     }
 }
